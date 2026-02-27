@@ -20,7 +20,7 @@ export default function Footer({ onConsultClick }) {
   // 5. TEKS STATIS
   const content = {
     id: {
-      desc: "Mengangkat budaya kopi melalui pendidikan presisi dan keahlian yang penuh semangat. Menetapkan standar baru dalam industri kopi profesional Indonesia.",
+      desc: "Barista Lab Academy ditujukan untuk barista profesional dan bagi siapapun yang ingin mempelajari kopi. Para siswa akan mendapatkan semua materi yang berhubungan dengan pengenalan kopi, mengoperasikan mesin espresso, dan membuat minuman berbasis espresso sesuai dengan standar penyajian.",
       headers: {
         studios: "Studio",
         contact: "Kontak",
@@ -34,8 +34,8 @@ export default function Footer({ onConsultClick }) {
         scan: "Scan chat Admin",
       },
       hours: {
-        weekdays: "Senin - Jumat",
-        saturday: "Sabtu",
+        weekdays: "Senin - Sabtu",
+  
         sunday: "Minggu",
         closed: "TUTUP",
       },
@@ -43,7 +43,7 @@ export default function Footer({ onConsultClick }) {
       links: ["Kebijakan Privasi", "Syarat Layanan", "Karir"],
     },
     en: {
-      desc: "Elevating coffee culture through precise education and passionate craftsmanship. Setting new standards in the Indonesian professional coffee industry.",
+      desc: "Barista Lab Academy is intended for professional baristas and anyone who wants to learn about coffee. Students will receive all materials related to an introduction to coffee, operating an espresso machine, and making espresso-based drinks according to serving standards.",
       headers: { studios: "Studios", contact: "Contact", hours: "Hours" },
       labels: {
         consult: "Consultation",
@@ -53,8 +53,8 @@ export default function Footer({ onConsultClick }) {
         scan: "Scan to Chat",
       },
       hours: {
-        weekdays: "Mon - Fri",
-        saturday: "Saturday",
+        weekdays: "Mon - Sat",
+
         sunday: "Sunday",
         closed: "CLOSED",
       },
@@ -262,12 +262,7 @@ export default function Footer({ onConsultClick }) {
                     08:00 AM - 05:00 PM
                   </span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-3">
-                  <span className="text-gray-400">{t.hours.saturday}</span>
-                  <span className="text-white font-medium">
-                    09:00 AM - 03:00 PM
-                  </span>
-                </li>
+   
                 <li className="flex justify-between items-center pt-1">
                   <span className="text-gray-400">{t.hours.sunday}</span>
                   <span className="text-gold font-bold text-xs bg-gold/10 px-2 py-1 rounded">

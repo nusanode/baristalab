@@ -149,22 +149,7 @@ export const coursesData = {
         "Latte Art: Steaming, Foam, Pola (Heart, Tulip, Rosetta)",
       ],
     },
-    espresso: {
-      title: "Espresso Calibration",
-        price: "IDR 1.450.000", 
-      duration: "2 Hari",
-      level: "Intermediate",
-      image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
-      desc: "Kelas pendalaman teknik kalibrasi rasa (dial-in). Memahami rasio, yield, dan variabel ekstraksi untuk mencapai sweet spot espresso.",
-      syllabus: [
-        "Teori Ekstraksi & Variabel",
-        "Memahami Brew Ratio",
-        "Teknik Dial-in (Kalibrasi Rasa)",
-        "Analisis Sensorik (Tasting)",
-        "Troubleshooting Espresso",
-      ],
-    },
+
     latte: {
       title: "Espresso & Latte Art",
       price: "IDR 2.450.000",
@@ -562,7 +547,7 @@ export const contactData = {
     },
     email: {
       support: "admin@baristalab.id",
-      partnership: "admin@baristalab.id",
+      partnership: " baristalab2025@gmail.com",
     },
     // UBAH STRUKTUR: Sekarang berisi objek { id, link }
     socials: [
