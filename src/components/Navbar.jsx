@@ -91,7 +91,7 @@ export default function Navbar() {
             : "py-6 border-transparent"
         }`}
       >
-        <div className="container mx-auto px-8 flex justify-between items-center">
+        <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
           {/* --- LOGO --- */}
           <a href="#" className="group flex items-center gap-3">
             <img
@@ -100,43 +100,54 @@ export default function Navbar() {
               className="h-10 w-auto object-contain transition-transform duration-300 group-hover:rotate-12"
             />
             <div className="flex flex-col">
-              <div className="text-2xl font-display font-bold text-white tracking-[0.15em] group-hover:text-gold transition duration-300">
+              <div className="text-xl md:text-2xl font-display font-bold text-white tracking-[0.15em] group-hover:text-gold transition duration-300">
                 BARISTA<span className="text-gold font-light">LAB</span>
               </div>
               <div className="h-[1px] w-0 bg-gold group-hover:w-full transition-all duration-500 ease-out"></div>
             </div>
           </a>
 
-          {/* --- DESKTOP MENU --- */}
-          <div className="hidden md:flex space-x-10 items-center text-sm font-medium tracking-widest uppercase">
-            {/* 4. GUNAKAN 'navItems[language]' UNTUK MAPPING */}
-            {navItems[language].map((item) => (
-              <a
-                key={item.label}
-                href={`#${item.id}`}
-                className={`transition duration-300 relative group ${
-                  activeSection === item.id
-                    ? "text-gold"
-                    : "text-white hover:text-gold"
-                }`}
-              >
-                {item.label}
-                <span
-                  className={`absolute -bottom-2 left-0 h-[1px] bg-gold transition-all duration-300 ${
+          {/* --- KONTEN KANAN NAVBAR --- */}
+          <div className="flex items-center gap-4 md:gap-10">
+            
+            {/* --- DESKTOP MENU --- */}
+            <div className="hidden md:flex space-x-10 items-center text-sm font-medium tracking-widest uppercase">
+              {/* 4. GUNAKAN 'navItems[language]' UNTUK MAPPING */}
+              {navItems[language].map((item) => (
+                <a
+                  key={item.label}
+                  href={`#${item.id}`}
+                  className={`transition duration-300 relative group ${
                     activeSection === item.id
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                      ? "text-gold"
+                      : "text-white hover:text-gold"
                   }`}
-                ></span>
-              </a>
-            ))}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-2 left-0 h-[1px] bg-gold transition-all duration-300 ${
+                      activeSection === item.id
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </a>
+              ))}
 
-            {/* 5. DROPDOWN BAHASA (DESKTOP - Dengan Gambar Bendera) */}
+              <a
+                href="#contact"
+                className="border border-gold text-gold px-8 py-3 hover:bg-gold hover:text-black transition-all duration-300 ease-out font-semibold"
+              >
+                {language === 'id' ? 'Daftar' : 'Join Now'}
+              </a>
+            </div>
+
+            {/* --- 5. DROPDOWN BAHASA (TAMPIL DI DESKTOP & MOBILE) --- */}
             <div className="relative">
                 {/* Tombol Pemicu Dropdown */}
                 <button 
                     onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                    className="flex items-center gap-2 text-white/70 hover:text-gold transition-colors py-2 border border-white/10 px-3 rounded-full hover:border-gold/50"
+                    className="flex items-center gap-2 text-white/70 hover:text-gold transition-colors py-1.5 md:py-2 border border-white/10 px-3 rounded-full hover:border-gold/50"
                 >
                     {/* Tampilkan bendera aktif (Gambar) */}
                     <img 
@@ -144,7 +155,7 @@ export default function Navbar() {
                         alt={language} 
                         className="w-5 h-auto shadow-sm rounded-sm"
                     />
-                    <span className="text-xs font-bold">{language.toUpperCase()}</span>
+                    <span className="text-xs font-bold uppercase">{language}</span>
                     <i className={`fas fa-chevron-down text-[10px] transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`}></i>
                 </button>
 
@@ -175,21 +186,14 @@ export default function Navbar() {
                 )}
             </div>
 
-            <a
-              href="#contact"
-              className="border border-gold text-gold px-8 py-3 hover:bg-gold hover:text-black transition-all duration-300 ease-out font-semibold"
+            {/* --- MOBILE HAMBURGER BUTTON --- */}
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="md:hidden text-2xl text-gold focus:outline-none transition-transform duration-300 active:scale-90"
             >
-              {language === 'id' ? 'Daftar' : 'Join Now'}
-            </a>
+              <i className="fas fa-bars"></i>
+            </button>
           </div>
-
-          {/* --- MOBILE HAMBURGER BUTTON --- */}
-          <button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden text-2xl text-gold focus:outline-none transition-transform duration-300 active:scale-90"
-          >
-            <i className="fas fa-bars"></i>
-          </button>
         </div>
       </nav>
 
@@ -227,7 +231,7 @@ export default function Navbar() {
 
           {/* List Menu Items */}
           <div className="flex flex-col justify-center items-center flex-grow px-8 pb-20 space-y-8 text-center overflow-y-auto">
-            {/* 6. GUNAKAN 'navItems[language]' UNTUK MOBILE JUGA */}
+            {/* 6. GUNAKAN 'navItems[language]' UNTUK MOBILE */}
             {navItems[language].map((item) => (
               <a
                 key={item.label}
@@ -251,24 +255,6 @@ export default function Navbar() {
               >
                  {language === 'id' ? 'Daftar Sekarang' : 'Register Now'}
               </a>
-
-              {/* 7. PILIHAN BAHASA (MOBILE) - STYLE DENGAN BENDERA */}
-              <div className="flex items-center gap-2 border border-white/10 rounded-full p-1 bg-black/20">
-                  <button 
-                    onClick={() => changeLanguage('id')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${language === 'id' ? 'bg-gold text-black shadow-lg' : 'text-gray-400 hover:text-white'}`}
-                  >
-                    <img src={flags.id} alt="ID" className="w-4 h-auto rounded-sm" />
-                    Indo
-                  </button>
-                  <button 
-                    onClick={() => changeLanguage('en')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${language === 'en' ? 'bg-gold text-black shadow-lg' : 'text-gray-400 hover:text-white'}`}
-                  >
-                    <img src={flags.en} alt="EN" className="w-4 h-auto rounded-sm" />
-                    Eng
-                  </button>
-              </div>
             </div>
           </div>
         </div>

@@ -3,8 +3,8 @@ import { createContext, useState, useContext } from 'react';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  // Default bahasa 'id' (Indonesia) atau 'en' (Inggris)
-  const [language, setLanguage] = useState('id');
+  // Ubah default bahasa menjadi 'en' (Inggris)
+  const [language, setLanguage] = useState('en');
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'id' ? 'en' : 'id'));
