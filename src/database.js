@@ -565,8 +565,8 @@ export const contactData = {
       general: "6285213541993",
     },
     email: {
-      support: "baristalabjakarta@gmail.com",
-      partnership: "baristalabjakarta@gmail.com",
+      support: " baristalab2025@gmail.com",
+      partnership: " baristalab2025@gmail.com",
     },
     // UBAH STRUKTUR: Sekarang berisi objek { id, link }
     socials: [
