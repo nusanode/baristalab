@@ -249,22 +249,7 @@ export const coursesData = {
         "Latte Art: Steaming, Foam, Patterns (Heart, Tulip, Rosetta)",
       ],
     },
-    espresso: {
-      title: "Espresso Calibration",
-      price: "IDR 1.450.000", 
-      duration: "2 Days",
-      level: "Intermediate",
-      image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
-      desc: "Deep focus on espresso extraction variables. Learn how to find the best recipe (dial-in) and train your sensory palate.",
-      syllabus: [
-        "Extraction Theory & Variables",
-        "Understanding Brew Ratio",
-        "Dial-in Technique",
-        "Sensory Analysis (Tasting)",
-        "Troubleshooting Espresso",
-      ],
-    },
+
     latte: {
       title: "Espresso & Latte Art",
       price: "IDR 2.450.000",
