@@ -276,7 +276,7 @@ export default function Footer({ onConsultClick }) {
 
         {/* --- BOTTOM BAR --- */}
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider uppercase text-gray-600">
-          <p>© 2024 Barista Lab Academy. {t.rights}</p>
+          <p>© 2026 Barista Lab Academy. {t.rights}</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold transition-colors">
               {t.links[0]}
