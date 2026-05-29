@@ -11,16 +11,18 @@ const rootElement = document.getElementById("root");
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>
+
       <BrowserRouter>
-  <LanguageProvider>
-    <App />
-  </LanguageProvider>
-</BrowserRouter>
-        
-      
+
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
+
+      </BrowserRouter>
+
     </StrictMode>,
   );
 
-  // KODE OPTIMASI SEO: Memicu Vite Prerender untuk merekam teks halaman menjadi HTML kaku
+  // KODE OPTIMASI SEO
   document.dispatchEvent(new Event('custom-render-trigger'));
 }
