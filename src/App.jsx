@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
@@ -15,30 +15,27 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isFabOpen, setIsFabOpen] = useState(false);
-
-  // 1. Buat Ref untuk menyimpan ID timer closing
   const closeTimerRef = useRef(null);
 
+  // 1. Pemicu Prerender otomatis untuk Googlebot (Solusi Vite CSR)
+  useEffect(() => {
+    document.dispatchEvent(new Event('custom-render-trigger'));
+  }, []);
+
   const handleOpenModal = (course) => {
-    // 2. Batalkan timer penghapusan data jika user membuka modal lagi dengan cepat
-    // Ini mencegah modal menjadi "blank" jika dibuka-tutup-buka dengan sangat cepat
     if (closeTimerRef.current) {
       clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
     }
-
     setSelectedCourse(course);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-
-    // 3. Simpan ID timer ke ref agar bisa dibatalkan nanti jika perlu
-    // Timeout 300ms disesuaikan dengan durasi animasi CSS di Modal.jsx
     closeTimerRef.current = setTimeout(() => {
       setSelectedCourse(null);
-      closeTimerRef.current = null; // Reset ref setelah selesai
+      closeTimerRef.current = null;
     }, 300);
   };
 
@@ -47,76 +44,77 @@ function App() {
   return (
     <div className="relative">
       <Navbar />
-      <Hero onConsultClick={toggleFab} />
+      
+      {/* 2. Mengubah tag div pembungkus menjadi komponen semantik HTML5 untuk Google */}
+      <main>
+        <Hero onConsultClick={toggleFab} />
+        <Benefits />
+        <Program onOpenModal={handleOpenModal} />
+        <About />
+        <Testimonials />
 
-      <Benefits />
+        {/* Seksi SEO Lokal - Dioptimasi dengan struktur Heading yang Benar */}
+        <section className="max-w-5xl mx-auto px-4 py-16 bg-dark text-gray-300">
+          {/* PERBAIKAN: Mengubah H1 menjadi H2 karena H1 utama sudah ada di komponen Hero */}
+          <h2 className="text-4xl font-bold mb-6 text-white font-serif">
+            Kursus Barista Jakarta & Tangerang Profesional
+          </h2>
 
-      <Program onOpenModal={handleOpenModal} />
-      <About />
-      <Testimonials />
-      <section className="max-w-5xl mx-auto px-4 py-16">
+          <p className="mb-4 text-gray-400">
+            BaristaLab Academy menyediakan kursus barista profesional
+            di Jakarta Timur dan Tangerang untuk pemula hingga calon pemilik coffee shop.
+          </p>
 
-  <h1 className="text-4xl font-bold mb-6">
-    Kursus Barista Jakarta Timur
-  </h1>
+          <p className="mb-4 text-gray-400">
+            Materi meliputi espresso, latte art, manual brewing,
+            hingga bisnis coffee shop modern.
+          </p>
 
-  <p className="mb-4">
-    BaristaLab Academy menyediakan kursus barista profesional
-    di Jakarta Timur untuk pemula hingga calon pemilik coffee shop.
-  </p>
+          <h3 className="text-2xl font-semibold mt-8 mb-4 text-white">
+            Kenapa Memilih BaristaLab Academy?
+          </h3>
 
-  <p className="mb-4">
-    Materi meliputi espresso, latte art, manual brewing,
-    hingga bisnis coffee shop modern.
-  </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-400">
+            <li>Trainer profesional dan bersertifikat</li>
+            <li>Praktek langsung menggunakan mesin espresso standar industri</li>
+            <li>Sertifikat pelatihan barista resmi</li>
+            <li>Kurikulum ramah pemula tanpa latar belakang kopi</li>
+            <li>Tempat nyaman, kondusif, dan full AC</li>
+          </ul>
 
-  <h2 className="text-2xl font-semibold mt-8 mb-4">
-    Kenapa Memilih BaristaLab Academy?
-  </h2>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://wa.me/6285213541993"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="bg-gold text-black px-6 py-3 rounded-xl text-center font-bold hover:bg-yellow-600 transition"
+            >
+              Hubungi WhatsApp Cabang Jakarta
+            </a>
 
-  <ul className="list-disc pl-6 space-y-2">
-    <li>Trainer profesional</li>
-    <li>Praktek langsung mesin espresso</li>
-    <li>Sertifikat pelatihan</li>
-    <li>Cocok untuk pemula</li>
-    <li>Tempat nyaman dan full AC</li>
-  </ul>
+            <a
+              href="https://wa.me/6281356561721"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-gold text-gold px-6 py-3 rounded-xl text-center font-bold hover:bg-gold hover:text-black transition"
+            >
+              Hubungi WhatsApp Cabang Tangerang
+            </a>
+          </div>
+        </section>
 
-  <div className="mt-8 flex flex-col gap-4">
-
-    <a
-      href="https://wa.me/6285213541993"
-      target="_blank"
-      className="bg-black text-white px-6 py-3 rounded-xl text-center"
-    >
-      WhatsApp Cabang Jakarta
-    </a>
-
-    <a
-      href="https://wa.me/6281356561721"
-      target="_blank"
-      className="bg-black text-white px-6 py-3 rounded-xl text-center"
-    >
-      WhatsApp Cabang Tangerang
-    </a>
-
-  </div>
-
-</section>
-
-      <FAQ />
+        <FAQ />
+      </main>
 
       <Footer onConsultClick={toggleFab} />
 
-      {/* --- Komponen Overlay (Fixed Position) --- */}
+      {/* --- Komponen Overlay --- */}
       <Modal
         isOpen={isModalOpen}
         course={selectedCourse}
         onClose={handleCloseModal}
       />
-
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
-
       <ScrollToTop />
     </div>
   );
