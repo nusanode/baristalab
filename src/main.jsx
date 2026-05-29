@@ -4,10 +4,18 @@ import './index.css'
 import App from './App.jsx'
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  </StrictMode>,
-);
+// Simpan elemen root ke dalam variabel
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </StrictMode>,
+  );
+
+  // KODE OPTIMASI SEO: Memicu Vite Prerender untuk merekam teks halaman menjadi HTML kaku
+  document.dispatchEvent(new Event('custom-render-trigger'));
+}
