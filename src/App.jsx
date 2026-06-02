@@ -138,6 +138,28 @@ function App() {
     konsistensi pola, kontrol susu, serta pengembangan desain latte art
     profesional.
   </p>
+          <h3 className="text-2xl font-semibold mt-10 mb-4 text-gold">
+  Kursus Barista Jakarta Timur
+</h3>
+
+<p className="mb-6 text-gray-400">
+  Cabang Jakarta melayani peserta dari Cakung, Pulogadung,
+  Rawamangun, Kelapa Gading, Bekasi, dan wilayah Jakarta lainnya.
+  Program kursus barista Jakarta dirancang untuk pemula hingga
+  profesional dengan praktik langsung menggunakan mesin espresso
+  standar industri.
+</p>
+
+<h3 className="text-2xl font-semibold mt-10 mb-4 text-gold">
+  Kursus Barista Tangerang
+</h3>
+
+<p className="mb-6 text-gray-400">
+  Cabang Tangerang melayani peserta dari Karawaci, Cikokol,
+  Gading Serpong, BSD, Alam Sutera, Ciledug, dan sekitarnya.
+  Pelatihan barista Tangerang mencakup espresso, latte art,
+  manual brew, serta manajemen bisnis coffee shop.
+</p>
 
   <h3 className="text-2xl font-semibold mt-10 mb-4 text-white">
     Kenapa Memilih Barista Lab Academy?
