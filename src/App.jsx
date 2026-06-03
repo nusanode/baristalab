@@ -45,6 +45,12 @@ function App() {
 
   return (
     <div className="relative">
+  <Routes>
+
+    <Route
+      path="/"
+      element={
+        <>
       <Navbar />
       
       {/* 2. Mengubah tag div pembungkus menjadi komponen semantik HTML5 untuk Google */}
@@ -220,7 +226,19 @@ function App() {
       />
 
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
-      <ScrollToTop />
+<ScrollToTop />
+
+        </>
+      }
+    />
+
+    <Route
+      path="/kursus-barista-jakarta-timur"
+      element={<KursusBaristaJakartaTimur />}
+    />
+
+  </Routes>
+      
     </div>
   );
 }
