@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import KursusBaristaJakartaTimur from "./pages/KursusBaristaJakartaTimur";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
