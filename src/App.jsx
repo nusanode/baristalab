@@ -206,3 +206,21 @@ function App() {
   </div>
 </div>     
 </section>
+        <FAQ />
+      </main>
+
+      <Footer onConsultClick={toggleFab} />
+
+      <Modal
+        isOpen={isModalOpen}
+        course={selectedCourse}
+        onClose={handleCloseModal}
+      />
+
+      <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
+      <ScrollToTop />
+    </div>
+  );
+}
+
+export default App;
