@@ -604,7 +604,7 @@ export const heroData = {
       highlight: "Cangkir Sempurna",
     },
     description:
-      "Akademi barista terdepan. Dari teknik fundamental hingga manajemen bisnis, kami membentuk pengrajin kopi masa depan.",
+  "Pelatihan barista profesional untuk pemula hingga calon pemilik coffee shop. Belajar espresso, latte art, manual brew, dan bisnis kopi bersama Barista Lab Academy.",
     cta: {
       primary: "Lihat Kursus",
       secondary: "Konsultasi",
