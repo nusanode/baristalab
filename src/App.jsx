@@ -56,9 +56,9 @@ function App() {
       <Testimonials />
       <section className="max-w-5xl mx-auto px-4 py-16">
 
-  <h1 className="text-4xl font-bold mb-6">
+  <h2 className="text-4xl font-bold mb-6">
   Kursus Barista Jakarta, Tangerang & Jabodetabek
-</h1>
+</h2>
 
   <p className="mb-4">
   Barista Lab Academy menyediakan kursus dan pelatihan barista profesional
@@ -71,9 +71,9 @@ function App() {
     hingga bisnis coffee shop modern.
   </p>
 
-  <h2 className="text-2xl font-semibold mt-8 mb-4">
+  <h3 className="text-2xl font-semibold mt-8 mb-4">
     Kenapa Memilih BaristaLab Academy?
-  </h2>
+  </h3>
 
   <ul className="list-disc pl-6 space-y-2">
     <li>Trainer profesional</li>
