@@ -170,7 +170,25 @@ function App() {
           />
         }
       />
+<Route
+  path="/kursus-barista-jakarta"
+  element={<LocationPage />}
+/>
 
+<Route
+  path="/kursus-barista-tangerang"
+  element={<LocationPage />}
+/>
+
+<Route
+  path="/kursus-barista-jakarta-timur"
+  element={<LocationPage />}
+/>
+
+<Route
+  path="/pelatihan-barista-jabodetabek"
+  element={<LocationPage />}
+/>
     </Routes>
    
   </div>
