@@ -604,7 +604,8 @@ export const heroData = {
       highlight: "Cangkir Sempurna",
     },
     description:
-  "Pelatihan barista profesional untuk pemula hingga calon pemilik coffee shop. Belajar espresso, latte art, manual brew, dan bisnis kopi bersama Barista Lab Academy.",
+  "description:
+"Ikuti kursus barista Jakarta & Tangerang untuk pemula hingga profesional. Belajar espresso, latte art, manual brew, dan bisnis coffee shop dengan praktik 1-on-1 di Barista Lab Academy."
     cta: {
       primary: "Lihat Kursus",
       secondary: "Konsultasi",
