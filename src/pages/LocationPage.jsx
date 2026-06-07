@@ -1,75 +1,41 @@
-import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import FAQ from "../components/FAQ";
-import { locationData } from "../data/locationData";
 
-export default function LocationPage() {
-  const { slug } = useParams();
-
-  const data = locationData[slug];
-
-  if (!data) {
-    return <h1>Halaman tidak ditemukan</h1>;
-  }
-
+export default function LocationPage({ city, keyword }) {
   return (
     <>
       <Navbar />
 
       <main className="max-w-5xl mx-auto px-4 py-16">
-
         <h1 className="text-4xl font-bold mb-6">
-          {data.h1}
+          {keyword}
         </h1>
 
         <p className="mb-4">
-          {data.description}
+          Barista Lab Academy menyediakan {keyword.toLowerCase()}
+          untuk pemula, calon barista profesional,
+          dan pemilik coffee shop.
         </p>
 
         <p className="mb-4">
-          Barista Lab Academy melayani peserta dari {data.location}
-          dan sekitarnya dengan program pelatihan yang dirancang
-          sesuai kebutuhan industri coffee shop modern.
+          Materi meliputi espresso, latte art,
+          manual brewing, customer service,
+          hingga bisnis coffee shop modern.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-4">
-          Materi Pelatihan
+        <h2 className="text-2xl font-semibold mt-8 mb-4">
+          Mengapa Memilih Barista Lab?
         </h2>
 
         <ul className="list-disc pl-6 space-y-2">
-          <li>Espresso Extraction</li>
-          <li>Latte Art</li>
-          <li>Manual Brew</li>
-          <li>Customer Service</li>
-          <li>Manajemen Coffee Shop</li>
+          <li>Trainer profesional</li>
+          <li>Sertifikat pelatihan</li>
+          <li>Praktek langsung</li>
+          <li>Cocok untuk pemula</li>
+          <li>Konsultasi bisnis coffee shop</li>
         </ul>
-
-        <div className="mt-8 flex flex-col gap-4">
-
-          <a
-            href={`https://wa.me/${data.phone}`}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-black text-white px-6 py-3 rounded-xl text-center"
-          >
-            Konsultasi WhatsApp
-          </a>
-
-          <a
-            href={data.maps}
-            target="_blank"
-            rel="noreferrer"
-            className="border px-6 py-3 rounded-xl text-center"
-          >
-            Lihat Lokasi
-          </a>
-
-        </div>
-
       </main>
 
-      <FAQ />
       <Footer />
     </>
   );
