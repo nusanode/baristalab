@@ -130,46 +130,7 @@ function App() {
             </>
         }
       />
-
-      <Route
-        path="/kursus-barista-jakarta"
-        element={
-          <LocationPage
-            city="Jakarta"
-            keyword="Kursus Barista Jakarta"
-          />
-        }
-      />
-
-      <Route
-        path="/kursus-barista-tangerang"
-        element={
-          <LocationPage
-            city="Tangerang"
-            keyword="Kursus Barista Tangerang"
-          />
-        }
-      />
-
-      <Route
-        path="/kursus-barista-jakarta-timur"
-        element={
-          <LocationPage
-            city="Jakarta Timur"
-            keyword="Kursus Barista Jakarta Timur"
-          />
-        }
-      />
-
-      <Route
-        path="/pelatihan-barista-jabodetabek"
-        element={
-          <LocationPage
-            city="Jabodetabek"
-            keyword="Pelatihan Barista Jabodetabek"
-          />
-        }
-      />
+  
 <Route
   path="/kursus-barista-jakarta"
   element={<LocationPage />}
