@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
@@ -10,6 +11,7 @@ import Modal from "./components/Modal";
 import Fab from "./components/Fab";
 import ScrollToTop from "./components/ScrollToTop";
 import FAQ from "./components/FAQ";
+import LocationPage from "./pages/LocationPage";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
