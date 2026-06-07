@@ -57,13 +57,14 @@ function App() {
       <section className="max-w-5xl mx-auto px-4 py-16">
 
   <h1 className="text-4xl font-bold mb-6">
-    Kursus Barista Jakarta Timur
-  </h1>
+  Kursus Barista Jakarta, Tangerang & Jabodetabek
+</h1>
 
   <p className="mb-4">
-    BaristaLab Academy menyediakan kursus barista profesional
-    di Jakarta Timur untuk pemula hingga calon pemilik coffee shop.
-  </p>
+  Barista Lab Academy menyediakan kursus dan pelatihan barista profesional
+  di Jakarta, Tangerang, dan wilayah Jabodetabek untuk pemula, calon barista,
+  maupun pemilik coffee shop.
+</p>
 
   <p className="mb-4">
     Materi meliputi espresso, latte art, manual brewing,
