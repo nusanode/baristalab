@@ -1,15 +1,15 @@
 export const locationData = {
-  jakarta: {
+  "kursus-barista-jakarta": {
     title: "Kursus Barista Jakarta",
     h1: "Kursus Barista Jakarta Profesional",
     location: "Jakarta",
     phone: "6285213541993",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
-      "Barista Lab Academy menyediakan kursus barista Jakarta untuk pemula hingga profesional. Belajar espresso, latte art, manual brew dan bisnis coffee shop."
+      "Barista Lab Academy menyediakan kursus barista Jakarta untuk pemula hingga profesional."
   },
 
-  tangerang: {
+  "kursus-barista-tangerang": {
     title: "Kursus Barista Tangerang",
     h1: "Kursus Barista Tangerang Profesional",
     location: "Tangerang",
@@ -19,23 +19,23 @@ export const locationData = {
       "Program pelatihan barista Tangerang dengan praktik langsung menggunakan mesin espresso komersial."
   },
 
-  "jakarta-timur": {
+  "kursus-barista-jakarta-timur": {
     title: "Kursus Barista Jakarta Timur",
     h1: "Kursus Barista Jakarta Timur Profesional",
-    location: "Duren Sawit Jakarta Timur",
+    location: "Jakarta Timur",
     phone: "6285213541993",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
-      "Pelatihan barista Jakarta Timur untuk pemula, profesional dan calon pemilik coffee shop."
+      "Pelatihan barista Jakarta Timur untuk pemula hingga profesional."
   },
 
-  jabodetabek: {
+  "pelatihan-barista-jabodetabek": {
     title: "Pelatihan Barista Jabodetabek",
     h1: "Pelatihan Barista Jabodetabek",
-    location: "Jakarta, Bogor, Depok, Tangerang dan Bekasi",
+    location: "Jabodetabek",
     phone: "6285213541993",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
-      "Program pelatihan barista Jabodetabek dengan kurikulum industri dan trainer berpengalaman."
+      "Program pelatihan barista Jabodetabek dengan kurikulum industri."
   }
 };
