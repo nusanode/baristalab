@@ -47,7 +47,13 @@ function App() {
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   return (
-    <div className="relative">
+  <div className="relative">
+    <Routes>
+
+      <Route
+        path="/"
+        element={
+          <>
       <Navbar />
       <Hero onConsultClick={toggleFab} />
 
@@ -121,6 +127,53 @@ function App() {
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
 
       <ScrollToTop />
+            </>
+        }
+      />
+
+      <Route
+        path="/kursus-barista-jakarta"
+        element={
+          <LocationPage
+            city="Jakarta"
+            keyword="Kursus Barista Jakarta"
+          />
+        }
+      />
+
+      <Route
+        path="/kursus-barista-tangerang"
+        element={
+          <LocationPage
+            city="Tangerang"
+            keyword="Kursus Barista Tangerang"
+          />
+        }
+      />
+
+      <Route
+        path="/kursus-barista-jakarta-timur"
+        element={
+          <LocationPage
+            city="Jakarta Timur"
+            keyword="Kursus Barista Jakarta Timur"
+          />
+        }
+      />
+
+      <Route
+        path="/pelatihan-barista-jabodetabek"
+        element={
+          <LocationPage
+            city="Jabodetabek"
+            keyword="Pelatihan Barista Jabodetabek"
+          />
+        }
+      />
+
+    </Routes>
+  </div>
+);
     </div>
   );
 }
