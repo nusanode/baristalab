@@ -575,16 +575,16 @@ export const contactData = {
     ],
     addresses: {
       jakarta: {
-        title: "Jakarta HQ",
-        text: "Jl. Madrasah II No.1A, Duren Sawit, Jakarta Timur",
+        title: "Kursus Barista Jakarta Timur - Barista Lab HQ",
+        text: "Jl. Madrasah II No.1A, Duren Sawit, Jakarta Timur, Kursus barista profesional dengan pelatihan espresso, latte art, dan coffee business.",
         zip: "East Jakarta, 13440",
         // TAMBAH LINK MAPS
         mapLink: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
       },
       tangerang: {
-        title: "Tangerang Hub",
+        title: "Kursus Barista Tangerang - Barista Lab Hub",
         text: "Jl. Kav. Perkebunan Raya No.139, Cibodas, Banten",
-        zip: "Cibodas, Banten",
+        zip: "Cibodas, Banten,Kursus barista profesional dengan pelatihan espresso, latte art, dan coffee business.",
         // TAMBAH LINK MAPS
         mapLink: "https://maps.app.goo.gl/ZtByeSPviSn4f1cj9",
       },
