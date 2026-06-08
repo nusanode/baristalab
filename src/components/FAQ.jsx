@@ -28,7 +28,36 @@ export default function FAQ() {
   };
 
   const text = content[language];
+useEffect(() => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData[language].map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
 
+  let script = document.getElementById("faq-schema");
+
+  if (!script) {
+    script = document.createElement("script");
+    script.id = "faq-schema";
+    script.type = "application/ld+json";
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify(faqSchema);
+
+  return () => {
+    const existing = document.getElementById("faq-schema");
+    if (existing) existing.remove();
+  };
+}, [language]);
   // Handler to toggle accordion
   const toggleAccordion = (index) => {
     // If clicking the same index, close it (set null). If different, open new index.
