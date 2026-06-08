@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 // 1. IMPORT DATA DARI DATABASE
 import { faqData, contactData } from '../database';
 // 2. IMPORT HOOK BAHASA
