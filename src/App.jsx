@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+import KursusBaristaJakartaTimur from "./pages/KursusBaristaJakartaTimur";
 import { useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
