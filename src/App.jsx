@@ -49,7 +49,12 @@ closeTimerRef.current = setTimeout(() => {
 const toggleFab = () => setIsFabOpen(!isFabOpen);
 
 return (
-<div className="relative">
+<Routes>
+
+  <Route
+    path="/"
+    element={
+      <div className="relative">
 <Navbar />
 <Hero onConsultClick={toggleFab} />
 
@@ -117,7 +122,15 @@ return (
 
   <ScrollToTop />  
 </div>
+    }
+  />
 
+  <Route
+    path="/kursus-barista-jakarta-timur"
+    element={<KursusBaristaJakartaTimur />}
+  />
+
+</Routes>
 );
 }
 
