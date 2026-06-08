@@ -67,7 +67,8 @@ return (
 </p>    <p className="mb-4">  
     Materi meliputi espresso, latte art, manual brewing,  
     hingga bisnis coffee shop modern.
-  <div className="mt-6">
+</p> 
+    <div className="mt-6">
   <a
     href="/kursus-barista-jakarta-timur"
     className="text-gold font-semibold underline"
@@ -75,7 +76,7 @@ return (
     Lihat Program Kursus Barista Jakarta Timur →
   </a>
 </div>
-  </p>    <h3 className="text-2xl font-semibold mt-8 mb-4">  
+    <h3 className="text-2xl font-semibold mt-8 mb-4">  
     Kenapa Memilih BaristaLab Academy?  
   </h3>    <ul className="list-disc pl-6 space-y-2">  
     <li>Trainer profesional</li>  
