@@ -598,7 +598,7 @@ export const heroData = {
     videoId: "aTC_RNYtEb0",
     fallbackImage:
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80",
-    tagline: "Seni Menyeduh Kopi",
+    tagline: "Kursus Barista Jabodetabek Profesional | Jakarta, Tangerang, Bekasi, Depok & Bogor",
     headline: {
       main: "Kuasai",
       highlight: "Cangkir Sempurna",
