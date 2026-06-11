@@ -575,16 +575,16 @@ export const contactData = {
     ],
     addresses: {
       jakarta: {
-        title: "Kursus Barista Jakarta Timur - Barista Lab HQ",
-        text: "Jl. Madrasah II No.1A, Duren Sawit, Jakarta Timur, Kursus barista profesional dengan pelatihan espresso, latte art, dan coffee business.",
+        title: "Jakarta HQ",
+        text: "Jl. Madrasah II No.1A, Duren Sawit, Jakarta Timur",
         zip: "East Jakarta, 13440",
         // TAMBAH LINK MAPS
         mapLink: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
       },
       tangerang: {
-        title: "Kursus Barista Tangerang - Barista Lab Hub",
+        title: "Tangerang Hub",
         text: "Jl. Kav. Perkebunan Raya No.139, Cibodas, Banten",
-        zip: "Cibodas, Banten,Kursus barista profesional dengan pelatihan espresso, latte art, dan coffee business.",
+        zip: "Cibodas, Banten",
         // TAMBAH LINK MAPS
         mapLink: "https://maps.app.goo.gl/ZtByeSPviSn4f1cj9",
       },
@@ -598,14 +598,13 @@ export const heroData = {
     videoId: "aTC_RNYtEb0",
     fallbackImage:
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80",
-    tagline: "Kursus Barista Jakarta & Tangerang | Belajar Espresso, Latte Art & Coffee Business",
-
+    tagline: "Seni Menyeduh Kopi",
     headline: {
       main: "Kuasai",
       highlight: "Cangkir Sempurna",
     },
-  description:
-"Pelatihan barista Jakarta & Tangerang untuk pemula hingga profesional. Belajar espresso, latte art, manual brew, dan bisnis coffee shop dengan praktik 1-on-1 di Barista Lab Academy."
+    description:
+      "Akademi barista terdepan. Dari teknik fundamental hingga manajemen bisnis, kami membentuk pengrajin kopi masa depan.",
     cta: {
       primary: "Lihat Kursus",
       secondary: "Konsultasi",
