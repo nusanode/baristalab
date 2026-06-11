@@ -598,7 +598,8 @@ export const heroData = {
     videoId: "aTC_RNYtEb0",
     fallbackImage:
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80",
-    tagline: "Kursus Barista Jakarta & Tangerang",
+    tagline: "Kursus Barista Jakarta & Tangerang | Belajar Espresso, Latte Art & Coffee Business",
+
     headline: {
       main: "Kuasai",
       highlight: "Cangkir Sempurna",
