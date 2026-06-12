@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function KursusBaristaJakarta() {
+export default function KursusBaristaBogor() {
 return (
 <div className="max-w-5xl mx-auto px-4 py-10">
 
