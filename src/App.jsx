@@ -6,6 +6,7 @@ import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
 import KursusBaristaDepok from "./pages/KursusBaristaDepok";
 import KursusBaristaBogor from "./pages/KursusBaristaBogor";
 import SertifikasiBarista from "./pages/SertifikasiBarista";
+import PelatihanBarista from "./pages/PelatihanBarista";
 import KelasLatteArt from "./pages/KelasLatteArt";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -111,6 +112,11 @@ element={<KursusBaristaDepok />}
 path="/kursus-barista-bogor"
 element={<KursusBaristaBogor />}
 />
+  <Route
+path="/pelatihan-barista"
+element={<PelatihanBarista />}
+/>
+
 
 
 <Route
