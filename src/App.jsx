@@ -77,7 +77,51 @@ function App() {
 
       <ScrollToTop />
     </div>
-  );
+  );<Route
+path="/kursus-barista-jakarta"
+element={<KursusBaristaJakarta />}
+/>
+
+
+<Route
+path="/kursus-barista-tangerang"
+element={<KursusBaristaTangerang />}
+/>
+
+
+<Route
+path="/kursus-barista-bekasi"
+element={<KursusBaristaBekasi />}
+/>
+
+
+<Route
+path="/kursus-barista-depok"
+element={<KursusBaristaDepok />}
+/>
+
+
+<Route
+path="/kursus-barista-bogor"
+element={<KursusBaristaBogor />}
+/>
+
+
+<Route
+path="/sertifikasi-barista"
+element={<SertifikasiBarista />}
+/>
+
+
+<Route
+path="/kelas-latte-art"
+element={<KelasLatteArt />}
+/>
+
+
+</Routes>
+
+);  
 }
 
 export default App;
