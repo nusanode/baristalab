@@ -1,4 +1,11 @@
 import { useState, useRef } from "react";
+import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
+import KursusBaristaTangerang from "./pages/KursusBaristaTangerang";
+import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
+import KursusBaristaDepok from "./pages/KursusBaristaDepok";
+import KursusBaristaBogor from "./pages/KursusBaristaBogor";
+import SertifikasiBarista from "./pages/SertifikasiBarista";
+import KelasLatteArt from "./pages/KelasLatteArt";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
