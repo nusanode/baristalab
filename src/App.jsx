@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import KursusBaristaJakartaTimur from "./pages/KursusBaristaJakartaTimur";
 import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
 import KursusBaristaTangerang from "./pages/KursusBaristaTangerang";
 import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
@@ -84,12 +83,7 @@ function App() {
 path="/kursus-barista-jakarta"
 element={<KursusBaristaJakarta />}
 />
-    <Route
-path="/kursus-barista-jakarta-Timur"
-element={<KursusBaristaJakartaTimur />}
-/>
-
-
+  
 <Route
 path="/kursus-barista-tangerang"
 element={<KursusBaristaTangerang />}
@@ -112,12 +106,7 @@ element={<KursusBaristaDepok />}
 path="/kursus-barista-bogor"
 element={<KursusBaristaBogor />}
 />
-  <Route
-path="/pelatihan-barista"
-element={<PelatihanBarista />}
-/>
-
-
+ 
 
 <Route
 path="/sertifikasi-barista"
@@ -128,6 +117,10 @@ element={<SertifikasiBarista />}
 <Route
 path="/kelas-latte-art"
 element={<KelasLatteArt />}
+/>
+   <Route
+path="/pelatihan-barista"
+element={<PelatihanBarista />}
 />
 
 
