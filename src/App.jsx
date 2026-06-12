@@ -1,4 +1,28 @@
 import { useState, useRef } from "react";
+<Route
+ path="/kursus-barista-jakarta"
+ element={<KursusBaristaJakarta />}
+/>
+
+<Route
+ path="/kursus-barista-tangerang"
+ element={<KursusBaristaTangerang />}
+/>
+
+<Route
+ path="/kursus-barista-bekasi"
+ element={<KursusBaristaBekasi />}
+/>
+
+<Route
+ path="/kursus-barista-depok"
+ element={<KursusBaristaDepok />}
+/>
+
+<Route
+ path="/kursus-barista-bogor"
+ element={<KursusBaristaBogor />}
+/>
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
