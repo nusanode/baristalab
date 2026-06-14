@@ -1,0 +1,23 @@
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Fab from "./Fab";
+import { useState } from "react";
+
+export default function Layout({ children }) {
+  const [isFabOpen, setIsFabOpen] = useState(false);
+
+  return (
+    <>
+      <Navbar />
+
+      {children}
+
+      <Footer />
+
+      <Fab
+        isOpen={isFabOpen}
+        toggleOpen={() => setIsFabOpen(!isFabOpen)}
+      />
+    </>
+  );
+}
