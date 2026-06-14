@@ -18,13 +18,13 @@ export default function KursusBaristaJakarta() {
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           <h1 className="text-4xl font-bold mb-6">
-            Kursus Barista Jakarta Profesional
+            Kursus Barista Jakarta Profesional | Coffee Academy Jakarta
           </h1>
 
           <p className="mb-4">
-            Barista Lab Academy merupakan lembaga pelatihan barista profesional
-            yang menyediakan kursus barista di Tangerang untuk pemula,
-            karyawan coffee shop, hingga calon pemilik usaha kopi.
+            Barista Lab Academy menyediakan kursus barista Jakarta untuk pemula,
+barista aktif, dan calon pemilik coffee shop yang ingin meningkatkan
+kompetensi di bidang kopi.
           </p>
 
           <p className="mb-4">
