@@ -18,13 +18,14 @@ export default function KursusBaristaBekasi() {
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           <h1 className="text-4xl font-bold mb-6">
-            Kursus Barista Bekasi Profesional
+            Kursus Barista Bekasi Profesional | Pelatihan Barista Bersertifikat
           </h1>
 
           <p className="mb-4">
-            Barista Lab Academy merupakan lembaga pelatihan barista profesional
-            yang menyediakan kursus barista di Tangerang untuk pemula,
-            karyawan coffee shop, hingga calon pemilik usaha kopi.
+             Barista Lab Academy menyediakan kursus barista di Bekasi untuk pemula,
+karyawan coffee shop, hingga calon pengusaha kopi. Program pelatihan
+dirancang untuk membantu peserta menguasai keterampilan barista
+sesuai standar industri kopi modern.
           </p>
 
           <p className="mb-4">
@@ -81,9 +82,9 @@ export default function KursusBaristaBekasi() {
           </h2>
 
           <p className="mb-4">
-            Barista Lab Academy memiliki cabang pelatihan di Jakarta
-            dan Tangerang yang mudah diakses menggunakan kendaraan pribadi
-            maupun transportasi umum.
+            Peserta dari Bekasi, Cikarang, Tambun, Babelan, dan sekitarnya dapat
+mengikuti pelatihan barista di Barista Lab Academy dengan fasilitas
+praktik lengkap dan instruktur profesional.
           </p>
 
           <div className="mt-8 flex flex-col gap-4">
