@@ -106,6 +106,20 @@ export default function Program({ onOpenModal }) {
   // --- DATA SLICING LOGIC ---
   // If Expanded = true, show all. If false, show according to limit (1 or 3).
   const displayedCourses = isExpanded ? filteredCourses : filteredCourses.slice(0, initialLimit);
+  const levelLabels = {
+  id: {
+    All: "SEMUA",
+    Beginner: "PEMULA",
+    Intermediate: "MENENGAH",
+    Advanced: "LANJUTAN"
+  },
+  en: {
+    All: "ALL",
+    Beginner: "BEGINNER",
+    Intermediate: "INTERMEDIATE",
+    Advanced: "ADVANCED"
+  }
+};
 
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 
