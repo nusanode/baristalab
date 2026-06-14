@@ -114,8 +114,8 @@ const t = text[language];
           <div className="flex items-end justify-between mb-12 border-b border-white/5 pb-4">
             <div>
               <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
-                Atmosphere
-              </p>
+  {t.atmosphere}
+</p>
               <h3 className="text-3xl font-display text-white">
                 Inside the{" "}
                 <span className="text-gold italic font-serif">Lab</span>
