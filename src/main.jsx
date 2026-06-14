@@ -6,8 +6,10 @@ import { LanguageProvider } from "./context/LanguageContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  </StrictMode>,
+    import { BrowserRouter } from "react-router-dom";
+    <BrowserRouter>
+  <LanguageProvider>
+    <App />
+  </LanguageProvider>
+</BrowserRouter>
 );
