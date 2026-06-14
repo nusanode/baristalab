@@ -81,8 +81,11 @@ const t = text[language];
           </div>
           <div className="lg:w-1/2">
             <h2 className="text-4xl lg:text-5xl font-display text-white mb-8">
-              The <span className="text-gold">Privilege</span>
-            </h2>
+  {t.privilege}{" "}
+  <span className="text-gold">
+    {t.privilegeGold}
+  </span>
+</h2>
             <div className="space-y-12">
               {/* 4. GUNAKAN DATA 'aboutFeatures' SESUAI BAHASA */}
               {aboutFeatures[language].map((feature) => (
