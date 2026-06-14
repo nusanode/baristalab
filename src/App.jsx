@@ -1,4 +1,11 @@
 import { useState, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import KursusBaristaTangerang from "./pages/KursusBaristaTangerang";
+import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
+import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
+import KursusBaristaBogor from "./pages/KursusBaristaBogor";
+import KursusBaristaDepok from "./pages/KursusBaristaDepok";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
