@@ -213,7 +213,7 @@ export default function Program({ onOpenModal }) {
                     
                     {/* Level Badge */}
                     <div className={`absolute top-4 left-4 z-20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded border backdrop-blur-md ${getBadgeStyle(course.level)}`}>
-                      {course.level}
+                      {levelLabels[language][course.level]}
                     </div>
 
                     {/* Premium Badge */}
