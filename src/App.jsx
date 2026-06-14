@@ -76,32 +76,37 @@ const HomePage = () => (
   </>
 );
   return (
-    <div className="relative">
-      <Navbar />
-      <Hero onConsultClick={toggleFab} />
+  <Routes>
 
-      <Benefits />
+    <Route path="/" element={<HomePage />} />
 
-      <Program onOpenModal={handleOpenModal} />
-      <About />
-      <Testimonials />
+    <Route
+      path="/kursus-barista-tangerang"
+      element={<KursusBaristaTangerang />}
+    />
 
-      <FAQ />
+    <Route
+      path="/kursus-barista-jakarta"
+      element={<KursusBaristaJakarta />}
+    />
 
-      <Footer onConsultClick={toggleFab} />
+    <Route
+      path="/kursus-barista-bekasi"
+      element={<KursusBaristaBekasi />}
+    />
 
-      {/* --- Komponen Overlay (Fixed Position) --- */}
-      <Modal
-        isOpen={isModalOpen}
-        course={selectedCourse}
-        onClose={handleCloseModal}
-      />
+    <Route
+      path="/kursus-barista-bogor"
+      element={<KursusBaristaBogor />}
+    />
 
-      <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
+    <Route
+      path="/kursus-barista-depok"
+      element={<KursusBaristaDepok />}
+    />
 
-      <ScrollToTop />
-    </div>
-  );
+  </Routes>
+);
 }
 
 export default App;
