@@ -81,9 +81,9 @@ dunia kopi secara profesional.
           </h2>
 
           <p className="mb-4">
-            Barista Lab Academy memiliki cabang pelatihan di Jakarta
-            dan Tangerang yang mudah diakses menggunakan kendaraan pribadi
-            maupun transportasi umum.
+            Peserta dari Depok, Cinere, Beji, Sawangan, dan sekitarnya dapat
+mengikuti program pelatihan barista dengan praktik langsung menggunakan
+mesin espresso standar industri.
           </p>
 
           <div className="mt-8 flex flex-col gap-4">
