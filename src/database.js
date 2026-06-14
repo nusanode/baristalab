@@ -570,7 +570,7 @@ export const contactData = {
     },
     // UBAH STRUKTUR: Sekarang berisi objek { id, link }
     socials: [
-      { id: "instagram", link: "https://www.instagram.com/baristalabjakarta.id/" },
+      { id: "instagram", link: "https://www.instagram.com/baristalab.co.id/" },
       { id: "tiktok", link: "https://www.tiktok.com/@baristalab.id" },
     ],
     addresses: {
