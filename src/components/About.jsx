@@ -11,7 +11,24 @@ export default function About() {
 
   // 3. AMBIL STATE BAHASA
   const { language } = useLanguage();
+const text = {
+  id: {
+    privilege: "Keunggulan",
+    privilegeGold: "Kami",
+    atmosphere: "Suasana Pelatihan",
+    gallery: "Galeri",
+    galleryGold: "BaristaLab",
+  },
+  en: {
+    privilege: "The",
+    privilegeGold: "Privilege",
+    atmosphere: "Atmosphere",
+    gallery: "Inside the",
+    galleryGold: "Lab",
+  },
+};
 
+const t = text[language];
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
