@@ -50,7 +50,31 @@ function App() {
   };
 
   const toggleFab = () => setIsFabOpen(!isFabOpen);
+const HomePage = () => (
+  <>
+    <Navbar />
+    <Hero onConsultClick={toggleFab} />
+    <Benefits />
+    <Program onOpenModal={handleOpenModal} />
+    <About />
+    <Testimonials />
+    <FAQ />
+    <Footer onConsultClick={toggleFab} />
 
+    <Modal
+      isOpen={isModalOpen}
+      course={selectedCourse}
+      onClose={handleCloseModal}
+    />
+
+    <Fab
+      isOpen={isFabOpen}
+      toggleOpen={toggleFab}
+    />
+
+    <ScrollToTop />
+  </>
+);
   return (
     <div className="relative">
       <Navbar />
