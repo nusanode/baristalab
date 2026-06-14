@@ -6,7 +6,7 @@ import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
 import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
 import KursusBaristaBogor from "./pages/KursusBaristaBogor";
 import KursusBaristaDepok from "./pages/KursusBaristaDepok";
-import KursusBarista from "./pages/KursusBarista";
+import KelasLatteArt from "./pages/KelasLatteArt";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
@@ -107,8 +107,8 @@ const HomePage = () => (
     />
     
     <Route
-      path="/kursus-barista"
-      element={<KursusBarista />}
+      path="/kelas-latte-art"
+      element={<KelasLatteArt />}
     />
 
   </Routes>
