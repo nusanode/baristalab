@@ -4,7 +4,10 @@ import Footer from "../components/Footer";
 
 export default function KursusBaristaTangerang() {
 return (
-<div className="max-w-5xl mx-auto px-4 py-10">
+<>
+  <Navbar />
+
+  <main className="bg-dark-charcoal text-white min-h-screen">
 
   <h1 className="text-4xl font-bold mb-6">
     Kursus Barista Tangerang Profesional
