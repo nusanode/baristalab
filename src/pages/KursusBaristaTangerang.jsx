@@ -18,13 +18,13 @@ export default function KursusBaristaTangerang() {
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           <h1 className="text-4xl font-bold mb-6">
-            Kursus Barista Tangerang Profesional
+            Kursus Barista Tangerang Profesional | Pelatihan Barista Bersertifikat
           </h1>
 
           <p className="mb-4">
-            Barista Lab Academy merupakan lembaga pelatihan barista profesional
-            yang menyediakan kursus barista di Tangerang untuk pemula,
-            karyawan coffee shop, hingga calon pemilik usaha kopi.
+            Barista Lab Academy menyediakan kursus barista Tangerang untuk pemula,
+karyawan coffee shop, hingga calon pengusaha kopi dengan metode belajar
+teori dan praktik langsung.
           </p>
 
           <p className="mb-4">
@@ -81,9 +81,8 @@ export default function KursusBaristaTangerang() {
           </h2>
 
           <p className="mb-4">
-            Barista Lab Academy memiliki cabang pelatihan di Jakarta
-            dan Tangerang yang mudah diakses menggunakan kendaraan pribadi
-            maupun transportasi umum.
+            Program ini banyak diikuti peserta dari Tangerang Kota, Tangerang
+Selatan, Cikupa, Ciledug, Karawaci, dan wilayah Tangerang lainnya.
           </p>
 
           <div className="mt-8 flex flex-col gap-4">
