@@ -117,9 +117,11 @@ const t = text[language];
   {t.atmosphere}
 </p>
               <h3 className="text-3xl font-display text-white">
-                Inside the{" "}
-                <span className="text-gold italic font-serif">Lab</span>
-              </h3>
+  {t.gallery}{" "}
+  <span className="text-gold italic font-serif">
+    {t.galleryGold}
+  </span>
+</h3>
             </div>
             <div className="hidden md:block h-[1px] bg-gold/30 w-1/3"></div>
           </div>
