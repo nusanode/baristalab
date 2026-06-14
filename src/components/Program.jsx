@@ -10,7 +10,20 @@ export default function Program({ onOpenModal }) {
   
   // 3. AMBIL STATE BAHASA
   const { language } = useLanguage();
-  
+  const levelLabels = {
+  id: {
+    All: "SEMUA",
+    Beginner: "PEMULA",
+    Intermediate: "MENENGAH",
+    Advanced: "LANJUTAN"
+  },
+  en: {
+    All: "ALL",
+    Beginner: "BEGINNER",
+    Intermediate: "INTERMEDIATE",
+    Advanced: "ADVANCED"
+  }
+};
   // --- STATE FOR SHOW MORE FEATURE ---
   const [isExpanded, setIsExpanded] = useState(false);
   const [initialLimit, setInitialLimit] = useState(3); // Default Desktop: 3
