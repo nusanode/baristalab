@@ -18,13 +18,13 @@ export default function KursusBaristaDepok() {
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           <h1 className="text-4xl font-bold mb-6">
-            Kursus Barista Depok Profesional
+            Kursus Barista Depok Profesional | Pelatihan Barista Bersertifikat
           </h1>
 
           <p className="mb-4">
-            Barista Lab Academy merupakan lembaga pelatihan barista profesional
-            yang menyediakan kursus barista di Tangerang untuk pemula,
-            karyawan coffee shop, hingga calon pemilik usaha kopi.
+            Barista Lab Academy menghadirkan kursus barista di Depok bagi pemula,
+karyawan coffee shop, maupun calon pengusaha kopi yang ingin memahami
+dunia kopi secara profesional.
           </p>
 
           <p className="mb-4">
