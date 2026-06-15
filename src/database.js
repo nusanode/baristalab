@@ -455,39 +455,45 @@ export const partnersData = [
 
 // --- 9. DATA FAQ ---
 export const faqData = {
-  id: [
-    {
-      id: 1,
-      question: "Bisakah pemula tanpa pengalaman bergabung?",
-      answer:
-        "Tentu saja! Kurikulum kami dirancang dari dasar (Basic hingga Pro). Sebagian besar alumni kami memulai tanpa latar belakang kopi dan sekarang bekerja sebagai barista profesional.",
-    },
-    {
-      id: 2,
-      question: "Apakah saya mendapatkan sertifikat resmi?",
-      answer:
-        "Ya, setiap lulusan menerima sertifikat fisik dan digital dengan Nomor Seri Unik. Sertifikat ini valid dan diakui oleh mitra kerja kami serta industri perhotelan nasional.",
-    },
-    {
-      id: 3,
-      question: "Berapa lama durasi kursusnya?",
-      answer:
-        "Durasi bervariasi tergantung program. Mulai dari 1 hari (Kelas Dasar) hingga 4 hari intensif (Bisnis Pro). Silakan cek detail durasi pada setiap kartu di bagian Program.",
-    },
-    {
-      id: 4,
-      question: "Apakah alat dan bahan disediakan selama kursus?",
-      answer:
-        "Semuanya sudah termasuk (All-inclusive). Mesin espresso komersial, grinder, susu segar, dan biji kopi premium disediakan sepenuhnya oleh kami. Anda hanya perlu membawa semangat belajar.",
-    },
-    {
-      id: 5,
-      question:
-        "Bagaimana jika saya berhalangan hadir pada jadwal yang ditentukan?",
-      answer:
-        "Kami menyediakan opsi Reschedule satu kali, dengan pemberitahuan minimal 3 hari sebelum kelas dimulai. Silakan hubungi admin kami segera jika ada perubahan jadwal.",
-    },
-  ],
+ id: [
+{
+id: 1,
+question: "Apakah pemula tanpa pengalaman bisa mengikuti kursus barista?",
+answer:
+"Ya. Program Barista Lab Academy dirancang untuk pemula tanpa pengalaman. Materi dimulai dari pengenalan kopi, espresso, latte art hingga praktik langsung menggunakan mesin espresso."
+},
+{
+id: 2,
+question: "Berapa biaya kursus barista di Jakarta dan Tangerang?",
+answer:
+"Biaya pelatihan berbeda sesuai program yang dipilih. Tersedia kelas Barista Basic, Barista Professional hingga Barista Business dengan fasilitas lengkap dan sertifikat."
+},
+{
+id: 3,
+question: "Apakah peserta mendapatkan sertifikat?",
+answer:
+"Ya. Seluruh peserta yang menyelesaikan pelatihan akan mendapatkan sertifikat resmi dari Barista Lab Academy."
+},
+{
+id: 4,
+question: "Apa saja yang dipelajari dalam kursus barista?",
+answer:
+"Peserta mempelajari pengenalan kopi, manual brew, espresso, grinder setting, milk steaming, latte art, pelayanan pelanggan dan dasar operasional coffee shop."
+},
+{
+id: 5,
+question: "Apakah tersedia kelas untuk peserta dari Bekasi, Depok dan Bogor?",
+answer:
+"Ya. Barista Lab Academy melayani peserta dari Jakarta, Tangerang, Bekasi, Depok dan Bogor."
+},
+{
+id: 6,
+question: "Berapa lama durasi pelatihan barista?",
+answer:
+"Durasi pelatihan mulai dari 1 hari hingga 4 hari tergantung program yang dipilih."
+}
+] 
+
   en: [
     {
       id: 1,
