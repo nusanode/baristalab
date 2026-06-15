@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://baristalab.co.id/</loc>
-  </url>
-
-  <url>
-    <loc>https://baristalab.co.id/kursus-barista-jakarta-timur</loc>
-  </url>  
-
-  <url>
-<loc>https://baristalab.co.id/kursus-barista-jakarta</loc>
+<url>
+<loc>https://www.baristalab.co.id/</loc>
 </url>
 
 <url>
-<loc>https://baristalab.co.id/kursus-barista-tangerang</loc>
+<loc>https://www.baristalab.co.id/kursus-barista</loc>
 </url>
 
 <url>
-<loc>https://baristalab.co.id/kursus-barista-bekasi</loc>
+<loc>https://www.baristalab.co.id/kelas-latte-art</loc>
 </url>
 
 <url>
-<loc>https://baristalab.co.id/kursus-barista-depok</loc>
+<loc>https://www.baristalab.co.id/kursus-barista-jakarta</loc>
 </url>
 
 <url>
-<loc>https://baristalab.co.id/kursus-barista-bogor</loc>
+<loc>https://www.baristalab.co.id/kursus-barista-jakarta-timur</loc>
 </url>
 
-  <url>
-  <loc>https://baristalab.co.id/kelas-latte-art</loc>
+<url>
+<loc>https://www.baristalab.co.id/kursus-barista-tangerang</loc>
 </url>
 
-  <url>
-<loc>https://baristalab.co.id/kursus-barista</loc>
+<url>
+<loc>https://www.baristalab.co.id/kursus-barista-bekasi</loc>
 </url>
+
+<url>
+<loc>https://www.baristalab.co.id/kursus-barista-depok</loc>
+</url>
+
+<url>
+<loc>https://www.baristalab.co.id/kursus-barista-bogor</loc>
+</url>
+
 </urlset>
