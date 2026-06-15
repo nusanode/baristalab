@@ -194,6 +194,43 @@ const t = text[language];
           </div>
         </div>
       </div>
+      {/* SEO Content Section */}
+
+<div className="mt-32 max-w-5xl mx-auto">
+  <h2 className="text-4xl font-display text-white mb-8">
+    Kursus Barista Jakarta & Tangerang
+  </h2>  <p className="text-gray-400 leading-relaxed mb-6">
+    Barista Lab Academy merupakan lembaga pelatihan barista profesional yang
+    melayani peserta dari Jakarta, Tangerang, Bekasi, Depok, dan Bogor.
+    Program kami dirancang untuk pemula yang ingin menjadi barista maupun
+    calon pemilik coffee shop yang ingin memahami dunia kopi secara langsung.
+  </p>  <p className="text-gray-400 leading-relaxed mb-12">
+    Peserta akan mempelajari espresso, latte art, manual brew, pengenalan
+    kopi, grinder setting, milk steaming, hingga standar operasional coffee
+    shop modern. Seluruh materi disampaikan secara praktik dengan pendampingan
+    instruktur berpengalaman.
+  </p>  <h3 className="text-2xl text-gold mb-4">
+    Kursus Barista Jakarta
+  </h3>  <p className="text-gray-400 leading-relaxed mb-10">
+    Program kursus barista Jakarta cocok untuk peserta dari Jakarta Timur,
+    Jakarta Selatan, Jakarta Barat, Jakarta Utara, dan Jakarta Pusat yang
+    ingin belajar barista secara profesional. Pelatihan berfokus pada praktik
+    sehingga peserta dapat memahami standar industri kopi modern.
+  </p>  <h3 className="text-2xl text-gold mb-4">
+    Kursus Barista Tangerang
+  </h3>  <p className="text-gray-400 leading-relaxed mb-10">
+    Peserta dari Tangerang dapat mengikuti pelatihan espresso, latte art,
+    manual brew, dan coffee business dengan fasilitas lengkap serta sertifikat
+    pelatihan. Program ini cocok untuk pemula maupun pelaku usaha kopi.
+  </p>  <h3 className="text-2xl text-gold mb-4">
+    Kursus Barista Bekasi, Depok & Bogor
+  </h3>  <p className="text-gray-400 leading-relaxed">
+    Barista Lab Academy juga menerima peserta dari Bekasi, Depok, dan Bogor.
+    Banyak alumni kami berasal dari wilayah Jabodetabek dan mengikuti
+    pelatihan untuk meningkatkan keterampilan kerja maupun mempersiapkan
+    pembukaan usaha coffee shop sendiri.
+  </p>
+</div>
     </section>
   );
 }
