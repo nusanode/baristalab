@@ -492,7 +492,7 @@ question: "Berapa lama durasi pelatihan barista?",
 answer:
 "Durasi pelatihan mulai dari 1 hari hingga 4 hari tergantung program yang dipilih."
 }
-] 
+],
 
   en: [
     {
