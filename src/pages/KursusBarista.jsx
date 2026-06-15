@@ -162,6 +162,10 @@ const toggleFab = () => setIsFabOpen(!isFabOpen);
       </main>
 
       <Footer />
+      <Fab
+  isOpen={isFabOpen}
+  toggleOpen={toggleFab}
+/>
     </>
   );
 }
