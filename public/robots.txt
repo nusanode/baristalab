@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://baristalab.co.id/sitemap.xml
+Sitemap: https://www.baristalab.co.id/sitemap.xml
