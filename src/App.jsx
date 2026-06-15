@@ -9,15 +9,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
 
-      <Route
-        path="/kursus-barista"
-        element={<KursusBarista />}
-      />
+      <Route path="/kursus-barista" element={<KursusBarista />} />
 
-      <Route
-        path="/kelas-latte-art"
-        element={<KelasLatteArt />}
-      />
+      <Route path="/kelas-latte-art" element={<KelasLatteArt />} />
     </Routes>
   );
 }
