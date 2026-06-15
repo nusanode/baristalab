@@ -1,12 +1,20 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import Fab from "../components/Fab";
 
 export default function KursusBarista() {
+  const [isFabOpen, setIsFabOpen] = useState(false);
+
+const toggleFab = () => setIsFabOpen(!isFabOpen);
   return (
     <>
       <Navbar />
 
-      <main className="bg-dark-charcoal text-white min-h-screen">
+<Hero onConsultClick={toggleFab} />
+
+<main className="bg-dark-charcoal text-white min-h-screen">
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           <h1 className="text-4xl font-bold mb-6">
