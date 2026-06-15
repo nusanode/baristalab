@@ -1,12 +1,4 @@
 import { useState, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
-
-import KursusBaristaTangerang from "./pages/KursusBaristaTangerang";
-import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
-import KursusBaristaBekasi from "./pages/KursusBaristaBekasi";
-import KursusBaristaBogor from "./pages/KursusBaristaBogor";
-import KursusBaristaDepok from "./pages/KursusBaristaDepok";
-import KelasLatteArt from "./pages/KelasLatteArt";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
@@ -20,98 +12,67 @@ import ScrollToTop from "./components/ScrollToTop";
 import FAQ from "./components/FAQ";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isFabOpen, setIsFabOpen] = useState(false);
+const [isModalOpen, setIsModalOpen] = useState(false);
+const [selectedCourse, setSelectedCourse] = useState(null);
+const [isFabOpen, setIsFabOpen] = useState(false);
 
-  // 1. Buat Ref untuk menyimpan ID timer closing
-  const closeTimerRef = useRef(null);
+// 1. Buat Ref untuk menyimpan ID timer closing
+const closeTimerRef = useRef(null);
 
-  const handleOpenModal = (course) => {
-    // 2. Batalkan timer penghapusan data jika user membuka modal lagi dengan cepat
-    // Ini mencegah modal menjadi "blank" jika dibuka-tutup-buka dengan sangat cepat
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
+const handleOpenModal = (course) => {
+// 2. Batalkan timer penghapusan data jika user membuka modal lagi dengan cepat
+// Ini mencegah modal menjadi "blank" jika dibuka-tutup-buka dengan sangat cepat
+if (closeTimerRef.current) {
+clearTimeout(closeTimerRef.current);
+closeTimerRef.current = null;
+}
 
-    setSelectedCourse(course);
-    setIsModalOpen(true);
-  };
+setSelectedCourse(course);  
+setIsModalOpen(true);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+};
 
-    // 3. Simpan ID timer ke ref agar bisa dibatalkan nanti jika perlu
-    // Timeout 300ms disesuaikan dengan durasi animasi CSS di Modal.jsx
-    closeTimerRef.current = setTimeout(() => {
-      setSelectedCourse(null);
-      closeTimerRef.current = null; // Reset ref setelah selesai
-    }, 300);
-  };
+const handleCloseModal = () => {
+setIsModalOpen(false);
 
-  const toggleFab = () => setIsFabOpen(!isFabOpen);
-const HomePage = () => (
-  <>
-    <Navbar />
-    <Hero onConsultClick={toggleFab} />
-    <Benefits />
-    <Program onOpenModal={handleOpenModal} />
-    <About />
-    <Testimonials />
-    <FAQ />
-    <Footer onConsultClick={toggleFab} />
+// 3. Simpan ID timer ke ref agar bisa dibatalkan nanti jika perlu  
+// Timeout 300ms disesuaikan dengan durasi animasi CSS di Modal.jsx  
+closeTimerRef.current = setTimeout(() => {  
+  setSelectedCourse(null);  
+  closeTimerRef.current = null; // Reset ref setelah selesai  
+}, 300);
 
-    <Modal
-      isOpen={isModalOpen}
-      course={selectedCourse}
-      onClose={handleCloseModal}
-    />
+};
 
-    <Fab
-      isOpen={isFabOpen}
-      toggleOpen={toggleFab}
-    />
+const toggleFab = () => setIsFabOpen(!isFabOpen);
 
-    <ScrollToTop />
-  </>
-);
-  return (
-  <Routes>
+return (
+<div className="relative">
+<Navbar />
+<Hero onConsultClick={toggleFab} />
 
-    <Route path="/" element={<HomePage />} />
+<Benefits />  
 
-    <Route
-      path="/kursus-barista-tangerang"
-      element={<KursusBaristaTangerang />}
-    />
+  <Program onOpenModal={handleOpenModal} />  
+  <About />  
+  <Testimonials />  
 
-    <Route
-      path="/kursus-barista-jakarta"
-      element={<KursusBaristaJakarta />}
-    />
+  <FAQ />  
 
-    <Route
-      path="/kursus-barista-bekasi"
-      element={<KursusBaristaBekasi />}
-    />
+  <Footer onConsultClick={toggleFab} />  
 
-    <Route
-      path="/kursus-barista-bogor"
-      element={<KursusBaristaBogor />}
-    />
+  {/* --- Komponen Overlay (Fixed Position) --- */}  
+  <Modal  
+    isOpen={isModalOpen}  
+    course={selectedCourse}  
+    onClose={handleCloseModal}  
+  />  
 
-    <Route
-      path="/kursus-barista-depok"
-      element={<KursusBaristaDepok />}
-    />
-    
-    <Route
-      path="/kelas-latte-art"
-      element={<KelasLatteArt />}
-    />
+  <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />  
 
-  </Routes>
+  <ScrollToTop />  
+</div>
+
 );
 }
 
