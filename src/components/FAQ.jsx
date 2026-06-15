@@ -15,13 +15,13 @@ export default function FAQ() {
   const content = {
     id: {
       subtitle: "Pertanyaan Umum",
-      title: { t1: "Pertanyaan yang Sering ", highlight: "Diajukan" },
+      title: { t1: "FAQ Kursus Barista Jakarta & Tangerang ", highlight: "Diajukan" },
       cta: "Masih punya pertanyaan lain?",
       button: "Chat Dengan Admin Kami"
     },
     en: {
       subtitle: "Common Questions",
-      title: { t1: "Frequently Asked ", highlight: "Questions" },
+      title: { t1: "Barista Course FAQ ", highlight: "Questions" },
       cta: "Still have other questions?",
       button: "Chat With Our Admin"
     }
