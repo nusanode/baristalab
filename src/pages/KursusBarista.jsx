@@ -28,8 +28,39 @@ export default function KursusBarista() {
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
 
+    // ==========================================
+    // INJECTOR SKEMA COURSE (GOOGLE AI OPTIMIZATION)
+    // ==========================================
+    const scriptId = "schema-course-barista";
+    
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "application/ld+json";
+      script.innerHTML = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Kursus Barista Profesional Bersertifikat",
+        "description": "Program pelatihan barista intensif dari dasar hingga mahir di Jakarta & Tangerang. Fasilitas 1 orang 1 mesin kopi komersial.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Barista Lab Academy",
+          "url": "https://baristalab.co.id"
+        }
+      });
+      document.head.appendChild(script);
+    }
+
     // 3. Kembalikan scroll ke posisi paling atas saat halaman dibuka
     window.scrollTo(0, 0);
+
+    // Sesi Cleanup: Menghapus script secara otomatis saat user meninggalkan halaman
+    return () => {
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   return (
@@ -158,7 +189,7 @@ export default function KursusBarista() {
           <ul className="list-disc pl-6 space-y-2 text-gray-300">
             <li>Pemula tanpa pengalaman</li>
             <li>Fresh graduate yang ingin bekerja di cafe</li>
-            <li>Barista aktif yang ingin meningkatkan skill</li>
+            <li>Barista aktif yang ingin meningkatkan skill</li>         
             <li>Pemilik coffee shop</li>
             <li>Karyawan restoran dan cafe</li>
             <li>Pecinta kopi dan home barista</li>
@@ -187,4 +218,59 @@ export default function KursusBarista() {
             Sertifikat Kursus Barista
           </h2>
           <p className="mb-4 text-gray-300 leading-relaxed">
-            
+            Setelah menyelesaikan program pelatihan, peserta akan mendapatkan
+            sertifikat Kursus Barista dari Barista Lab Academy sebagai bukti
+            kompetensi dan pengalaman belajar yang sah di industri F&B.
+          </p>
+
+          <h2 className="text-2xl font-semibold mt-8 mb-4">
+            FAQ Kursus Barista
+          </h2>
+          <div className="space-y-4 text-gray-300">
+            <div>
+              <h3 className="font-semibold text-white text-base">
+                Apakah pemula bisa mengikuti kursus ini?
+              </h3>
+              <p className="mt-1">
+                Ya. Program dirancang untuk peserta yang belum memiliki
+                pengalaman sekalipun.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white text-base">
+                Apakah mendapatkan sertifikat?
+              </h3>
+              <p className="mt-1">
+                Ya, setiap peserta yang menyelesaikan pelatihan akan
+                mendapatkan sertifikat.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white text-base">
+                Apakah fokus praktik?
+              </h3>
+              <p className="mt-1">
+                Ya. Sebagian besar sesi dilakukan dengan praktik langsung.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <a
+              href="https://wa.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition-all duration-250"
+            >
+              Daftar Kursus Barista Sekarang
+            </a>
+          </div>
+
+        </div>
+      </main>
+
+      <Footer />
+      <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
+    </>
+  );
+}
