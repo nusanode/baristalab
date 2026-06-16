@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react"; // <-- Tambahkan ini
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
@@ -21,7 +21,7 @@ export default function LocationPage() {
         metaDesc.setAttribute("content", `${data.description} Fasilitas praktik 1 orang 1 mesin kopi komersial, bimbingan karier, & bersertifikat resmi.`);
       }
 
-      // 3. Otomatis mengubah Open Graph URL
+      // 3. Otomatis mengubah Open Graph URL (Sudah Diperbaiki)
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) {
         ogUrl.setAttribute("content", `https://baristalab.co.id{slug}`);
@@ -56,7 +56,7 @@ export default function LocationPage() {
         if (existingScript) existingScript.remove();
       };
     }
-  }, [slug, data]); // Memicu ulang kode jika rute wilayah berubah
+  }, [slug, data]);
 
   if (!data) {
     return (
@@ -148,14 +148,15 @@ export default function LocationPage() {
             <li><strong>Manajemen Coffee Shop:</strong> Perhitungan HPP menu, inventory, dan penyusunan SOP kedai kopi.</li>
           </ul>
 
+          {/* Tombol WhatsApp Sudah Dinamis Sesuai Wilayah */}
           <div className="mt-10">
             <a
-              href="https://wa.me"
+              href={`https://wa.me{data.phone}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition"
             >
-              Konsultasi Kelas Regional via WhatsApp
+              Konsultasi Kelas {data.title} via WhatsApp
             </a>
           </div>
 
@@ -166,5 +167,4 @@ export default function LocationPage() {
       <Footer />
     </>
   );
-          }
-
+}
