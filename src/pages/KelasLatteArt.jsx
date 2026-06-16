@@ -26,7 +26,7 @@ export default function KelasLatteArt() {
     if (ogDesc) ogDesc.setAttribute("content", "Kursus latte art terdekat di Jabodetabek. Kuasai teknik steaming susu microfoam hingga pembuatan pola tulip, rosetta, dan swan.");
 
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
+    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id"); // <-- Selesai Diperbaiki
 
     // 3. Kembalikan scroll ke posisi paling atas saat halaman dibuka
     window.scrollTo(0, 0);
@@ -143,4 +143,3 @@ export default function KelasLatteArt() {
     </>
   );
 }
-
