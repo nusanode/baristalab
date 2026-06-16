@@ -1,121 +1,65 @@
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
-import { useState } from "react";
 
 export default function KursusBaristaBekasi() {
   const [isFabOpen, setIsFabOpen] = useState(false);
+  const toggleFab = () => setIsFabOpen(!isFabOpen);
 
-  const toggleFab = () => {
-    setIsFabOpen(!isFabOpen);
-  };
+  useEffect(() => {
+    document.title = "Kursus Barista Bekasi Bersertifikat | Barista Lab Academy";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Daftar kursus barista profesional di Bekasi, Cikarang, Tambun, & Babelan. Pelatihan espresso, latte art, dan coffee business. 1 orang 1 mesin!");
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
+
+    const scriptId = "schema-course-bekasi";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "application/ld+json";
+      script.innerHTML = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Kursus Barista Bekasi Profesional",
+        "description": "Program pelatihan barista bersertifikat untuk area Bekasi, Cikarang, dan sekitarnya.",
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://baristalab.co.id" }
+      });
+      document.head.appendChild(script);
+    }
+    window.scrollTo(0, 0);
+    return () => { const s = document.getElementById(scriptId); if (s) s.remove(); };
+  }, []);
 
   return (
     <>
       <Navbar />
-
-      <main className="bg-dark-charcoal text-white min-h-screen">
+      <main className="bg-dark-charcoal text-white min-h-screen pt-24">
         <div className="max-w-5xl mx-auto px-4 py-10">
-
-          <h1 className="text-4xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Kursus Barista Bekasi Profesional | Pelatihan Barista Bersertifikat
           </h1>
-
-          <p className="mb-4">
-             Barista Lab Academy menyediakan kursus barista di Bekasi untuk pemula,
-karyawan coffee shop, hingga calon pengusaha kopi. Program pelatihan
-dirancang untuk membantu peserta menguasai keterampilan barista
-sesuai standar industri kopi modern.
+          <p className="mb-6 text-gray-300 leading-relaxed text-lg">
+            Barista Lab Academy menyediakan kursus barista di Bekasi untuk pemula, karyawan coffee shop, hingga calon pengusaha kopi se-wilayah Bekasi, Cikarang, Tambun, dan Babelan [•].
           </p>
 
-          <p className="mb-4">
-            Program pelatihan dirancang berdasarkan kebutuhan industri kopi modern
-            dengan kombinasi teori dan praktik langsung menggunakan mesin espresso
-            standar komersial.
-          </p>
-
-          <p className="mb-4">
-            Peserta akan mempelajari dasar-dasar kopi, teknik ekstraksi espresso,
-            latte art, manual brewing, pelayanan pelanggan, hingga manajemen bisnis
-            coffee shop.
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-8 mb-4">
-            Program Kursus Barista
-          </h2>
-
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Barista Basic Class</li>
-            <li>Espresso & Latte Art Class</li>
-            <li>Manual Brew Class</li>
-            <li>Barista Professional Class</li>
-            <li>Barista Pro Business Class</li>
+          <h2 className="text-2xl font-semibold mt-8 mb-4 text-gold">Kenapa Memilih Barista Lab Academy?</h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-8">
+            <li>Praktik langsung menggunakan mesin espresso standar industri (1 orang 1 mesin)</li>
+            <li>Kurikulum berstandar internasional dengan sertifikat resmi pelatihan [•]</li>
           </ul>
 
-          <h2 className="text-2xl font-semibold mt-8 mb-4">
-            Kenapa Memilih Barista Lab Academy?
-          </h2>
-
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Trainer profesional dan berpengalaman</li>
-            <li>Praktik langsung menggunakan mesin espresso standar industri</li>
-            <li>Sertifikat pelatihan resmi</li>
-            <li>Cocok untuk pemula tanpa pengalaman</li>
-            <li>Ruang belajar nyaman dan full AC</li>
-            <li>Konsultasi bisnis coffee shop</li>
-            <li>Dukungan jaringan alumni dan peluang kerja</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold mt-8 mb-4">
-            Peluang Karir Setelah Menjadi Barista
-          </h2>
-
-          <p className="mb-4">
-            Industri kopi di Indonesia terus berkembang. Lulusan pelatihan
-            barista memiliki peluang bekerja sebagai barista profesional,
-            head barista, trainer kopi, quality control, maupun membuka
-            usaha coffee shop sendiri.
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-8 mb-4">
-            Lokasi Pelatihan
-          </h2>
-
-          <p className="mb-4">
-            Peserta dari Bekasi, Cikarang, Tambun, Babelan, dan sekitarnya dapat
-mengikuti pelatihan barista di Barista Lab Academy dengan fasilitas
-praktik lengkap dan instruktur profesional.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-4">
-            <a
-              href="https://wa.me/6285213541993"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gold text-black px-6 py-3 rounded-xl text-center font-semibold"
-            >
-              WhatsApp Cabang Jakarta
-            </a>
-
-            <a
-              href="https://wa.me/6281356561721"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gold text-black px-6 py-3 rounded-xl text-center font-semibold"
-            >
-              WhatsApp Cabang Tangerang
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-6 py-3 rounded-xl text-center font-bold flex-1 hover:bg-opacity-90 transition">
+              WhatsApp Cabang Jakarta (Terdekat ke Bekasi)
             </a>
           </div>
-
         </div>
       </main>
-
       <Footer onConsultClick={toggleFab} />
-
-      <Fab
-        isOpen={isFabOpen}
-        toggleOpen={toggleFab}
-      />
+      <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );
 }
