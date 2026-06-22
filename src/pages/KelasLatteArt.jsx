@@ -122,11 +122,12 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
             
             {/* --- 3. FOTO KEDUA DI SAMPING MATERI --- */}
             <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/5 h-64">
-              <img 
-                src="/images/latte-art/kursus-latte-art.jpg" 
-                alt="Praktik Milk Steaming Barista Lab Academy" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
-              />
+             <img
+  src="/images/latte-art/kursus-latte-art.jpg"
+  alt="Praktik Milk Steaming Barista Lab Academy"
+  loading="lazy"
+  className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
+/>
             </div>
           </div>
 
