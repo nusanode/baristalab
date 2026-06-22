@@ -15,7 +15,6 @@ export default function KelasLatteArt() {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi");
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    // FIXED: Menggunakan www. agar selaras dengan domain server utama
     if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
 
     const scriptId = "schema-course-latteart";
@@ -28,7 +27,7 @@ export default function KelasLatteArt() {
         "@type": "Course",
         "name": "Kelas Pelatihan Latte Art Intensif",
         "description": "Kursus khusus menguasai teknik steaming susu microfoam dan pembuatan pola free pour latte art seperti tulip, rosetta, dan swan.",
-        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://baristalab.co.id" }
       });
       document.head.appendChild(script);
     }
@@ -41,19 +40,14 @@ export default function KelasLatteArt() {
       <Navbar />
       <main className="bg-dark-charcoal text-white min-h-screen pt-20">
         
-        {/* --- TAMBAHAN: HERO BANNER FOTO UTAMA DI ATAS HALAMAN --- */}
+        {/* --- 1. HERO BANNER FOTO UTAMA ATAS --- */}
         <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
-          {/* Efek Gradasi Overlay Gelap */}
           <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
-          
-          {/* Foto Aset Banner Teroptimasi CDN */}
           <img 
             src="https://unsplash.com" 
             alt="Pelatihan Latte Art di Barista Lab Academy" 
             className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition duration-700 ease-in-out"
           />
-          
-          {/* Teks Konten Banner Atas */}
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
             <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">Specialist Program</span>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
@@ -62,10 +56,10 @@ export default function KelasLatteArt() {
           </div>
         </div>
 
-        {/* --- KONTEN UTAMA ARTIKEL HALAMAN --- */}
+        {/* --- 2. KONTEN TEKS ARTIKEL --- */}
         <div className="max-w-5xl mx-auto px-6 py-16">
           <p className="mb-8 text-gray-300 leading-relaxed text-lg font-light">
-            Kelas Latte Art di Barista Lab Academy memfokuskan peserta pada penguasaan kontrol penuh terhadap susu (*milk handling*) guna menciptakan visual minuman berbasis espresso yang memikat dan berstandar kafe modern [•].
+            Kelas Latte Art di Barista Lab Academy memfokuskan peserta pada penguasaan kontrol penuh terhadap susu (*milk handling*) guna menciptakan visual minuman berbasis espresso yang memikat dan berstandar kafe modern.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 items-center my-12">
@@ -87,7 +81,7 @@ export default function KelasLatteArt() {
               </ul>
             </div>
             
-            {/* --- TAMBAHAN: FOTO PENDUKUNG DI SAMPING DAFTAR MATERI --- */}
+            {/* --- 3. FOTO KEDUA DI SAMPING MATERI --- */}
             <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/5 h-64">
               <img 
                 src="https://unsplash.com" 
@@ -114,4 +108,3 @@ export default function KelasLatteArt() {
     </>
   );
 }
-
