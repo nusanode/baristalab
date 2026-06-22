@@ -16,6 +16,15 @@ export default function KelasLatteArt() {
     if (ogTitle) ogTitle.setAttribute("content", "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi");
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id/kelas-latte-art");
+    let canonical = document.querySelector("link[rel='canonical']");
+
+    if (!canonical) {
+  canonical = document.createElement("link");
+  canonical.rel = "canonical";
+  document.head.appendChild(canonical);
+}
+
+canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
 
     const scriptId = "schema-course-latteart";
     if (!document.getElementById(scriptId)) {
@@ -26,7 +35,7 @@ export default function KelasLatteArt() {
         "@context": "https://schema.org",
         "@type": "Course",
         "name": "Kelas Pelatihan Latte Art Intensif",
-        "description": "Kursus khusus menguasai teknik steaming susu microfoam dan pembuatan pola free pour latte art seperti tulip, rosetta, dan swan.",
+        "description": "Kursus Latte Art Jakarta dan Tangerang. Pelajari milk steaming, microfoam, tulip, rosetta, dan swan bersama instruktur profesional. Cocok untuk pemula maupun barista berpengalaman.",
         "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
       });
       document.head.appendChild(script);
