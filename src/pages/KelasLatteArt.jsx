@@ -45,11 +45,17 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
       script.type = "application/ld+json";
       script.innerHTML = JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Kelas Pelatihan Latte Art Intensif",
-        "description": "Kursus Latte Art Jakarta dan Tangerang. Pelajari milk steaming, microfoam, tulip, rosetta, dan swan bersama instruktur profesional. Cocok untuk pemula maupun barista berpengalaman.",
-        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
-      });
+  "@type": "Course",
+  "name": "Kelas Latte Art Profesional",
+  "description": "Pelatihan Latte Art untuk pemula dan profesional.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Barista Lab Academy",
+    "url": "https://www.baristalab.co.id"
+  },
+  "courseMode": "onsite",
+  "inLanguage": "id-ID",
+  "educationalLevel": "Beginner" });
       document.head.appendChild(script);
     }
     window.scrollTo(0, 0);
