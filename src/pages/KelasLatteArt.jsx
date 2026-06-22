@@ -43,11 +43,11 @@ export default function KelasLatteArt() {
         {/* --- 1. HERO BANNER FOTO UTAMA ATAS --- */}
         <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
           <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
-          <img 
-            src="/images/latte-art-hero.jpg" 
-            alt="Pelatihan Latte Art di Barista Lab Academy" 
-            className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition duration-700 ease-in-out"
-          />
+          <img
+  src="/images/latte-art/latte-art-hero.jpg"
+  alt="Kelas Latte Art Jakarta dan Tangerang"
+  className="w-full h-full object-cover"
+/>
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
             <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">Specialist Program</span>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
