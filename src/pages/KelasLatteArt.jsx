@@ -45,7 +45,7 @@ export default function KelasLatteArt() {
 <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
   
   <img
-    src="/images/latte-art-hero.jpg.png"
+    src="/images/latte-art-hero.png"
     alt="Kelas Latte Art Jakarta dan Tangerang"
     className="absolute inset-0 w-full h-full object-cover"
   />
