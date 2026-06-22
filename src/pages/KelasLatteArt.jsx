@@ -14,6 +14,18 @@ export default function KelasLatteArt() {
     
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi");
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+
+if (!ogDesc) {
+  ogDesc = document.createElement("meta");
+  ogDesc.setAttribute("property", "og:description");
+  document.head.appendChild(ogDesc);
+}
+
+ogDesc.setAttribute(
+  "content",
+  "Belajar Latte Art profesional di Jakarta dan Tangerang. Kuasai milk steaming, tulip, rosetta hingga swan."
+);
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id/kelas-latte-art");
     let canonical = document.querySelector("link[rel='canonical']");
