@@ -17,14 +17,14 @@ const text = {
     privilegeGold: "Kami",
     atmosphere: "Suasana Pelatihan",
     gallery: "Galeri",
-    galleryGold: "BaristaLab",
+    galleryGold: "Barista Lab Academy",
   },
   en: {
     privilege: "The",
     privilegeGold: "Privilege",
     atmosphere: "Atmosphere",
     gallery: "Inside the",
-    galleryGold: "Lab",
+    galleryGold: "Academy",
   },
 };
 
