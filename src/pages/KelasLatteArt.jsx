@@ -33,6 +33,7 @@ ogTitle.setAttribute(
   "content",
   "Kelas Latte Art Jakarta & Tangerang | Kursus Latte Art Profesional"
 );
+    let ogDesc = document.querySelector('meta[property="og:description"]');
 if (!ogDesc) {
   ogDesc = document.createElement("meta");
   ogDesc.setAttribute("property", "og:description");
