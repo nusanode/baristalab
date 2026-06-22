@@ -15,7 +15,7 @@ export default function KelasLatteArt() {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi");
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
+    if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id");
 
     const scriptId = "schema-course-latteart";
     if (!document.getElementById(scriptId)) {
@@ -27,7 +27,7 @@ export default function KelasLatteArt() {
         "@type": "Course",
         "name": "Kelas Pelatihan Latte Art Intensif",
         "description": "Kursus khusus menguasai teknik steaming susu microfoam dan pembuatan pola free pour latte art seperti tulip, rosetta, dan swan.",
-        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://baristalab.co.id" }
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
       });
       document.head.appendChild(script);
     }
@@ -105,7 +105,7 @@ export default function KelasLatteArt() {
 
           <div className="mt-12 text-center md:text-left">
             <a 
-              href="https://wa.me/62852-1354-1993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art
+              href="https://wa.me/6285213541993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art"
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 hover:scale-105 transform transition duration-300 shadow-lg shadow-gold/20"
