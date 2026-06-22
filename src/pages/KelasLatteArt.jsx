@@ -9,13 +9,30 @@ export default function KelasLatteArt() {
 
   useEffect(() => {
     document.title = "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Kursus latte art terdekat di Jabodetabek. Kuasai teknik steaming susu microfoam hingga pembuatan pola tulip, rosetta, dan swan. 1 orang 1 mesin!");
-    
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi");
-    let ogDesc = document.querySelector('meta[property="og:description"]');
+    let metaDesc = document.querySelector('meta[name="description"]');
 
+if (!metaDesc) {
+  metaDesc = document.createElement("meta");
+  metaDesc.setAttribute("name", "description");
+  document.head.appendChild(metaDesc);
+}
+
+metaDesc.setAttribute(
+  "content",
+  "Kursus Latte Art Jakarta dan Tangerang. Pelajari milk steaming, microfoam, tulip, rosetta, dan swan bersama instruktur profesional."
+);
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+
+if (!ogTitle) {
+  ogTitle = document.createElement("meta");
+  ogTitle.setAttribute("property", "og:title");
+  document.head.appendChild(ogTitle);
+}
+
+ogTitle.setAttribute(
+  "content",
+  "Kelas Latte Art Jakarta & Tangerang | Kursus Latte Art Profesional"
+);
 if (!ogDesc) {
   ogDesc = document.createElement("meta");
   ogDesc.setAttribute("property", "og:description");
@@ -26,10 +43,30 @@ ogDesc.setAttribute(
   "content",
   "Belajar Latte Art profesional di Jakarta dan Tangerang. Kuasai milk steaming, tulip, rosetta hingga swan."
 );
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id/kelas-latte-art");
-    let canonical = document.querySelector("link[rel='canonical']");
+   let ogImage = document.querySelector('meta[property="og:image"]');
 
+if (!ogImage) {
+  ogImage = document.createElement("meta");
+  ogImage.setAttribute("property", "og:image");
+  document.head.appendChild(ogImage);
+}
+
+ogImage.setAttribute(
+  "content",
+  "https://www.baristalab.co.id/images/latte-art/latte-art-hero.png"
+);
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+
+if (!ogUrl) {
+  ogUrl = document.createElement("meta");
+  ogUrl.setAttribute("property", "og:url");
+  document.head.appendChild(ogUrl);
+}
+
+ogUrl.setAttribute(
+  "content",
+  "https://www.baristalab.co.id/kelas-latte-art"
+);
     if (!canonical) {
   canonical = document.createElement("link");
   canonical.rel = "canonical";
