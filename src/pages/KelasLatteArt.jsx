@@ -27,7 +27,7 @@ export default function KelasLatteArt() {
         "@type": "Course",
         "name": "Kelas Pelatihan Latte Art Intensif",
         "description": "Kursus khusus menguasai teknik steaming susu microfoam dan pembuatan pola free pour latte art seperti tulip, rosetta, dan swan.",
-        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id/kelas-latte-art" }
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
       });
       document.head.appendChild(script);
     }
