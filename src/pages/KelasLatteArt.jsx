@@ -105,7 +105,7 @@ export default function KelasLatteArt() {
 
           <div className="mt-12 text-center md:text-left">
             <a 
-              href="https://wa.me" 
+              href="https://wa.me/62852-1354-1993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 hover:scale-105 transform transition duration-300 shadow-lg shadow-gold/20"
