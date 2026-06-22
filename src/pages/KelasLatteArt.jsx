@@ -44,7 +44,7 @@ export default function KelasLatteArt() {
         <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
           <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
           <img 
-            src="https://unsplash.com" 
+            src="/images/latte-art-hero.jpg" 
             alt="Pelatihan Latte Art di Barista Lab Academy" 
             className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition duration-700 ease-in-out"
           />
