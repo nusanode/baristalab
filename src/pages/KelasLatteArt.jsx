@@ -68,6 +68,7 @@ ogUrl.setAttribute(
   "content",
   "https://www.baristalab.co.id/kelas-latte-art"
 );
+    let canonical = document.querySelector("link[rel='canonical']");
     if (!canonical) {
   canonical = document.createElement("link");
   canonical.rel = "canonical";
