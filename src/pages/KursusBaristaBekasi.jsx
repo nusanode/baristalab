@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
+import kelasLatteArtBekasi from "../images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg";
+import kursusBaristaBekasi from "../images/kursus-barista-bekasi/kursus-barista-bekasi.jpg";
+import pelatihanBaristaBekasi from "../images/kursus-barista-bekasi/pelatihan-barista-bekasi.jpg";
+import sertifikasiBaristaBekasi from "../images/kursus-barista-bekasi/sertifikasi-barista-bekasi.jpg";
+{/* GALLERY KURSUS BARISTA BEKASI */}
+<div className="mb-12">
+  <h2 className="text-2xl font-semibold text-gold mb-6">
+    Dokumentasi Kursus Barista Bekasi
+  </h2>
 
 export default function KursusBaristaBekasi() {
   const [isFabOpen, setIsFabOpen] = useState(false);
@@ -96,6 +105,52 @@ export default function KursusBaristaBekasi() {
             Tambun Selatan, Tambun Utara, Babelan,
             Setu, dan Tarumajaya.
           </p>
+          {/* GALLERY KURSUS BARISTA BEKASI */}
+<div className="mb-12">
+  <h2 className="text-2xl font-semibold text-gold mb-6">
+    Dokumentasi Kursus Barista Bekasi
+  </h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+    <div className="overflow-hidden rounded-xl border border-white/10">
+      <img
+        src={kursusBaristaBekasi}
+        alt="Kursus Barista Bekasi Profesional"
+        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl border border-white/10">
+      <img
+        src={kelasLatteArtBekasi}
+        alt="Kelas Latte Art Bekasi"
+        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl border border-white/10">
+      <img
+        src={pelatihanBaristaBekasi}
+        alt="Pelatihan Barista Bekasi Bersertifikat"
+        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl border border-white/10">
+      <img
+        src={sertifikasiBaristaBekasi}
+        alt="Sertifikasi Barista Bekasi"
+        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</div>
 
           <h2 className="text-2xl font-semibold text-gold mb-4">
             Kenapa Memilih Barista Lab Academy?
