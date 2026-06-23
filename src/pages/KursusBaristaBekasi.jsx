@@ -119,13 +119,39 @@ export default function KursusBaristaBekasi() {
       <Navbar />
 
       <main className="bg-dark-charcoal text-white min-h-screen pt-24">
+              {/* HERO BANNER */}
+<div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
+
+  <img
+    src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
+    alt="Kursus Barista Bekasi Profesional"
+    fetchPriority="high"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
+
+  <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
+
+    <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
+      Barista Training Program
+    </span>
+
+    <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
+      Kursus Barista
+      <span className="text-gold italic font-serif"> Bekasi</span>
+    </h1>
+
+    <p className="mt-4 text-gray-200 max-w-2xl text-sm md:text-lg">
+      Pelatihan barista profesional untuk pemula hingga calon pemilik coffee shop di Bekasi, Cikarang, Tambun dan sekitarnya.
+    </p>
+
+  </div>
+
+</div>
         <div className="max-w-5xl mx-auto px-6 py-12">
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Kursus Barista Bekasi Profesional Bersertifikat
-          </h1>
-
-          <p className="text-lg text-gray-300 leading-relaxed mb-8">
+         <p className="text-lg text-gray-300 leading-relaxed mb-8">
             Barista Lab Academy menyediakan program sekolah kopi dan kursus barista Bekasi terbaik untuk pemula, karyawan coffee shop, calon barista kerja, maupun pengusaha kopi yang ingin meningkatkan daya saing di industri F&B modern.
           </p>
 
@@ -278,36 +304,7 @@ export default function KursusBaristaBekasi() {
 
         </div>
       </main>
-      {/* HERO BANNER */}
-<div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
 
-  <img
-    src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
-    alt="Kursus Barista Bekasi Profesional"
-    fetchPriority="high"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
-
-  <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
-
-    <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
-      Barista Training Program
-    </span>
-
-    <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
-      Kursus Barista
-      <span className="text-gold italic font-serif"> Bekasi</span>
-    </h1>
-
-    <p className="mt-4 text-gray-200 max-w-2xl text-sm md:text-lg">
-      Pelatihan barista profesional untuk pemula hingga calon pemilik coffee shop di Bekasi, Cikarang, Tambun dan sekitarnya.
-    </p>
-
-  </div>
-
-</div>
 
       <Footer onConsultClick={toggleFab} />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
