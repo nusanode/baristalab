@@ -13,7 +13,6 @@ export default function KursusBaristaBekasi() {
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   useEffect(() => {
-    // 1. Judul & Meta Description Berbasis Keyword Lokal Bekasi
     document.title = "Kursus Barista Bekasi Terbaik #1 Bersertifikat | Barista Lab";
 
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -27,7 +26,6 @@ export default function KursusBaristaBekasi() {
       "Kursus barista profesional & sekolah kopi terbaik di Bekasi. Paket kilat bersertifikat untuk kerja/bisnis di Cikarang, Tambun, & Jatiasih. Metode privat 1 orang 1 mesin!"
     );
 
-    // 2. Koreksi Open Graph Metatags
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (!ogTitle) {
       ogTitle = document.createElement("meta");
@@ -49,10 +47,6 @@ export default function KursusBaristaBekasi() {
       ogUrl.setAttribute("content", "https://baristalab.co.id");
     }
 
-    // ==========================================
-    // MULTI-SCHEMA INJECTOR (COURSE + LOCAL BUSINESS + FAQ)
-    // Ditargetkan Khusus untuk Kebutuhan Google Maps & Ringkasan AI
-    // ==========================================
     const scriptId = "schema-baristalab-bekasi";
 
     if (!document.getElementById(scriptId)) {
@@ -124,8 +118,7 @@ export default function KursusBaristaBekasi() {
       if (s) s.remove();
     };
   }, []);
-
-  return (
+    return (
     <>
       <Navbar />
 
@@ -201,8 +194,7 @@ export default function KursusBaristaBekasi() {
             <li>Kurikulum inklusif yang ramah untuk pemula maupun tingkat lanjut</li>
             <li>Fasilitas sesi konsultasi gratis pasca-kelas untuk pendampingan membuka coffee shop</li>
           </ul>
-
-          <h2 className="text-2xl font-semibold text-gold mb-4">
+                    <h2 className="text-2xl font-semibold text-gold mb-4">
             Materi Kursus Barista Bekasi
           </h2>
 
@@ -213,7 +205,24 @@ export default function KursusBaristaBekasi() {
           <h2 className="text-2xl font-semibold text-gold mb-4">
             Cocok Untuk Siapa?
           </h2>
-                    {/* IMPLEMENTASI CTA BUTTON DENGAN DESIGN LATTEART */}
+
+          <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-10">
+            <li>Pemula murni tanpa latar belakang industri F&B</li>
+            <li>Barista aktif yang ingin melakukan *up-skilling* sertifikasi keahlian</li>
+            <li>Calon pemilik kedai kopi mandiri (*coffee shop owner*)</li>
+            <li>Mahasiswa dan fresh graduate yang ingin mencari pekerjaan sampingan</li>
+            <li>Pencari kerja profesional yang membidik karier barista di dalam maupun luar negeri</li>
+          </ul>
+
+          <h2 className="text-2xl font-semibold text-gold mb-4">
+            Peluang Kerja Barista di Bekasi
+          </h2>
+
+          <p className="text-gray-300 leading-relaxed mb-10">
+            Pertumbuhan ekosistem *coffee shop* modern di wilayah kota maupun kabupaten Bekasi terus melonjak pesat. Kebutuhan industri terhadap tenaga peracik kopi yang profesional dan terlatih secara taktis menjadi semakin tinggi. Mengikuti program pelatihan kopi yang tepat akan memberi Anda keunggulan kompetitif untuk diserap langsung oleh pasar industri F&B Jabodetabek.
+          </p>
+
+          {/* IMPLEMENTASI CTA BUTTON DENGAN DESIGN LATTEART */}
           <div className="flex flex-col md:flex-row gap-4 mb-16 text-center md:text-left">
             <a 
               href="https://wa.me"
@@ -228,6 +237,7 @@ export default function KursusBaristaBekasi() {
           <h2 className="text-2xl font-semibold text-gold mb-6">
             Kursus Barista Jabodetabek
           </h2>
+
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm mb-16">
             <Link to="/kursus-barista-jakarta" className="hover:text-gold transition">Kursus Barista Jakarta</Link>
             <Link to="/kursus-barista-jakarta-timur" className="hover:text-gold transition">Kursus Barista Jakarta Timur</Link>
@@ -240,13 +250,14 @@ export default function KursusBaristaBekasi() {
           <h2 className="text-2xl font-semibold text-gold mb-6">
             FAQ Kursus Barista Bekasi
           </h2>
+
           <div className="space-y-6 text-gray-300 mb-12 text-sm">
             <div className="p-4 bg-neutral-900 rounded-xl border border-gray-800">
               <h3 className="font-semibold text-white mb-2">
                 Apakah pemula tanpa pengalaman bisa mengikuti kursus?
               </h3>
               <p className="text-gray-400">
-                Sangat bisa. Seluruh kurikulum program pelatihan kopi di Barista Lab dirancang bertahap dari level nol agar mudah dipahami secara cepat oleh pemula sekalipun.
+                Seluruh kurikulum program pelatihan kopi di Barista Lab dirancang bertahap dari level nol agar mudah dipahami secara cepat oleh pemula sekalipun.
               </p>
             </div>
 
@@ -264,7 +275,7 @@ export default function KursusBaristaBekasi() {
                 Apakah tersedia jenis kelas privat khusus?
               </h3>
               <p className="text-gray-400">
-                Kami menyediakan opsi Kelas Privat VIP, *Corporate B2B Training*, serta konsultasi intensif susunan menu bagi calon pemilik kedai kopi komersial.
+                Kami menyediakan opsi Kelas Privat VIP, Corporate B2B Training, serta konsultasi intensif susunan menu bagi calon pemilik kedai kopi komersial.
               </p>
             </div>
           </div>
@@ -278,4 +289,4 @@ export default function KursusBaristaBekasi() {
   );
 }
 
-
+  
