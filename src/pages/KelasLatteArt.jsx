@@ -315,6 +315,35 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
     </div>
   </div>
 </section>
+          {/* ===== INTERNAL LINK ===== */}
+<section className="mt-16 border-t border-white/10 pt-10">
+  <h2 className="text-xl font-bold text-gold mb-4">
+    Program Pelatihan Lainnya
+  </h2>
+
+  <div className="flex flex-col gap-3">
+    <Link
+      to="/kursus-barista"
+      className="text-gold hover:text-white transition"
+    >
+      Kursus Barista Profesional
+    </Link>
+
+    <Link
+      to="/kelas-brewing"
+      className="text-gold hover:text-white transition"
+    >
+      Kelas Manual Brewing
+    </Link>
+
+    <Link
+      to="/kelas-basic-barista"
+      className="text-gold hover:text-white transition"
+    >
+      Kelas Basic Barista
+    </Link>
+  </div>
+</section>
           <div className="mt-12 text-center md:text-left">
             <a 
               href="https://wa.me/6285213541993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art"
