@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
-
+import { Link } from "react-router-dom";
 export default function KelasLatteArt() {
   const [isFabOpen, setIsFabOpen] = useState(false);
   const toggleFab = () => setIsFabOpen(!isFabOpen);
