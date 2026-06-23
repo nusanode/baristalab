@@ -82,19 +82,68 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
       const script = document.createElement("script");
       script.id = scriptId;
       script.type = "application/ld+json";
-      script.innerHTML = JSON.stringify({
-        "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Kelas Latte Art Profesional",
-  "description": "Pelatihan Latte Art untuk pemula dan profesional.",
-  "provider": {
-    "@type": "EducationalOrganization",
-    "name": "Barista Lab Academy",
-    "url": "https://www.baristalab.co.id"
+      script.innerHTML = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Kelas Latte Art Profesional",
+    "description": "Pelatihan Latte Art untuk pemula dan profesional.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Barista Lab Academy",
+      "url": "https://www.baristalab.co.id"
+    },
+    "courseMode": "onsite",
+    "inLanguage": "id-ID",
+    "educationalLevel": "Beginner"
   },
-  "courseMode": "onsite",
-  "inLanguage": "id-ID",
-  "educationalLevel": "Beginner" });
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah kelas latte art cocok untuk pemula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Program ini dirancang untuk pemula maupun barista yang ingin meningkatkan kemampuan latte art."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah peserta mendapatkan sertifikat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya, peserta akan mendapatkan sertifikat pelatihan setelah menyelesaikan program."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah semua alat praktik disediakan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Mesin espresso, grinder, pitcher dan perlengkapan praktik disediakan selama pelatihan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Berapa lama durasi pelatihan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Durasi pelatihan menyesuaikan program yang dipilih. Silakan hubungi admin untuk jadwal terbaru."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah tersedia kelas privat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Tersedia pilihan kelas privat maupun kelas reguler sesuai kebutuhan peserta."
+        }
+      }
+    ]
+  }
+]);
       document.head.appendChild(script);
     }
     window.scrollTo(0, 0);
@@ -111,10 +160,11 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
 <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
   
   <img
-    src="/images/latte-art/latte-art-hero.png"
-    alt="Kelas Latte Art Jakarta dan Tangerang"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+  src="/images/latte-art/latte-art-hero.png"
+  alt="Kelas Latte Art Jakarta dan Tangerang"
+  fetchPriority="high"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
 
   <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
 
@@ -169,7 +219,102 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
 />
             </div>
           </div>
+{/* ===== TENTANG KELAS LATTE ART ===== */}
+<section className="mt-20">
+  <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6">
+    Mengapa Memilih Kelas Latte Art Barista Lab Academy?
+  </h2>
 
+  <div className="space-y-5 text-gray-300 leading-relaxed">
+    <p>
+      Kelas Latte Art Barista Lab Academy dirancang untuk peserta pemula
+      maupun barista profesional yang ingin meningkatkan kemampuan
+      presentasi minuman berbasis espresso. Program ini berfokus pada
+      penguasaan teknik milk steaming, pembentukan microfoam, serta
+      pengendalian aliran susu saat proses pouring.
+    </p>
+
+    <p>
+      Peserta akan belajar secara langsung menggunakan mesin espresso
+      profesional dan mendapatkan bimbingan dari instruktur berpengalaman.
+      Metode pembelajaran lebih banyak praktik sehingga peserta dapat
+      memahami teknik latte art secara lebih cepat dan efektif.
+    </p>
+
+    <p>
+      Materi pelatihan mencakup pembuatan pola dasar hingga pola lanjutan
+      seperti Heart, Tulip, Rosetta dan Swan. Setelah mengikuti pelatihan,
+      peserta diharapkan mampu menghasilkan tampilan minuman yang menarik
+      dan memiliki standar penyajian seperti di coffee shop modern.
+    </p>
+
+    <p>
+      Barista Lab Academy menyediakan fasilitas pelatihan lengkap dengan
+      mesin espresso, grinder, pitcher, susu latihan serta perlengkapan
+      praktik lainnya sehingga peserta dapat fokus mengembangkan
+      keterampilan tanpa perlu membawa peralatan sendiri.
+    </p>
+  </div>
+</section>
+
+{/* ===== FAQ ===== */}
+<section className="mt-20">
+  <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8">
+    Pertanyaan Yang Sering Diajukan
+  </h2>
+
+  <div className="space-y-8">
+    <div>
+      <h3 className="text-lg font-semibold text-white mb-2">
+        Apakah kelas latte art cocok untuk pemula?
+      </h3>
+      <p className="text-gray-300">
+        Ya. Program ini dirancang untuk pemula maupun barista yang ingin
+        meningkatkan kemampuan latte art.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-semibold text-white mb-2">
+        Apakah peserta mendapatkan sertifikat?
+      </h3>
+      <p className="text-gray-300">
+        Ya, peserta akan mendapatkan sertifikat pelatihan setelah
+        menyelesaikan program.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-semibold text-white mb-2">
+        Apakah semua alat praktik disediakan?
+      </h3>
+      <p className="text-gray-300">
+        Ya. Mesin espresso, grinder, pitcher, susu latihan dan peralatan
+        lainnya telah disediakan selama pelatihan berlangsung.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-semibold text-white mb-2">
+        Berapa lama durasi pelatihan?
+      </h3>
+      <p className="text-gray-300">
+        Durasi pelatihan menyesuaikan program yang dipilih. Silakan hubungi
+        admin untuk informasi jadwal terbaru.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-semibold text-white mb-2">
+        Apakah bisa mengikuti kelas secara privat?
+      </h3>
+      <p className="text-gray-300">
+        Ya. Tersedia pilihan kelas privat maupun kelas reguler sesuai
+        kebutuhan peserta.
+      </p>
+    </div>
+  </div>
+</section>
           <div className="mt-12 text-center md:text-left">
             <a 
               href="https://wa.me/6285213541993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art"
