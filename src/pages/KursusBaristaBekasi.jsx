@@ -168,7 +168,7 @@ export default function KursusBaristaBekasi() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
                 <img
-                  src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
+                  src="/images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg"
                   alt="Kursus Barista Bekasi Profesional"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-500"
                   loading="lazy"
