@@ -3,62 +3,117 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
+import kelasLatteArtBekasi from "../images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg";
+import kursusBaristaBekasi from "../images/kursus-barista-bekasi/kursus-barista-bekasi.jpg";
+import pelatihanBaristaBekasi from "../images/kursus-barista-bekasi/pelatihan-barista-bekasi.jpg";
+import sertifikasiBaristaBekasi from "../images/kursus-barista-bekasi/sertifikasi-barista-bekasi.jpg";
 
 export default function KursusBaristaBekasi() {
   const [isFabOpen, setIsFabOpen] = useState(false);
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   useEffect(() => {
-    document.title =
-      "Kursus Barista Bekasi Bersertifikat | Pelatihan Barista Profesional";
+    // 1. Judul & Meta Description Berbasis Keyword Lokal Bekasi
+    document.title = "Kursus Barista Bekasi Terbaik #1 Bersertifikat | Barista Lab";
 
-    const metaDesc = document.querySelector(
-      'meta[name="description"]'
-    );
-
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Kursus Barista Bekasi untuk pemula hingga profesional. Belajar espresso, latte art, manual brew dan coffee business. Cocok untuk peserta dari Bekasi, Cikarang, Tambun, Babelan, Jatiasih dan sekitarnya."
-      );
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta");
+      metaDesc.setAttribute("name", "description");
+      document.head.appendChild(metaDesc);
     }
-
-    const ogUrl = document.querySelector(
-      'meta[property="og:url"]'
+    metaDesc.setAttribute(
+      "content",
+      "Kursus barista profesional & sekolah kopi terbaik di Bekasi. Paket kilat bersertifikat untuk kerja/bisnis di Cikarang, Tambun, & Jatiasih. Metode privat 1 orang 1 mesin!"
     );
 
+    // 2. Koreksi Open Graph Metatags
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute("content", "Kursus Barista Bekasi Terbaik #1 Bersertifikat | Barista Lab");
+
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if (!ogDesc) {
+      ogDesc = document.createElement("meta");
+      ogDesc.setAttribute("property", "og:description");
+      document.head.appendChild(ogDesc);
+    }
+    ogDesc.setAttribute("content", "Pelatihan barista intensif di Bekasi. Kuasai teknik kalibrasi espresso, latte art, hingga bisnis kopi dengan rasio privat 1 orang 1 mesin.");
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) {
-      ogUrl.setAttribute(
-        "content",
-        "https://baristalab.co.id/kursus-barista-bekasi"
-      );
+      ogUrl.setAttribute("content", "https://baristalab.co.id");
     }
 
-    const scriptId = "schema-course-bekasi";
+    // ==========================================
+    // MULTI-SCHEMA INJECTOR (COURSE + LOCAL BUSINESS + FAQ)
+    // Ditargetkan Khusus untuk Kebutuhan Google Maps & Ringkasan AI
+    // ==========================================
+    const scriptId = "schema-baristalab-bekasi";
 
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
-
       script.id = scriptId;
       script.type = "application/ld+json";
-
-      script.innerHTML = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Course",
-        name: "Kursus Barista Bekasi",
-        description:
-          "Pelatihan barista profesional untuk peserta dari Bekasi dan sekitarnya.",
-        provider: {
-          "@type": "EducationalOrganization",
-          name: "Barista Lab Academy",
-          url: "https://baristalab.co.id",
+      script.innerHTML = JSON.stringify([
+        {
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Kursus Barista Bekasi Profesional",
+          "description": "Program pelatihan barista intensif bersertifikat resmi di Bekasi. Menjamin metode privat 1 peserta 1 mesin espresso komersial untuk persiapan kerja dan bisnis kedai kopi.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Barista Lab Academy",
+            "url": "https://baristalab.co.id"
+          },
+          "educationalCredentialAwarded": "Sertifikat Pelatihan Barista",
+          "courseMode": "OnSite",
+          "inLanguage": "id-ID"
         },
-        educationalCredentialAwarded:
-          "Sertifikat Pelatihan Barista",
-        courseMode: "OnSite",
-        inLanguage: "id-ID",
-      });
-
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Barista Lab Academy - Cabang Bekasi",
+          "description": "Tempat pelatihan dan sekolah barista kopi terdekat di wilayah Bekasi dan Cikarang.",
+          "url": "https://baristalab.co.id",
+          "image": "https://baristalab.co.id",
+          "telephone": "+6285213541993",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Area Operasional Bekasi & Jangkauan Se-Bekasi Raya",
+            "addressLocality": "Bekasi",
+            "addressRegion": "Jawa Barat",
+            "postalCode": "17111",
+            "addressCountry": "ID"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apakah pemula tanpa latar belakang kopi bisa ikut kelas di Bekasi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sangat bisa. Program kami dirancang khusus dari dasar (*zero experience*) untuk pemula agar bisa memahami kalibrasi espresso dan teknik menyeduh kopi dengan benar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah pendaftar dari Cikarang dan Tambun bisa ikut pelatihan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bisa. Lokasi pelatihan kami dirancang strategis sehingga mudah dijangkau oleh peserta dari wilayah Bekasi Timur, Tambun, Cikarang, Jatiasih, hingga Harapan Indah."
+              }
+            }
+          ]
+        }
+      ]);
       document.head.appendChild(script);
     }
 
@@ -77,85 +132,74 @@ export default function KursusBaristaBekasi() {
       <main className="bg-dark-charcoal text-white min-h-screen pt-24">
         <div className="max-w-5xl mx-auto px-6 py-12">
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
             Kursus Barista Bekasi Profesional Bersertifikat
           </h1>
 
           <p className="text-lg text-gray-300 leading-relaxed mb-8">
-            Barista Lab Academy menyediakan kursus barista Bekasi
-            untuk pemula, karyawan coffee shop, calon barista,
-            maupun pengusaha kopi yang ingin meningkatkan
-            kemampuan di industri kopi modern.
+            Barista Lab Academy menyediakan program sekolah kopi dan kursus barista Bekasi terbaik untuk pemula, karyawan coffee shop, calon barista kerja, maupun pengusaha kopi yang ingin meningkatkan daya saing di industri F&B modern.
           </p>
 
           <p className="text-gray-300 leading-relaxed mb-10">
-            Peserta berasal dari berbagai wilayah seperti
-            Bekasi Timur, Bekasi Barat, Bekasi Utara,
-            Bekasi Selatan, Jatiasih, Pondok Gede,
-            Harapan Indah, Cikarang, Lippo Cikarang,
-            Tambun Selatan, Tambun Utara, Babelan,
-            Setu, dan Tarumajaya.
+            Kami siap melayani kebutuhan pelatihan intensif untuk peserta yang berasal dari berbagai wilayah jangkauan komersial seperti <strong className="text-white">Bekasi Timur, Bekasi Barat, Bekasi Utara, Bekasi Selatan, Jatiasih, Pondok Gede, Harapan Indah, Cikarang, Lippo Cikarang, Tambun Selatan, Tambun Utara, Babelan, Setu, hingga Tarumajaya</strong>.
           </p>
-    
 
           {/* GALLERY KURSUS BARISTA BEKASI */}
-<div className="mb-12">
-  <h2 className="text-2xl font-semibold text-gold mb-6">
-    Dokumentasi Kursus Barista Bekasi
-  </h2>
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-gold mb-6">
+              Dokumentasi Kursus Barista Bekasi
+            </h2>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+                <img
+                  src={kursusBaristaBekasi}
+                  alt="Kursus Barista Bekasi Profesional"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
 
-    <div className="overflow-hidden rounded-xl border border-white/10">
-      <img
-        src={kursusBaristaBekasi}
-        alt="Kursus Barista Bekasi Profesional"
-        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
-        loading="lazy"
-      />
-    </div>
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+                <img
+                  src={kelasLatteArtBekasi}
+                  alt="Kelas Latte Art Bekasi"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
 
-    <div className="overflow-hidden rounded-xl border border-white/10">
-      <img
-        src={kelasLatteArtBekasi}
-        alt="Kelas Latte Art Bekasi"
-        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
-        loading="lazy"
-      />
-    </div>
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+                <img
+                  src={pelatihanBaristaBekasi}
+                  alt="Pelatihan Barista Bekasi Bersertifikat"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
 
-    <div className="overflow-hidden rounded-xl border border-white/10">
-      <img
-        src={pelatihanBaristaBekasi}
-        alt="Pelatihan Barista Bekasi Bersertifikat"
-        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
-        loading="lazy"
-      />
-    </div>
-
-    <div className="overflow-hidden rounded-xl border border-white/10">
-      <img
-        src={sertifikasiBaristaBekasi}
-        alt="Sertifikasi Barista Bekasi"
-        className="w-full h-56 object-cover hover:scale-105 transition duration-500"
-        loading="lazy"
-      />
-    </div>
-
-  </div>
-</div>
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+                <img
+                  src={sertifikasiBaristaBekasi}
+                  alt="Sertifikasi Barista Bekasi"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
 
           <h2 className="text-2xl font-semibold text-gold mb-4">
             Kenapa Memilih Barista Lab Academy?
           </h2>
 
           <ul className="list-disc pl-6 text-gray-300 space-y-3 mb-10">
-            <li>1 peserta 1 mesin espresso</li>
-            <li>Belajar langsung dengan instruktur berpengalaman</li>
-            <li>Materi espresso, latte art dan manual brew</li>
-            <li>Sertifikat pelatihan barista</li>
-            <li>Kelas cocok untuk pemula maupun profesional</li>
-            <li>Pendampingan membuka coffee shop</li>
+            <li>Sistem belajar privat: <strong className="text-gold">1 peserta 1 mesin espresso komersial</strong></li>
+            <li>Bimbingan praktik langsung bersama instruktur ahli berpengalaman industri</li>
+            <li>Modul komprehensif mencakup teknik Kalibrasi Espresso, Latte Art, dan Manual Brew</li>
+            <li>Mendapatkan Sertifikat Pelatihan Resmi sebagai portfolio melamar kerja</li>
+            <li>Kurikulum inklusif yang ramah untuk pemula maupun tingkat lanjut</li>
+            <li>Fasilitas sesi konsultasi gratis pasca-kelas untuk pendampingan membuka coffee shop</li>
           </ul>
 
           <h2 className="text-2xl font-semibold text-gold mb-4">
@@ -163,123 +207,68 @@ export default function KursusBaristaBekasi() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-6">
-            Program pelatihan mencakup pengenalan kopi,
-            karakter biji kopi, teknik ekstraksi espresso,
-            steaming susu, latte art, manual brew,
-            pelayanan pelanggan, hingga dasar pengelolaan
-            bisnis coffee shop.
+            Program sekolah kopi kami mencakup teori fundamental sejarah kopi, identifikasi karakter rasa biji kopi (Arabika & Robusta), teknik ekstraksi espresso prima, durasi milk steaming untuk *microfoam*, free pour latte art (pola dasar tulip & rosetta), metode manual brewing (V60), standar pelayanan kedai kopi, hingga kalkulasi HPP dasar untuk pengelolaan bisnis coffee shop.
           </p>
 
           <h2 className="text-2xl font-semibold text-gold mb-4">
             Cocok Untuk Siapa?
           </h2>
-
-          <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-10">
-            <li>Pemula tanpa pengalaman</li>
-            <li>Barista yang ingin meningkatkan skill</li>
-            <li>Pemilik coffee shop</li>
-            <li>Mahasiswa dan fresh graduate</li>
-            <li>Pencari kerja di industri F&B</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold text-gold mb-4">
-            Peluang Kerja Barista di Bekasi
-          </h2>
-
-          <p className="text-gray-300 leading-relaxed mb-10">
-            Pertumbuhan coffee shop di Bekasi terus meningkat.
-            Kebutuhan tenaga barista profesional juga semakin tinggi,
-            sehingga pelatihan yang tepat dapat membantu peserta
-            memperoleh keterampilan yang dibutuhkan industri.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-4 mb-16">
-            {/* SALIN TOMBOL WA DARI KELASLATTEART */}
+                    {/* IMPLEMENTASI CTA BUTTON DENGAN DESIGN LATTEART */}
+          <div className="flex flex-col md:flex-row gap-4 mb-16 text-center md:text-left">
+            <a 
+              href="https://wa.me"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 hover:scale-105 transform transition duration-300 shadow-lg shadow-gold/20"
+            >
+              Booking Jadwal Kursus Bekasi
+            </a>
           </div>
 
           <h2 className="text-2xl font-semibold text-gold mb-6">
             Kursus Barista Jabodetabek
           </h2>
-
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm mb-16">
-            <Link
-              to="/kursus-barista-jakarta"
-              className="hover:text-gold"
-            >
-              Kursus Barista Jakarta
-            </Link>
-
-            <Link
-              to="/kursus-barista-jakarta-timur"
-              className="hover:text-gold"
-            >
-              Kursus Barista Jakarta Timur
-            </Link>
-
-            <Link
-              to="/kursus-barista-tangerang"
-              className="hover:text-gold"
-            >
-              Kursus Barista Tangerang
-            </Link>
-
-            <Link
-              to="/kursus-barista-bekasi"
-              className="hover:text-gold"
-            >
-              Kursus Barista Bekasi
-            </Link>
-
-            <Link
-              to="/kursus-barista-depok"
-              className="hover:text-gold"
-            >
-              Kursus Barista Depok
-            </Link>
-
-            <Link
-              to="/kursus-barista-bogor"
-              className="hover:text-gold"
-            >
-              Kursus Barista Bogor
-            </Link>
+            <Link to="/kursus-barista-jakarta" className="hover:text-gold transition">Kursus Barista Jakarta</Link>
+            <Link to="/kursus-barista-jakarta-timur" className="hover:text-gold transition">Kursus Barista Jakarta Timur</Link>
+            <Link to="/kursus-barista-tangerang" className="hover:text-gold transition">Kursus Barista Tangerang</Link>
+            <Link to="/kursus-barista-bekasi" className="hover:text-gold transition">Kursus Barista Bekasi</Link>
+            <Link to="/kursus-barista-depok" className="hover:text-gold transition">Kursus Barista Depok</Link>
+            <Link to="/kursus-barista-bogor" className="hover:text-gold transition">Kursus Barista Bogor</Link>
           </div>
 
           <h2 className="text-2xl font-semibold text-gold mb-6">
             FAQ Kursus Barista Bekasi
           </h2>
-
-          <div className="space-y-6 text-gray-300">
-            <div>
+          <div className="space-y-6 text-gray-300 mb-12 text-sm">
+            <div className="p-4 bg-neutral-900 rounded-xl border border-gray-800">
               <h3 className="font-semibold text-white mb-2">
-                Apakah pemula bisa mengikuti kursus?
+                Apakah pemula tanpa pengalaman bisa mengikuti kursus?
               </h3>
-              <p>
-                Ya. Program dirancang untuk peserta tanpa
-                pengalaman sekalipun.
+              <p className="text-gray-400">
+                Sangat bisa. Seluruh kurikulum program pelatihan kopi di Barista Lab dirancang bertahap dari level nol agar mudah dipahami secara cepat oleh pemula sekalipun.
               </p>
             </div>
 
-            <div>
+            <div className="p-4 bg-neutral-900 rounded-xl border border-gray-800">
               <h3 className="font-semibold text-white mb-2">
-                Apakah mendapatkan sertifikat?
+                Apakah alumni akan langsung mendapatkan sertifikat?
               </h3>
-              <p>
-                Ya, peserta akan memperoleh sertifikat
-                pelatihan setelah menyelesaikan program.
+              <p className="text-gray-400">
+                Ya, seluruh peserta yang telah merampungkan program secara penuh akan memperoleh sertifikat kompetensi resmi kelulusan dari Barista Lab Academy.
               </p>
             </div>
 
-            <div>
+            <div className="p-4 bg-neutral-900 rounded-xl border border-gray-800">
               <h3 className="font-semibold text-white mb-2">
-                Apakah tersedia kelas privat?
+                Apakah tersedia jenis kelas privat khusus?
               </h3>
-              <p>
-                Tersedia kelas privat, corporate training,
-                dan pelatihan untuk calon pemilik coffee shop.
+              <p className="text-gray-400">
+                Kami menyediakan opsi Kelas Privat VIP, *Corporate B2B Training*, serta konsultasi intensif susunan menu bagi calon pemilik kedai kopi komersial.
               </p>
             </div>
           </div>
+
         </div>
       </main>
 
@@ -288,3 +277,5 @@ export default function KursusBaristaBekasi() {
     </>
   );
 }
+
+
