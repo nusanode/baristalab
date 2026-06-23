@@ -46,6 +46,39 @@ export default function KursusBaristaTangerang() {
           "url": "https://baristalab.co.id"
         }
       });
+      const faqSchemaId = "faq-schema-tangerang";
+
+if (!document.getElementById(faqSchemaId)) {
+  const faqScript = document.createElement("script");
+
+  faqScript.id = faqSchemaId;
+  faqScript.type = "application/ld+json";
+
+  faqScript.innerHTML = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Apakah pemula bisa mengikuti kursus ini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Program dirancang untuk peserta yang belum memiliki pengalaman sama sekali."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah peserta mendapatkan sertifikat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Peserta yang menyelesaikan program akan memperoleh sertifikat pelatihan."
+        }
+      }
+    ]
+  });
+
+  document.head.appendChild(faqScript);
+}
       document.head.appendChild(script);
     }
 
@@ -53,12 +86,21 @@ export default function KursusBaristaTangerang() {
     window.scrollTo(0, 0);
 
     return () => {
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
+      return () => {
+  const existingScript =
+    document.getElementById(scriptId);
+
+  if (existingScript) {
+    existingScript.remove();
+  }
+
+  const faqScript =
+    document.getElementById(faqSchemaId);
+
+  if (faqScript) {
+    faqScript.remove();
+  }
+};
 
   return (
     <>
