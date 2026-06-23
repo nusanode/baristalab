@@ -6,15 +6,8 @@ import Fab from "../components/Fab";
 import kelasLatteArtBekasi from "../images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg";
 import kursusBaristaBekasi from "../images/kursus-barista-bekasi/kursus-barista-bekasi.jpg";
 import pelatihanBaristaBekasi from "../images/kursus-barista-bekasi/pelatihan-barista-bekasi.jpg";
-<img
-  src="/src/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
-  alt="Kursus Barista Bekasi"
-/>
-{/* GALLERY KURSUS BARISTA BEKASI */}
-<div className="mb-12">
-  <h2 className="text-2xl font-semibold text-gold mb-6">
-    Dokumentasi Kursus Barista Bekasi
-  </h2>
+import sertifikasiBaristaBekasi from "../images/kursus-barista-bekasi/sertifikasi-barista-bekasi.jpg";
+
 
 export default function KursusBaristaBekasi() {
   const [isFabOpen, setIsFabOpen] = useState(false);
