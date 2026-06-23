@@ -118,7 +118,7 @@ export default function KursusBaristaBekasi() {
     <>
       <Navbar />
 
-      <main className="bg-dark-charcoal text-white min-h-screen pt-24">
+      <main className="bg-dark-charcoal text-white min-h-screen">
               {/* HERO BANNER */}
 <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
 
