@@ -278,6 +278,36 @@ export default function KursusBaristaBekasi() {
 
         </div>
       </main>
+      {/* HERO BANNER */}
+<div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
+
+  <img
+    src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
+    alt="Kursus Barista Bekasi Profesional"
+    fetchPriority="high"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
+
+  <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
+
+    <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
+      Barista Training Program
+    </span>
+
+    <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
+      Kursus Barista
+      <span className="text-gold italic font-serif"> Bekasi</span>
+    </h1>
+
+    <p className="mt-4 text-gray-200 max-w-2xl text-sm md:text-lg">
+      Pelatihan barista profesional untuk pemula hingga calon pemilik coffee shop di Bekasi, Cikarang, Tambun dan sekitarnya.
+    </p>
+
+  </div>
+
+</div>
 
       <Footer onConsultClick={toggleFab} />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
