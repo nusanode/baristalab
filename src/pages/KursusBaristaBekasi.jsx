@@ -102,12 +102,7 @@ export default function KursusBaristaBekasi() {
             Setu, dan Tarumajaya.
           </p>
     
-  
-</div>
 
-<h2 className="text-2xl font-semibold text-gold mb-4">
-  Kenapa Memilih Barista Lab Academy?
-</h2>
           {/* GALLERY KURSUS BARISTA BEKASI */}
 <div className="mb-12">
   <h2 className="text-2xl font-semibold text-gold mb-6">
