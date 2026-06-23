@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import logoImg from "../images/Logo.png";
+import { contactData } from "../database";
+import { useLanguage } from "../context/LanguageContext";
 import logoImg from "../images/Logo.png";
 // 1. IMPORT DATA DARI DATABASE
 import { contactData } from "../database";
