@@ -118,6 +118,23 @@ if (!document.getElementById(faqSchemaId)) {
           </p>
 
           <p className="mb-8 text-gray-300 leading-relaxed">
+            <section className="mb-12">
+  <h2 className="text-2xl font-semibold mb-4 text-gold">
+    Kursus Barista Tangerang untuk Pemula hingga Profesional
+  </h2>
+
+  <p className="text-gray-300 mb-4 leading-relaxed">
+    Program kursus barista Tangerang di Barista Lab Academy
+    dirancang untuk peserta yang ingin bekerja sebagai
+    barista profesional maupun membuka usaha coffee shop.
+  </p>
+
+  <p className="text-gray-300 leading-relaxed">
+    Materi mencakup espresso extraction, grinder calibration,
+    milk steaming, latte art, manual brewing, customer service,
+    hingga coffee business management.
+  </p>
+</section>
             Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi [•].
           </p>
 
