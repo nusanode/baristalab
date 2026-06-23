@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
-import kelasLatteArtBekasi from "../images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg";
-import kursusBaristaBekasi from "../images/kursus-barista-bekasi/kursus-barista-bekasi.jpg";
-import pelatihanBaristaBekasi from "../images/kursus-barista-bekasi/pelatihan-barista-bekasi.jpg";
-import sertifikasiBaristaBekasi from "../images/kursus-barista-bekasi/sertifikasi-barista-bekasi.jpg";
 
 export default function KursusBaristaBekasi() {
   const [isFabOpen, setIsFabOpen] = useState(false);
