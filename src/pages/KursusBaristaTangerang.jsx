@@ -8,7 +8,7 @@ export default function KursusBaristaTangerang() {
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   useEffect(() => {
-    // 1. Atur Judul Halaman & Meta Description Khusus Tangerang untuk Google AI
+    // 1. Atur Judul Halaman & Meta Description Khusus Tangerang
     document.title = "Kursus Barista Tangerang Bersertifikat | Barista Lab Academy";
     
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -27,80 +27,64 @@ export default function KursusBaristaTangerang() {
     if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
 
     // ==========================================
-    // INJECTOR SKEMA COURSE TANGERANG (GOOGLE AI OPTIMIZATION)
+    // MULTI-SCHEMA INJECTOR (COURSE + FAQ)
+    // Ditargetkan Khusus untuk Kebutuhan Google Search & Ringkasan AI
     // ==========================================
-    const scriptId = "schema-course-tangerang";
+    const scriptId = "schema-combined-tangerang";
     
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
       script.type = "application/ld+json";
-      script.innerHTML = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Kursus Barista Tangerang Profesional",
-        "description": "Program pelatihan barista bersertifikat untuk area Tangerang, Tangerang Selatan, dan sekitarnya di Barista Lab Academy. Belajar menggunakan mesin espresso komersial.",
-        "provider": {
-          "@type": "EducationalOrganization",
-          "name": "Barista Lab Academy",
-          "url": "https://baristalab.co.id"
+      script.innerHTML = JSON.stringify([
+        {
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Kursus Barista Tangerang Profesional",
+          "description": "Program pelatihan barista bersertifikat untuk area Tangerang, Tangerang Selatan, dan sekitarnya di Barista Lab Academy. Belajar menggunakan mesin espresso komersial.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Barista Lab Academy",
+            "url": "https://baristalab.co.id"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apakah pemula bisa mengikuti kursus ini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya. Program dirancang untuk peserta yang belum memiliki pengalaman sama sekali."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah peserta mendapatkan sertifikat?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya. Peserta yang menyelesaikan program akan memperoleh sertifikat pelatihan."
+              }
+            }
+          ]
         }
-      });
-      const faqSchemaId = "faq-schema-tangerang";
-
-if (!document.getElementById(faqSchemaId)) {
-  const faqScript = document.createElement("script");
-
-  faqScript.id = faqSchemaId;
-  faqScript.type = "application/ld+json";
-
-  faqScript.innerHTML = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Apakah pemula bisa mengikuti kursus ini?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Program dirancang untuk peserta yang belum memiliki pengalaman sama sekali."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah peserta mendapatkan sertifikat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Peserta yang menyelesaikan program akan memperoleh sertifikat pelatihan."
-        }
-      }
-    ]
-  });
-
-  document.head.appendChild(faqScript);
-}
+      ]);
       document.head.appendChild(script);
     }
 
     // 3. Kembalikan scroll ke posisi paling atas
     window.scrollTo(0, 0);
 
+    // Fungsi pembersihan (Cleanup function) yang sudah diperbaiki
     return () => {
-      return () => {
-  const existingScript =
-    document.getElementById(scriptId);
-
-  if (existingScript) {
-    existingScript.remove();
-  }
-
-  const faqScript =
-    document.getElementById(faqSchemaId);
-
-  if (faqScript) {
-    faqScript.remove();
-  }
-};
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -114,29 +98,24 @@ if (!document.getElementById(faqSchemaId)) {
           </h1>
 
           <p className="mb-4 text-gray-300 leading-relaxed text-lg">
-            Barista Lab Academy hadir menyediakan pusat kursus barista profesional untuk area Tangerang Raya [•]. Metode pengajaran kami menekankan porsi praktik langsung (*hands-on training*) guna mempercepat pembentukan *muscle memory* mekanika barista [•].
+            Barista Lab Academy hadir menyediakan pusat kursus barista profesional untuk area Tangerang Raya. Metode pengajaran kami menekankan porsi praktik langsung (*hands-on training*) guna mempercepat pembentukan *muscle memory* mekanika barista.
           </p>
 
           <p className="mb-8 text-gray-300 leading-relaxed">
-            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi [•].
+            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi.
           </p>
-           <section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-4 text-gold">
-    Kursus Barista Tangerang untuk Pemula hingga Profesional
-  </h2>
 
-  <p className="text-gray-300 mb-4 leading-relaxed">
-    Program kursus barista Tangerang di Barista Lab Academy
-    dirancang untuk peserta yang ingin bekerja sebagai
-    barista profesional maupun membuka usaha coffee shop.
-  </p>
-
-  <p className="text-gray-300 leading-relaxed">
-    Materi mencakup espresso extraction, grinder calibration,
-    milk steaming, latte art, manual brewing, customer service,
-    hingga coffee business management.
-  </p>
-</section>
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-gold">
+              Kursus Barista Tangerang untuk Pemula hingga Profesional
+            </h2>
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              Program kursus barista Tangerang di Barista Lab Academy dirancang untuk peserta yang ingin bekerja sebagai barista profesional maupun membuka usaha coffee shop.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Materi mencakup espresso extraction, grinder calibration, milk steaming, latte art, manual brewing, customer service, hingga coffee business management.
+            </p>
+          </section>
 
           {/* TABEL PERBANDINGAN PROGRAM */}
           <h2 className="text-2xl font-semibold mt-10 mb-4 text-gold">Perbandingan Program Kelas Barista Lab Academy</h2>
@@ -184,44 +163,34 @@ if (!document.getElementById(faqSchemaId)) {
               </tbody>
             </table>
           </div>
-       <section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-4 text-gold">
-    Melayani Seluruh Wilayah Tangerang Raya
-  </h2>
 
-  <p className="text-gray-300 leading-relaxed">
-    Peserta kami berasal dari BSD City,
-    Gading Serpong, Alam Sutera,
-    Karawaci, Cikokol, Cibodas,
-    Cipondoh, Serpong, Bintaro,
-    Pamulang, Curug, Kelapa Dua,
-    Cikupa dan Tigaraksa.
-  </p>
-</section>
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-4 text-gold">
+              Melayani Seluruh Wilayah Tangerang Raya
+            </h2>
+            <p className="text-gray-300 leading-relaxed">
+              Peserta kami berasal dari BSD City, Gading Serpong, Alam Sutera, Karawaci, Cikokol, Cibodas, Cipondoh, Serpong, Bintaro, Pamulang, Curug, Kelapa Dua, Cikupa dan Tigaraksa.
+            </p>
+          </section>
+
           <h2 className="text-2xl font-semibold mt-8 mb-4">Lokasi Kampus Tangerang</h2>
           <p className="mb-6 text-gray-300 leading-relaxed">
-            Sesi tatap muka dilaksanakan langsung di workshop regional kami: <strong>Jl. Kav. Perkebunan Raya, Cibodas, Tangerang</strong> [•]. Lokasi strategis ini dirancang dekat akses bagi pendaftar dari area <strong>BSD City, Gading Serpong, Karawaci, Alam Sutera, Tangerang Selatan, hingga Cikupa</strong>.
+            Sesi tatap muka dilaksanakan langsung di workshop regional kami: <strong>Jl. Kav. Perkebunan Raya, Cibodas, Tangerang</strong>. Lokasi strategis ini dirancang dekat akses bagi pendaftar dari area <strong>BSD City, Gading Serpong, Karawaci, Alam Sutera, Tangerang Selatan, hingga Cikupa</strong>.
           </p>
+
           <section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-6 text-gold">
-    FAQ Kursus Barista Tangerang
-  </h2>
-
-  <div className="space-y-6">
-
-    <div>
-      <h3 className="font-semibold text-white">
-        Apakah pemula bisa ikut?
-      </h3>
-      <p className="text-gray-300">
-        Ya, program ini dirancang khusus untuk pemula.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="font-semibold text-white">
-        Apakah mendapatkan sertifikat?
-      </h3>
+            <h2 className="text-2xl font-semibold mb-6 text-gold">
+              FAQ Kursus Barista Tangerang
+            </h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-semibold text-white">Apakah pemula bisa ikut?</h3>
+                <p className="text-gray-300">Ya, program ini dirancang khusus untuk pemula.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white">Apakah mendapatkan sertifikat?</h3>
+                  
+     </h3>
       <p className="text-gray-300">
         Ya, seluruh peserta akan memperoleh sertifikat.
       </p>
