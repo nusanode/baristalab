@@ -142,7 +142,7 @@ export default function KursusBaristaBekasi() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
                 <img
-                  src={kursusBaristaBekasi}
+                  src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
                   alt="Kursus Barista Bekasi Profesional"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-500"
                   loading="lazy"
@@ -151,7 +151,7 @@ export default function KursusBaristaBekasi() {
 
               <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
                 <img
-                  src={kelasLatteArtBekasi}
+                  src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
                   alt="Kelas Latte Art Bekasi"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-500"
                   loading="lazy"
@@ -160,7 +160,7 @@ export default function KursusBaristaBekasi() {
 
               <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
                 <img
-                  src={pelatihanBaristaBekasi}
+                  src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
                   alt="Pelatihan Barista Bekasi Bersertifikat"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-500"
                   loading="lazy"
@@ -169,7 +169,7 @@ export default function KursusBaristaBekasi() {
 
               <div className="overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
                 <img
-                  src={sertifikasiBaristaBekasi}
+                  src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
                   alt="Sertifikasi Barista Bekasi"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-500"
                   loading="lazy"
