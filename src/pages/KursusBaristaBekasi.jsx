@@ -101,6 +101,59 @@ export default function KursusBaristaBekasi() {
             Tambun Selatan, Tambun Utara, Babelan,
             Setu, dan Tarumajaya.
           </p>
+          <p className="text-gray-300 leading-relaxed mb-10">
+  Peserta berasal dari berbagai wilayah seperti
+  Bekasi Timur, Bekasi Barat, Bekasi Utara,
+  Bekasi Selatan, Jatiasih, Pondok Gede,
+  Harapan Indah, Cikarang, Lippo Cikarang,
+  Tambun Selatan, Tambun Utara, Babelan,
+  Setu, dan Tarumajaya.
+</p>
+
+{/* GALLERY FOTO BEKASI */}
+<div className="grid md:grid-cols-2 gap-6 my-12">
+
+  <div className="overflow-hidden rounded-xl border border-white/10">
+    <img
+      src="/images/kursus-barista-bekasi/kursus-barista-bekasi.jpg"
+      alt="Kursus Barista Bekasi"
+      loading="lazy"
+      className="w-full h-64 object-cover hover:scale-105 transition duration-500"
+    />
+  </div>
+
+  <div className="overflow-hidden rounded-xl border border-white/10">
+    <img
+      src="/images/kursus-barista-bekasi/kelas-latte-art-bekasi.jpg"
+      alt="Kelas Latte Art Bekasi"
+      loading="lazy"
+      className="w-full h-64 object-cover hover:scale-105 transition duration-500"
+    />
+  </div>
+
+  <div className="overflow-hidden rounded-xl border border-white/10">
+    <img
+      src="/images/kursus-barista-bekasi/pelatihan-barista-bekasi.jpg"
+      alt="Pelatihan Barista Bekasi"
+      loading="lazy"
+      className="w-full h-64 object-cover hover:scale-105 transition duration-500"
+    />
+  </div>
+
+  <div className="overflow-hidden rounded-xl border border-white/10">
+    <img
+      src="/images/kursus-barista-bekasi/sertifikasi-barista-bekasi.jpg"
+      alt="Sertifikasi Barista Bekasi"
+      loading="lazy"
+      className="w-full h-64 object-cover hover:scale-105 transition duration-500"
+    />
+  </div>
+
+</div>
+
+<h2 className="text-2xl font-semibold text-gold mb-4">
+  Kenapa Memilih Barista Lab Academy?
+</h2>
           {/* GALLERY KURSUS BARISTA BEKASI */}
 <div className="mb-12">
   <h2 className="text-2xl font-semibold text-gold mb-6">
