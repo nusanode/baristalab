@@ -273,7 +273,57 @@ export default function Footer({ onConsultClick }) {
             </div>
           </div>
         </div>
+    {/* --- SEO CITY LINKS --- */}
+<div className="mt-16 pt-12 border-t border-white/5">
+  <h4 className="text-white font-display text-sm font-bold mb-6 uppercase tracking-[0.2em] flex items-center gap-2">
+    <span className="w-8 h-[1px] bg-gold"></span>
+    Kursus Barista Jabodetabek
+  </h4>
 
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
+    <Link
+      to="/kursus-barista-jakarta"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Jakarta
+    </Link>
+
+    <Link
+      to="/kursus-barista-jakarta-timur"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Jakarta Timur
+    </Link>
+
+    <Link
+      to="/kursus-barista-tangerang"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Tangerang
+    </Link>
+
+    <Link
+      to="/kursus-barista-bekasi"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Bekasi
+    </Link>
+
+    <Link
+      to="/kursus-barista-depok"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Depok
+    </Link>
+
+    <Link
+      to="/kursus-barista-bogor"
+      className="hover:text-gold transition-colors"
+    >
+      Kursus Barista Bogor
+    </Link>
+  </div>
+</div>
         {/* --- BOTTOM BAR --- */}
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider uppercase text-gray-600">
           <p>© 2026 Barista Lab Academy. {t.rights}</p>
