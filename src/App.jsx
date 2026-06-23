@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import KelasLatteArt from "./pages/KelasLatteArt";
 import KursusBarista from "./pages/KursusBarista";
 import LocationPage from "./pages/LocationPage";
+import PelatihanBarista from "./pages/PelatihanBarista";
+import SertifikasiBarista from "./pages/SertifikasiBarista";
 
 // Regional Routes
 import KursusBaristaJakarta from "./pages/KursusBaristaJakarta";
@@ -20,6 +22,8 @@ function App() {
       <Route path="/kursus-barista" element={<KursusBarista />} />
       <Route path="/kelas-latte-art" element={<KelasLatteArt />} />
       <Route path="/lokasi" element={<LocationPage />} />
+      <Route path="/pelatihan-barista" element={<PelatihanBarista />} />
+      <Route path="/sertifikasi-barista" element={<SertifikasiBarista />} />
 
       {/* Geo-Targeting Routes */}
       <Route path="/kursus-barista-jakarta" element={<KursusBaristaJakarta />} />
