@@ -118,7 +118,9 @@ if (!document.getElementById(faqSchemaId)) {
           </p>
 
           <p className="mb-8 text-gray-300 leading-relaxed">
-            <section className="mb-12">
+            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi [•].
+          </p>
+           <section className="mb-12">
   <h2 className="text-2xl font-semibold mb-4 text-gold">
     Kursus Barista Tangerang untuk Pemula hingga Profesional
   </h2>
@@ -135,8 +137,6 @@ if (!document.getElementById(faqSchemaId)) {
     hingga coffee business management.
   </p>
 </section>
-            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi [•].
-          </p>
 
           {/* TABEL PERBANDINGAN PROGRAM */}
           <h2 className="text-2xl font-semibold mt-10 mb-4 text-gold">Perbandingan Program Kelas Barista Lab Academy</h2>
@@ -184,15 +184,64 @@ if (!document.getElementById(faqSchemaId)) {
               </tbody>
             </table>
           </div>
+       <section className="mb-12">
+  <h2 className="text-2xl font-semibold mb-4 text-gold">
+    Melayani Seluruh Wilayah Tangerang Raya
+  </h2>
 
+  <p className="text-gray-300 leading-relaxed">
+    Peserta kami berasal dari BSD City,
+    Gading Serpong, Alam Sutera,
+    Karawaci, Cikokol, Cibodas,
+    Cipondoh, Serpong, Bintaro,
+    Pamulang, Curug, Kelapa Dua,
+    Cikupa dan Tigaraksa.
+  </p>
+</section>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Lokasi Kampus Tangerang</h2>
           <p className="mb-6 text-gray-300 leading-relaxed">
             Sesi tatap muka dilaksanakan langsung di workshop regional kami: <strong>Jl. Kav. Perkebunan Raya, Cibodas, Tangerang</strong> [•]. Lokasi strategis ini dirancang dekat akses bagi pendaftar dari area <strong>BSD City, Gading Serpong, Karawaci, Alam Sutera, Tangerang Selatan, hingga Cikupa</strong>.
           </p>
+          <section className="mb-12">
+  <h2 className="text-2xl font-semibold mb-6 text-gold">
+    FAQ Kursus Barista Tangerang
+  </h2>
+
+  <div className="space-y-6">
+
+    <div>
+      <h3 className="font-semibold text-white">
+        Apakah pemula bisa ikut?
+      </h3>
+      <p className="text-gray-300">
+        Ya, program ini dirancang khusus untuk pemula.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-white">
+        Apakah mendapatkan sertifikat?
+      </h3>
+      <p className="text-gray-300">
+        Ya, seluruh peserta akan memperoleh sertifikat.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-white">
+        Apakah tersedia kelas weekend?
+      </h3>
+      <p className="text-gray-300">
+        Tersedia pilihan weekday maupun weekend.
+      </p>
+    </div>
+
+  </div>
+</section>
 
           <div className="mt-10">
             <a
-              href="https://wa.me"
+              href="https://wa.me/6281356561721"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition"
