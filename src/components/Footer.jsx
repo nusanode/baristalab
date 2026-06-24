@@ -304,26 +304,7 @@ export default function Footer({ onConsultClick }) {
       Kursus Barista Tangerang
     </Link>
 
-    <Link
-      to="/kursus-barista-bekasi"
-      className="hover:text-gold transition-colors"
-    >
-      Kursus Barista Bekasi
-    </Link>
-
-    <Link
-      to="/kursus-barista-depok"
-      className="hover:text-gold transition-colors"
-    >
-      Kursus Barista Depok
-    </Link>
-
-    <Link
-      to="/kursus-barista-bogor"
-      className="hover:text-gold transition-colors"
-    >
-      Kursus Barista Bogor
-    </Link>
+    
   </div>
 </div>
         {/* --- BOTTOM BAR --- */}
