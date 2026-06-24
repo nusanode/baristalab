@@ -157,16 +157,9 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
         
         {/* --- 1. HERO BANNER FOTO UTAMA ATAS --- */}
      {/* HERO BANNER */}
-<div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
-  
-  <img
-  src="/images/latte-art/latte-art-hero.png"
-  alt="Kelas Latte Art Jakarta dan Tangerang"
-  fetchPriority="high"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
 
-  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
+  <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5 bg-black">
+  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70"></div>
 
   <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
     <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
@@ -181,8 +174,7 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
       Kuasai teknik milk steaming, microfoam, tulip, rosetta hingga swan bersama instruktur profesional.
     </p>
   </div>
-
-</div>   
+</div>
 
         {/* --- 2. KONTEN TEKS ARTIKEL --- */}
         <div className="max-w-5xl mx-auto px-6 py-16">
@@ -210,15 +202,16 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
             </div>
             
             {/* --- 3. FOTO KEDUA DI SAMPING MATERI --- */}
-            <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/5 h-64">
-             <img
-  src="/images/latte-art/kursus-latte-art.jpg"
-  alt="Praktik Milk Steaming Barista Lab Academy"
-  loading="lazy"
-  className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
-/>
-            </div>
-          </div>
+            <div className="bg-neutral-900 border border-white/10 rounded-lg p-8 h-64 flex items-center justify-center">
+  <div className="text-center">
+    <h3 className="text-gold text-xl font-bold mb-3">
+      Praktik Intensif Latte Art
+    </h3>
+    <p className="text-gray-300">
+      Milk Steaming • Microfoam • Tulip • Rosetta • Swan
+    </p>
+  </div>
+</div>
 {/* ===== TENTANG KELAS LATTE ART ===== */}
 <section className="mt-20">
   <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6">
