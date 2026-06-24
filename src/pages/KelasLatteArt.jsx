@@ -44,19 +44,9 @@ ogDesc.setAttribute(
   "content",
   "Belajar Latte Art profesional di Jakarta dan Tangerang. Kuasai milk steaming, tulip, rosetta hingga swan."
 );
-   let ogImage = document.querySelector('meta[property="og:image"]');
+   
 
-if (!ogImage) {
-  ogImage = document.createElement("meta");
-  ogImage.setAttribute("property", "og:image");
-  document.head.appendChild(ogImage);
-}
-
-ogImage.setAttribute(
-  "content",
-  "https://www.baristalab.co.id/images/latte-art/latte-art-hero.png"
-);
-    let ogUrl = document.querySelector('meta[property="og:url"]');
+  let ogUrl = document.querySelector('meta[property="og:url"]');
 
 if (!ogUrl) {
   ogUrl = document.createElement("meta");
@@ -175,7 +165,6 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
     </p>
   </div>
 </div>
-
         {/* --- 2. KONTEN TEKS ARTIKEL --- */}
         <div className="max-w-5xl mx-auto px-6 py-16">
           <p className="mb-8 text-gray-300 leading-relaxed text-lg font-light">
@@ -212,6 +201,7 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
     </p>
   </div>
 </div>
+</div>            
 {/* ===== TENTANG KELAS LATTE ART ===== */}
 <section className="mt-20">
   <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6">
