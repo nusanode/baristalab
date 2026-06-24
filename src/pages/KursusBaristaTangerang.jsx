@@ -149,4 +149,4 @@ export default function KursusBaristaTangerang() {
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );
-                    }
+}
