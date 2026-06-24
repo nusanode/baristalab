@@ -15,7 +15,7 @@ export default function KursusBarista() {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Kursus Barista Profesional & Sertifikasi | Barista Lab Academy");
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
+    if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id");
 
     const scriptId = "schema-course-barista";
     if (!document.getElementById(scriptId)) {
@@ -27,7 +27,7 @@ export default function KursusBarista() {
         "@type": "Course",
         "name": "Kursus Barista Profesional Bersertifikat",
         "description": "Program pelatihan barista intensif dari dasar hingga mahir di Jakarta & Tangerang. Fasilitas 1 orang 1 mesin kopi komersial.",
-        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://baristalab.co.id" }
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://www.baristalab.co.id" }
       });
       document.head.appendChild(script);
     }
