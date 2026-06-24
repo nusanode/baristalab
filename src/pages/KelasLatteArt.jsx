@@ -2,148 +2,36 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
-import { Link } from "react-router-dom";
+import LocationPage from "./LocationPage"; // Panggil hub lokasi yang sudah kita buat
+
 export default function KelasLatteArt() {
   const [isFabOpen, setIsFabOpen] = useState(false);
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   useEffect(() => {
-    document.title = "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi";
-    let metaDesc = document.querySelector('meta[name="description"]');
+    // 1. OPTIMASI META SPESIFIK LATTE ART
+    document.title = "Kursus Latte Art Profesional & Basic | Barista Lab Academy";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Daftar kursus latte art di Jakarta & Tangerang. Pelatihan intensif milk steaming, frothing, teknik pouring pattern heart, tulip, rosetta. Kelas 100% praktik!");
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", "Kursus Latte Art Profesional & Basic | Barista Lab Academy");
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", "https://baristalab.co.id");
 
-if (!metaDesc) {
-  metaDesc = document.createElement("meta");
-  metaDesc.setAttribute("name", "description");
-  document.head.appendChild(metaDesc);
-}
-
-metaDesc.setAttribute(
-  "content",
-  "Kursus Latte Art Jakarta dan Tangerang. Pelajari milk steaming, microfoam, tulip, rosetta, dan swan bersama instruktur profesional."
-);
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-
-if (!ogTitle) {
-  ogTitle = document.createElement("meta");
-  ogTitle.setAttribute("property", "og:title");
-  document.head.appendChild(ogTitle);
-}
-
-ogTitle.setAttribute(
-  "content",
-  "Kelas Latte Art Jakarta & Tangerang | Kursus Latte Art Profesional"
-);
-    let ogDesc = document.querySelector('meta[property="og:description"]');
-if (!ogDesc) {
-  ogDesc = document.createElement("meta");
-  ogDesc.setAttribute("property", "og:description");
-  document.head.appendChild(ogDesc);
-}
-
-ogDesc.setAttribute(
-  "content",
-  "Belajar Latte Art profesional di Jakarta dan Tangerang. Kuasai milk steaming, tulip, rosetta hingga swan."
-);
-   let ogImage = document.querySelector('meta[property="og:image"]');
-
-if (!ogImage) {
-  ogImage = document.createElement("meta");
-  ogImage.setAttribute("property", "og:image");
-  document.head.appendChild(ogImage);
-}
-
-ogImage.setAttribute(
-  "content",
-  "https://www.baristalab.co.id/images/latte-art/latte-art-hero.png"
-);
-    let ogUrl = document.querySelector('meta[property="og:url"]');
-
-if (!ogUrl) {
-  ogUrl = document.createElement("meta");
-  ogUrl.setAttribute("property", "og:url");
-  document.head.appendChild(ogUrl);
-}
-
-ogUrl.setAttribute(
-  "content",
-  "https://www.baristalab.co.id/kelas-latte-art"
-);
-    let canonical = document.querySelector("link[rel='canonical']");
-    if (!canonical) {
-  canonical = document.createElement("link");
-  canonical.rel = "canonical";
-  document.head.appendChild(canonical);
-}
-
-canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
-
-    const scriptId = "schema-course-latteart";
+    // 2. SCHEMA MARKUP GOOGLE UNTUK KURSUS SPESIFIK
+    const scriptId = "schema-latte-art-course";
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
       script.type = "application/ld+json";
-      script.innerHTML = JSON.stringify([
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Kelas Latte Art Profesional",
-    "description": "Pelatihan Latte Art untuk pemula dan profesional.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Barista Lab Academy",
-      "url": "https://www.baristalab.co.id"
-    },
-    "courseMode": "onsite",
-    "inLanguage": "id-ID",
-    "educationalLevel": "Beginner"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Apakah kelas latte art cocok untuk pemula?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Program ini dirancang untuk pemula maupun barista yang ingin meningkatkan kemampuan latte art."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah peserta mendapatkan sertifikat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya, peserta akan mendapatkan sertifikat pelatihan setelah menyelesaikan program."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah semua alat praktik disediakan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Mesin espresso, grinder, pitcher dan perlengkapan praktik disediakan selama pelatihan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Berapa lama durasi pelatihan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Durasi pelatihan menyesuaikan program yang dipilih. Silakan hubungi admin untuk jadwal terbaru."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah tersedia kelas privat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Tersedia pilihan kelas privat maupun kelas reguler sesuai kebutuhan peserta."
-        }
-      }
-    ]
-  }
-]);
+      script.innerHTML = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Kelas Pelatihan Latte Art Profesional",
+        "description": "Kursus intensif menguasai teknik pembuatan gambar di atas kopi (Latte Art) dari basic frothing hingga advanced pattern.",
+        "provider": { "@type": "EducationalOrganization", "name": "Barista Lab Academy", "url": "https://baristalab.co.id" }
+      });
       document.head.appendChild(script);
     }
     window.scrollTo(0, 0);
@@ -153,209 +41,85 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
   return (
     <>
       <Navbar />
-      <main className="bg-dark-charcoal text-white min-h-screen pt-20">
-        
-        {/* --- 1. HERO BANNER FOTO UTAMA ATAS --- */}
-     {/* HERO BANNER */}
-<div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5">
-  
-  <img
-  src="/images/latte-art/latte-art-hero.png"
-  alt="Kelas Latte Art Jakarta dan Tangerang"
-  fetchPriority="high"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
-
-  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70 z-10"></div>
-
-  <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
-    <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
-      Specialist Program
-    </span>
-
-    <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white max-w-4xl tracking-wide">
-      Kelas <span className="text-gold italic font-serif">Latte Art</span>
-    </h1>
-
-    <p className="mt-4 text-gray-200 max-w-2xl text-sm md:text-lg">
-      Kuasai teknik milk steaming, microfoam, tulip, rosetta hingga swan bersama instruktur profesional.
-    </p>
-  </div>
-
-</div>   
-
-        {/* --- 2. KONTEN TEKS ARTIKEL --- */}
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <p className="mb-8 text-gray-300 leading-relaxed text-lg font-light">
-            Kelas Latte Art di Barista Lab Academy memfokuskan peserta pada penguasaan kontrol penuh terhadap susu (*milk handling*) guna menciptakan visual minuman berbasis espresso yang memikat dan berstandar kafe modern.
+      <main className="bg-dark-charcoal text-white min-h-screen pt-24">
+        <div className="max-w-5xl mx-auto px-4 py-10">
+          
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-center md:text-left">
+            Kursus & Kelas Latte Art Profesional Jakarta - Tangerang
+          </h1>
+          
+          <p className="mb-6 text-gray-300 leading-relaxed text-lg">
+            Membuat <em>Latte Art</em> yang indah bukan sekadar menuangkan susu, melainkan kombinasi keahlian motorik, kontrol suhu, dan pemahaman sains tentang susu (*milk science*). Kelas Latte Art di <strong>Barista Lab Academy</strong> dirancang khusus untuk membantu barista maupun pencinta kopi menguasai teknik menggambar di atas kopi secara konsisten.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center my-12">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gold tracking-wide uppercase text-sm">Materi Pelatihan Kelas Latte Art</h2>
-              <ul className="list-none space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
-                  <span>Teknik <strong>milk steaming</strong> untuk menghasilkan tekstur microfoam yang halus (silky dan shiny).</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
-                  <span>Seni memposisikan cangkir dan menjaga kestabilan aliran susu saat menuang (*pouring physics*).</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
-                  <span>Praktik intensif pembuatan pola dasar Free Pour: <strong>Love, Tulip, Rosetta, dan Swan</strong>.</span>
-                </li>
+          {/* MATERI UTAMA / SILABUS */}
+          <h2 className="text-2xl font-semibold mt-10 mb-6 text-gold">Silabus Kelas Latte Art (Basic to Advanced)</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {/* Sesi 1 */}
+            <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-gold mb-2">Sesi 1: Milk Science & Frothing</h3>
+              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-400">
+                <li>Pemilihan jenis susu komersial terbaik untuk <em>microfoam</em> yang stabil.</li>
+                <li>Teknik *stretching* dan *rolling* susu menggunakan steam wand mesin komersial.</li>
+                <li>Manajemen suhu ideal susu agar rasa manis alami (*lactose*) tetap terjaga.</li>
               </ul>
             </div>
-            
-            {/* --- 3. FOTO KEDUA DI SAMPING MATERI --- */}
-            <div className="relative rounded-lg overflow-hidden shadow-2xl border border-white/5 h-64">
-             <img
-  src="/images/latte-art/kursus-latte-art.jpg"
-  alt="Praktik Milk Steaming Barista Lab Academy"
-  loading="lazy"
-  className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"
-/>
+
+            {/* Sesi 2 */}
+            <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-gold mb-2">Sesi 2: Pouring Foundation</h3>
+              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-400">
+                <li>Teknik memegang *milk jug* dan menjaga stabilitas posisi cangkir.</li>
+                <li>Memahami konsep *canvas creation* (membuat dasar crema espresso yang bersih).</li>
+                <li>Mengatur jarak tuangan (*height control*) dan laju kecepatan aliran susu (*flow rate*).</li>
+              </ul>
+            </div>
+
+            {/* Sesi 3 */}
+            <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-gold mb-2">Sesi 3: Basic Pattern (Free Pour)</h3>
+              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-400">
+                <li>Praktik intensif membuat pola **Heart** (Hati) dengan simetris.</li>
+                <li>Teknik goyangan (*wobbling*) dasar untuk membentuk pola **Tulip**.</li>
+                <li>Teknik memotong pola gambar (*cut-through*) agar hasil akhir terlihat tajam.</li>
+              </ul>
+            </div>
+
+            {/* Sesi 4 */}
+            <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-gold mb-2">Sesi 4: Advanced Pattern & Speed</h3>
+              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-400">
+                <li>Teknik pembuatan pola **Rosetta** dengan daun yang rapi dan rapat.</li>
+                <li>Kombinasi pola (*multi-pattern*) untuk meningkatkan nilai visual kopi di bar.</li>
+                <li>Simulasi kecepatan pembuatan menu latte art komersial sesuai standar pesanan kafe.</li>
+              </ul>
             </div>
           </div>
-{/* ===== TENTANG KELAS LATTE ART ===== */}
-<section className="mt-20">
-  <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6">
-    Mengapa Memilih Kelas Latte Art Barista Lab Academy?
-  </h2>
 
-  <div className="space-y-5 text-gray-300 leading-relaxed">
-    <p>
-      Kelas Latte Art Barista Lab Academy dirancang untuk peserta pemula
-      maupun barista profesional yang ingin meningkatkan kemampuan
-      presentasi minuman berbasis espresso. Program ini berfokus pada
-      penguasaan teknik milk steaming, pembentukan microfoam, serta
-      pengendalian aliran susu saat proses pouring.
-    </p>
+          {/* FASILITAS KELAS */}
+          <h2 className="text-2xl font-semibold mt-10 mb-4">Fasilitas & Benefit Peserta Kelas</h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-8">
+            <li><strong>Susu & Kopi Unlimited:</strong> Anda dibebaskan melakukan praktik tuang tanpa batasan bahan baku selama jam kelas berlangsung.</li>
+            <li><strong>Pendampingan Face-to-Face:</strong> Koreksi langsung dari instruktur berpengalaman untuk memperbaiki sudut tuangan tangan Anda secara presisi.</li>
+            <li>Sertifikat Kelulusan Resmi Kelas Latte Art dari Barista Lab Academy.</li>
+          </ul>
 
-    <p>
-      Peserta akan belajar secara langsung menggunakan mesin espresso
-      profesional dan mendapatkan bimbingan dari instruktur berpengalaman.
-      Metode pembelajaran lebih banyak praktik sehingga peserta dapat
-      memahami teknik latte art secara lebih cepat dan efektif.
-    </p>
-
-    <p>
-      Materi pelatihan mencakup pembuatan pola dasar hingga pola lanjutan
-      seperti Heart, Tulip, Rosetta dan Swan. Setelah mengikuti pelatihan,
-      peserta diharapkan mampu menghasilkan tampilan minuman yang menarik
-      dan memiliki standar penyajian seperti di coffee shop modern.
-    </p>
-
-    <p>
-      Barista Lab Academy menyediakan fasilitas pelatihan lengkap dengan
-      mesin espresso, grinder, pitcher, susu latihan serta perlengkapan
-      praktik lainnya sehingga peserta dapat fokus mengembangkan
-      keterampilan tanpa perlu membawa peralatan sendiri.
-    </p>
-  </div>
-</section>
-
-{/* ===== FAQ ===== */}
-<section className="mt-20">
-  <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8">
-    Pertanyaan Yang Sering Diajukan
-  </h2>
-
-  <div className="space-y-8">
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-2">
-        Apakah kelas latte art cocok untuk pemula?
-      </h3>
-      <p className="text-gray-300">
-        Ya. Program ini dirancang untuk pemula maupun barista yang ingin
-        meningkatkan kemampuan latte art.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-2">
-        Apakah peserta mendapatkan sertifikat?
-      </h3>
-      <p className="text-gray-300">
-        Ya, peserta akan mendapatkan sertifikat pelatihan setelah
-        menyelesaikan program.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-2">
-        Apakah semua alat praktik disediakan?
-      </h3>
-      <p className="text-gray-300">
-        Ya. Mesin espresso, grinder, pitcher, susu latihan dan peralatan
-        lainnya telah disediakan selama pelatihan berlangsung.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-2">
-        Berapa lama durasi pelatihan?
-      </h3>
-      <p className="text-gray-300">
-        Durasi pelatihan menyesuaikan program yang dipilih. Silakan hubungi
-        admin untuk informasi jadwal terbaru.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-2">
-        Apakah bisa mengikuti kelas secara privat?
-      </h3>
-      <p className="text-gray-300">
-        Ya. Tersedia pilihan kelas privat maupun kelas reguler sesuai
-        kebutuhan peserta.
-      </p>
-    </div>
-  </div>
-</section>
-          {/* ===== INTERNAL LINK ===== */}
-<section className="mt-16 border-t border-white/10 pt-10">
-  <h2 className="text-xl font-bold text-gold mb-4">
-    Program Pelatihan Lainnya
-  </h2>
-
-  <div className="flex flex-col gap-3">
-    <Link
-      to="/kursus-barista"
-      className="text-gold hover:text-white transition"
-    >
-      Kursus Barista Profesional
-    </Link>
-
-    <Link
-      to="/kelas-brewing"
-      className="text-gold hover:text-white transition"
-    >
-      Kelas Manual Brewing
-    </Link>
-
-    <Link
-      to="/kelas-basic-barista"
-      className="text-gold hover:text-white transition"
-    >
-      Kelas Basic Barista
-    </Link>
-  </div>
-</section>
-          <div className="mt-12 text-center md:text-left">
-            <a 
-              href="https://wa.me/6285213541993?text=Halo%20saya%20ingin%20daftar%20kelas%20Latte%20Art"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 hover:scale-105 transform transition duration-300 shadow-lg shadow-gold/20"
-            >
-              Booking Jadwal Kelas Latte Art
+          <div className="mt-10 bg-neutral-950 p-6 rounded-xl border border-gray-800 text-center md:text-left">
+            <p className="text-sm text-gray-400 mb-4">
+              *Kelas ini dibuka untuk umum (pemula maupun barista aktif yang ingin memantapkan teknik visual bar mereka).
+            </p>
+            <a href="https://wa.me." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
+              Amankan Slot Kelas Latte Art Sekarang
             </a>
           </div>
+
         </div>
       </main>
+
+      {/* HUB INTERNAL LINKING UTK BOT GOOGLE */}
+      <LocationPage />
+
       <Footer onConsultClick={toggleFab} />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
