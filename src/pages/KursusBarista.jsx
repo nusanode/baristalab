@@ -15,7 +15,7 @@ export default function KursusBarista() {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Kursus Barista Profesional & Sertifikasi | Barista Lab Academy");
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id");
+    if (ogUrl) ogUrl.setAttribute("content", "https://www.baristalab.co.id/kursus-barista");
 
     const scriptId = "schema-course-barista";
     if (!document.getElementById(scriptId)) {
