@@ -72,11 +72,11 @@ export default function KursusBaristaTangerang() {
           </h1>
 
           <p className="mb-4 text-gray-300 leading-relaxed text-lg">
-            Barista Lab Academy hadir menyediakan pusat kursus barista profesional untuk area Tangerang Raya [•]. Metode pengajaran kami menekankan porsi praktik langsung (*hands-on training*) guna mempercepat pembentukan *muscle memory* mekanika barista [•].
+            Barista Lab Academy hadir menyediakan pusat kursus barista profesional untuk area Tangerang Raya . Metode pengajaran kami menekankan porsi praktik langsung (hands-on training) guna mempercepat pembentukan *muscle memory* mekanika barista.
           </p>
 
           <p className="mb-8 text-gray-300 leading-relaxed">
-            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi [•].
+            Setiap kelas dijamin menggunakan pendekatan privat dengan rasio satu slot mesin espresso dan *grinder* komersial eksklusif hanya untuk satu orang peserta sepanjang durasi program pelatihan kopi.
           </p>
 
           {/* TABEL PERBANDINGAN PROGRAM */}
@@ -128,7 +128,7 @@ export default function KursusBaristaTangerang() {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Lokasi Kampus Tangerang</h2>
           <p className="mb-6 text-gray-300 leading-relaxed">
-            Sesi tatap muka dilaksanakan langsung di workshop regional kami: <strong>Jl. Kav. Perkebunan Raya, Cibodas, Tangerang</strong> [•]. Lokasi strategis ini dirancang dekat akses bagi pendaftar dari area <strong>BSD City, Gading Serpong, Karawaci, Alam Sutera, Tangerang Selatan, hingga Cikupa</strong>.
+            Sesi tatap muka dilaksanakan langsung di workshop regional kami: <strong>Jl. Kav. Perkebunan Raya, Cibodas, Tangerang</strong> . Lokasi strategis ini dirancang dekat akses bagi pendaftar dari area <strong>BSD City, Gading Serpong, Karawaci, Alam Sutera, Tangerang Selatan, hingga Cikupa</strong>.
           </p>
 
           <div className="mt-10">
