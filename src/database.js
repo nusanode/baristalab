@@ -57,7 +57,7 @@ export const benefitsData = {
     {
       icon: "fa-handshake",
       title: "Dukungan Karir",
-      desc: "Akses eksklusif ke jaringan alumni dan lowongan kerja dari 50+ mitra kedai kopi kami.",
+      desc: "Akses eksklusif ke jaringan alumni.",
     },
   ],
   en: [
@@ -79,7 +79,7 @@ export const benefitsData = {
     {
       icon: "fa-handshake",
       title: "Career Support",
-      desc: "Exclusive access to alumni networks and job openings from our 50+ coffee shop partners.",
+      desc: "Exclusive access to alumni networks.",
     },
   ],
 };
