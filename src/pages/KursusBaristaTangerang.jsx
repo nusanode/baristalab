@@ -133,7 +133,7 @@ export default function KursusBaristaTangerang() {
 
           <div className="mt-10">
             <a
-              href="https://wa.me"
+              href="https://wa.me/6281356561721"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition"
