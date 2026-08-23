@@ -39,7 +39,7 @@ export default function KursusBaristaTangerang() {
         "@context": "https://schema.org",
         "@type": "Course",
         "name": "Kursus Barista Tangerang Profesional",
-        "description": "Program pelatihan barista bersertifikat untuk area Tangerang, Tangerang Selatan, dan sekitarnya di Barista Lab Academy. Belajar menggunakan mesin espresso komersial.",
+        "description": "Program pelatihan barista bersertifikat untuk area Kota Tangerang, Tangerang Selatan, dan sekitarnya di Barista Lab Academy. Belajar menggunakan mesin espresso komersial.",
         "provider": {
           "@type": "EducationalOrganization",
           "name": "Barista Lab Academy",
