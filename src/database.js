@@ -532,9 +532,9 @@ answer:
 export const contactData = {
   id: {
     whatsapp: {
-      jakarta: "6285213541993",
+      jakarta: "6281356561721",
       tangerang: "6281356561721",
-      general: "6285213541993",
+      general: "6281356561721",
     },
     email: {
       support: "baristalabjakarta@gmail.com",
@@ -566,9 +566,9 @@ export const contactData = {
   },
   en: {
     whatsapp: {
-      jakarta: "6285213541993",
+      jakarta: "6281356561721",
       tangerang: "6281356561721",
-      general: "6285213541993",
+      general: "6281356561721",
     },
     email: {
       support: "baristalabjakarta@gmail.com",
