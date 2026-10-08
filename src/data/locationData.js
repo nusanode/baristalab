@@ -3,7 +3,7 @@ export const locationData = {
     title: "Kursus Barista Jakarta",
     h1: "Kursus Barista Jakarta Profesional",
     location: "Jakarta, Jakarta Timur, Barat, Selatan, Utara, & Pusat",
-    phone: "6285213541993",
+    phone: "6281356561721",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Barista Lab Academy menyediakan kursus barista Jakarta untuk pemula hingga profesional. Belajar espresso, latte art, manual brew dan bisnis coffee shop."
@@ -23,7 +23,7 @@ export const locationData = {
     title: "Kursus Barista Jakarta Timur",
     h1: "Kursus Barista Jakarta Timur Profesional",
     location: "Duren Sawit, Buaran, Klender, Pondok Kopi, & Jatinegara Jakarta Timur",
-    phone: "6285213541993",
+    phone: "6281356561721",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Pelatihan barista Jakarta Timur untuk pemula, profesional dan calon pemilik coffee shop. Laboratorium praktik privat di Duren Sawit."
@@ -33,7 +33,7 @@ export const locationData = {
     title: "Kursus Barista Bekasi",
     h1: "Kursus Barista Bekasi Profesional",
     location: "Bekasi Kota, Kabupaten Bekasi, Cikarang, Tambun, & Babelan",
-    phone: "6285213541993", // diarahkan ke cabang terdekat (Jaktim)
+    phone: "6281356561721", // diarahkan ke cabang terdekat (Jaktim)
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Daftar kursus barista profesional di Bekasi, Cikarang, Tambun, & Babelan. Pelatihan espresso, latte art, dan coffee business. Bersertifikat resmi!"
@@ -43,7 +43,7 @@ export const locationData = {
     title: "Kursus Barista Depok",
     h1: "Kursus Barista Depok Profesional",
     location: "Kota Depok, Margonda, Cinere, Sawangan, & Cimanggis",
-    phone: "6285213541993", // diarahkan ke cabang terdekat (Jaktim)
+    phone: "628135656721", // diarahkan ke cabang terdekat (Jaktim)
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Daftar kursus barista profesional di Depok, Margonda, Cinere, & Sawangan. Pelatihan espresso, latte art, dan coffee business. 1 orang 1 mesin!"
@@ -63,7 +63,7 @@ export const locationData = {
     title: "Pelatihan Barista Jabodetabek",
     h1: "Pelatihan Barista Jabodetabek",
     location: "Jakarta, Bogor, Depok, Tangerang dan Bekasi",
-    phone: "6285213541993",
+    phone: "6281356561721",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Program pelatihan barista Jabodetabek dengan kurikulum industri dan trainer berpengalaman."
