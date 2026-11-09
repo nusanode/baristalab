@@ -532,7 +532,7 @@ answer:
 export const contactData = {
   id: {
     whatsapp: {
-      jakarta: "6281356561721",
+      jakarta: "6285213541993",
       tangerang: "6281356561721",
       general: "6281356561721",
     },
@@ -566,7 +566,7 @@ export const contactData = {
   },
   en: {
     whatsapp: {
-      jakarta: "6281356561721",
+      jakarta: "6285213541993",
       tangerang: "6281356561721",
       general: "6281356561721",
     },
