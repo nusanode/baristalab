@@ -120,8 +120,8 @@ export const coursesData = {
       price: "IDR 4.450.000",
       duration: "4 Hari",
       level: "Advanced",
-      image:
-        "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80",
+     image:
+  "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=480&q=50",
       desc: "Program masterclass untuk calon owner. Fokus pada manajemen operasional kedai kopi, perhitungan profit (HPP), hingga strategi rekrutmen tim.",
       syllabus: [
         "Intro Kopi: Sensory, Cupping, Roasting & Alat",
@@ -139,7 +139,7 @@ export const coursesData = {
       duration: "3 Hari",
       level: "Advanced",
       image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=70",
       desc: "Transisi intensif dari pemula ke pro. Dirancang untuk siap kerja dengan standar kecepatan industri, workflow bar yang efisien, dan hospitality.",
       syllabus: [
         "Intro Kopi: Sensory, Cupping, Roasting & Alat",
@@ -156,7 +156,7 @@ export const coursesData = {
       duration: "2 Hari",
       level: "Intermediate",
       image:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=70",
       desc: "Kombinasi teknik ekstraksi espresso yang presisi dan seni melukis susu (Free Pour). Fokus pada konsistensi rasa dan visual.",
       syllabus: [
         "Ekstraksi Espresso Sempurna",
@@ -172,7 +172,7 @@ export const coursesData = {
       duration: "2 Hari",
       level: "Intermediate",
       image:
-        "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=70",
       desc: "Eksplorasi spektrum rasa kopi (Artisan). Memahami variabel seduh manual seperti suhu, rasio, dan ukuran gilingan.",
       syllabus: [
         "Profiling Biji Single Origin",
@@ -188,7 +188,7 @@ export const coursesData = {
       duration: "1 Hari",
       level: "Beginner",
       image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=70",
       desc: "Langkah pertama masuk ke dunia kopi spesialti. Cocok untuk hobiis atau pemula yang ingin memahami fundamental kopi yang benar.",
       syllabus: [
         "Intro Kopi: Sensory, Cupping, Roasting & Alat",
@@ -202,8 +202,7 @@ export const coursesData = {
       price: "IDR 1.450.000",
       duration: "1 Hari",
       level: "Intermediate",
-      image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+     image: "/images/latte-art/latte-art-focus.webp",
       desc: "Kelas khusus bagi yang sudah bisa membuat espresso dan ingin fokus penuh mempertajam teknik gambar (Artistic Skill).",
       syllabus: [
         "Teknik Frothing Lanjutan",
@@ -221,7 +220,7 @@ export const coursesData = {
       duration: "4 Days",
       level: "Advanced",
       image:
-        "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=480&q=50",
       desc: "Masterclass program for aspiring owners. Focuses on coffee shop operational management, profit calculation (COGS), and team recruitment strategies.",
       syllabus: [
         "Intro to Coffee: Sensory, Cupping, Roasting & Tools",
@@ -239,7 +238,7 @@ export const coursesData = {
       duration: "3 Days",
       level: "Advanced",
       image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=70",
       desc: "Intensive transition from beginner to pro. Designed to be work-ready with industry speed standards, efficient bar workflow, and hospitality.",
       syllabus: [
         "Intro to Coffee: Sensory, Cupping, Roasting & Tools",
@@ -256,7 +255,7 @@ export const coursesData = {
       duration: "2 Days",
       level: "Intermediate",
       image:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=70",
       desc: "Combination of precise espresso extraction techniques and milk painting art (Free Pour). Focuses on taste consistency and visuals.",
       syllabus: [
         "Perfect Espresso Extraction",
@@ -272,7 +271,7 @@ export const coursesData = {
       duration: "2 Days",
       level: "Intermediate",
       image:
-        "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=70",
       desc: "Exploration of the coffee flavor spectrum (Artisan). Understanding manual brewing variables such as temperature, ratio, and grind size.",
       syllabus: [
         "Single Origin Beans Profiling",
@@ -288,7 +287,7 @@ export const coursesData = {
       duration: "1 Day",
       level: "Beginner",
       image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=70",
       desc: "The first step into the world of specialty coffee. Suitable for hobbyists or beginners who want to understand the correct coffee fundamentals.",
       syllabus: [
         "Intro to Coffee: Sensory, Cupping, Roasting & Tools",
@@ -302,8 +301,7 @@ export const coursesData = {
       price: "IDR 1.450.000",
       duration: "1 Day",
       level: "Intermediate",
-      image:
-        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+      image: "/images/latte-art/latte-art-focus.webp",
       desc: "Special class for those who can already make espresso and want to fully focus on sharpening their drawing techniques (Artistic Skill).",
       syllabus: [
         "Advanced Frothing Technique",
@@ -318,22 +316,22 @@ export const coursesData = {
 // --- 6. DATA GALLERY ---
 export const galleryImages = [
   // 1. Latte Art
-  "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=70",
 
   // 2. Barista Pouring
-  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=70",
 
   // 3. Espresso Machine Portafilter
-  "https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=600&q=70",
 
   // 4. Coffee Beans
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=70",
 
   // 5. Manual Brew V60/Pour Over
-  "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=70",
 
   // 6. Coffee Shop Atmosphere
-  "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=70",
 ];
 
 // --- 7. DATA TESTIMONIALS ---
@@ -534,11 +532,11 @@ export const contactData = {
     whatsapp: {
       jakarta: "6285213541993",
       tangerang: "6281356561721",
-      general: "6281356561721",
+      general: "6285213541993",
     },
     email: {
       support: "baristalabjakarta@gmail.com",
-      partnership: " baristalab2025@gmail.com",
+      partnership: "baristalab2025@gmail.com",
     },
     // UBAH STRUKTUR: Sekarang berisi objek { id, link }
     socials: [
@@ -568,11 +566,11 @@ export const contactData = {
     whatsapp: {
       jakarta: "6285213541993",
       tangerang: "6281356561721",
-      general: "6281356561721",
+      general: "6285213541993",
     },
     email: {
       support: "baristalabjakarta@gmail.com",
-      partnership: " baristalab2025@gmail.com",
+      partnership: "baristalab2025@gmail.com",
     },
     // UBAH STRUKTUR: Sekarang berisi objek { id, link }
     socials: [
@@ -601,9 +599,8 @@ export const contactData = {
 // --- 11. DATA HERO ---
 export const heroData = {
   id: {
-    videoId: "aTC_RNYtEb0",
     fallbackImage:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=50",
     tagline: "Kursus Barista Jabodetabek Profesional Jakarta, Tangerang, Bekasi, Depok & Bogor",
     headline: {
       main: "Kuasai",
@@ -617,9 +614,8 @@ export const heroData = {
     },
   },
   en: {
-    videoId: "aTC_RNYtEb0",
     fallbackImage:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=80",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=50",
     tagline: "The Art of Brewing",
     headline: {
       main: "Master The",

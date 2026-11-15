@@ -63,7 +63,7 @@ export default function KursusBaristaBekasi() {
           
           {/* AKSES TRANSPORTASI POINT (Nilai Tambah Pengguna & Google Bot) */}
           <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl my-8">
-            <h3 className="text-xl font-semibold text-gold mb-3">Keunggulan Akses dari Bekasi:</h3>
+            <h2 className="text-xl font-semibold text-gold mb-3">Keunggulan Akses dari Bekasi:</h2>
             <ul className="list-disc pl-6 space-y-2 text-sm text-gray-400">
               <li><strong>Akses Tol Langsung:</strong> Hanya 15-20 menit berkendara dari Kalimalang atau Bekasi Barat menuju studio Jakarta Timur via Tol Becakayu.</li>
               <li><strong>Pilihan Jadwal Fleksibel:</strong> Tersedia kelas intensif reguler maupun kelas <em>weekend</em> (Sabtu-Minggu) sehingga Anda tidak perlu bolak-balik setiap hari.</li>
@@ -107,13 +107,13 @@ export default function KursusBaristaBekasi() {
               *Catatan: Seluruh keperluan bahan baku praktek (kopi & susu) sudah disediakan lengkap oleh pihak akademi selama kelas berlangsung tanpa biaya tambahan.
             </p>
             {/* LINK WHATSAPP DIKASIH TEXT TEMPLATE KHUSUS BEKASI AGAR LIKELY CLOSING LEBIH TINGGI */}
-            <a href="https://wa.me." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
+            <a href="https://wa.me/6285213541993?text=Halo%2C%20saya%20dari%20Bekasi%20dan%20ingin%20bertanya%20tentang%20kursus%20barista." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
               Konsultasi Kelas untuk Area Bekasi Sekarang
             </a>
           </div>
         </div>
       </main>
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

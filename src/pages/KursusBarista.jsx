@@ -79,13 +79,13 @@ export default function KursusBarista() {
           </ul>
 
           <div className="mt-10">
-            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
+            <a href="https://wa.me/6285213541993" target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
               Daftar Kursus Barista Sekarang
             </a>
           </div>
         </div>
       </main>
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

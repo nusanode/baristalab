@@ -1,3 +1,4 @@
+import Icon from "../components/Icon";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,136 +9,7 @@ export default function KelasLatteArt() {
   const toggleFab = () => setIsFabOpen(!isFabOpen);
 
   useEffect(() => {
-    document.title = "Kelas Latte Art Jakarta & Tangerang | Belajar Free Pour Kopi";
-    let metaDesc = document.querySelector('meta[name="description"]');
-
-if (!metaDesc) {
-  metaDesc = document.createElement("meta");
-  metaDesc.setAttribute("name", "description");
-  document.head.appendChild(metaDesc);
-}
-
-metaDesc.setAttribute(
-  "content",
-  "Kursus Latte Art Jakarta dan Tangerang. Pelajari milk steaming, microfoam, tulip, rosetta, dan swan bersama instruktur profesional."
-);
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-
-if (!ogTitle) {
-  ogTitle = document.createElement("meta");
-  ogTitle.setAttribute("property", "og:title");
-  document.head.appendChild(ogTitle);
-}
-
-ogTitle.setAttribute(
-  "content",
-  "Kelas Latte Art Jakarta & Tangerang | Kursus Latte Art Profesional"
-);
-    let ogDesc = document.querySelector('meta[property="og:description"]');
-if (!ogDesc) {
-  ogDesc = document.createElement("meta");
-  ogDesc.setAttribute("property", "og:description");
-  document.head.appendChild(ogDesc);
-}
-
-ogDesc.setAttribute(
-  "content",
-  "Belajar Latte Art profesional di Jakarta dan Tangerang. Kuasai milk steaming, tulip, rosetta hingga swan."
-);
-   
-
-  let ogUrl = document.querySelector('meta[property="og:url"]');
-
-if (!ogUrl) {
-  ogUrl = document.createElement("meta");
-  ogUrl.setAttribute("property", "og:url");
-  document.head.appendChild(ogUrl);
-}
-
-ogUrl.setAttribute(
-  "content",
-  "https://www.baristalab.co.id/kelas-latte-art"
-);
-    let canonical = document.querySelector("link[rel='canonical']");
-    if (!canonical) {
-  canonical = document.createElement("link");
-  canonical.rel = "canonical";
-  document.head.appendChild(canonical);
-}
-
-canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
-
-    const scriptId = "schema-course-latteart";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.type = "application/ld+json";
-      script.innerHTML = JSON.stringify([
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Kelas Latte Art Profesional",
-    "description": "Pelatihan Latte Art untuk pemula dan profesional.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Barista Lab Academy",
-      "url": "https://www.baristalab.co.id"
-    },
-    "courseMode": "onsite",
-    "inLanguage": "id-ID",
-    "educationalLevel": "Beginner"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Apakah kelas latte art cocok untuk pemula?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Program ini dirancang untuk pemula maupun barista yang ingin meningkatkan kemampuan latte art."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah peserta mendapatkan sertifikat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya, peserta akan mendapatkan sertifikat pelatihan setelah menyelesaikan program."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah semua alat praktik disediakan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Mesin espresso, grinder, pitcher dan perlengkapan praktik disediakan selama pelatihan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Berapa lama durasi pelatihan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Durasi pelatihan menyesuaikan program yang dipilih. Silakan hubungi admin untuk jadwal terbaru."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Apakah tersedia kelas privat?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ya. Tersedia pilihan kelas privat maupun kelas reguler sesuai kebutuhan peserta."
-        }
-      }
-    ]
-  }
-]);
-      document.head.appendChild(script);
-    }
     window.scrollTo(0, 0);
-    return () => { const s = document.getElementById(scriptId); if (s) s.remove(); };
   }, []);
 
   return (
@@ -176,15 +48,15 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
               <h2 className="text-2xl font-semibold mb-4 text-gold tracking-wide uppercase text-sm">Materi Pelatihan Kelas Latte Art</h2>
               <ul className="list-none space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
+                  <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-gold" />
                   <span>Teknik <strong>milk steaming</strong> untuk menghasilkan tekstur microfoam yang halus (silky dan shiny).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
+                  <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-gold" />
                   <span>Seni memposisikan cangkir dan menjaga kestabilan aliran susu saat menuang (*pouring physics*).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <i className="fas fa-check text-gold mt-1 text-sm"></i>
+                  <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-gold" />
                   <span>Praktik intensif pembuatan pola dasar Free Pour: <strong>Love, Tulip, Rosetta, dan Swan</strong>.</span>
                 </li>
               </ul>
@@ -339,7 +211,7 @@ canonical.href = "https://www.baristalab.co.id/kelas-latte-art";
           </div>
         </div>
       </main>
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

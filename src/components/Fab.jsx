@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import Icon from "./Icon";
 // 1. IMPORT DATA DATABASE
 import { contactData } from '../database';
 // 2. IMPORT HOOK BAHASA
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/useLanguage.js";
 
 export default function Fab({ isOpen, toggleOpen }) {
   // 3. AMBIL STATE BAHASA & DATA KONTAK
@@ -18,6 +18,9 @@ export default function Fab({ isOpen, toggleOpen }) {
     <div className="fixed bottom-8 right-8 md:bottom-8 md:right-8 z-[90] flex flex-col items-end gap-4">
       {/* Menu Options */}
       <div
+        id="whatsapp-quick-links"
+        aria-hidden={!isOpen}
+        inert={!isOpen}
         className={`flex flex-col gap-3 transition-all duration-300 ${
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -42,7 +45,7 @@ export default function Fab({ isOpen, toggleOpen }) {
             </span>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-            <i className="fas fa-map-marker-alt text-white text-sm"></i>
+            <Icon name="map-marker-alt" className="h-4 w-4 text-white" />
           </div>
         </a>
 
@@ -64,25 +67,25 @@ export default function Fab({ isOpen, toggleOpen }) {
             </span>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-            <i className="fas fa-map-marker-alt text-white text-sm"></i>
+            <Icon name="map-marker-alt" className="h-4 w-4 text-white" />
           </div>
         </a>
       </div>
 
       {/* Main Trigger Button */}
       <button
+        type="button"
         onClick={toggleOpen}
+        aria-label={isOpen ? (language === "id" ? "Tutup pilihan kontak WhatsApp" : "Close WhatsApp contact options") : (language === "id" ? "Buka pilihan kontak WhatsApp" : "Open WhatsApp contact options")}
+        aria-expanded={isOpen}
+        aria-controls="whatsapp-quick-links"
         className={`relative w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-all duration-500 border border-white/10 outline-none focus:outline-none ${
           isOpen
             ? "bg-dark-charcoal rotate-90 ring-2 ring-gold/50"
             : "bg-gradient-to-br from-[#25D366] to-[#128C7E] wa-pulse hover:scale-110"
         }`}
       >
-        <i
-          className={`fab ${
-            isOpen ? "fa-times text-gold" : "fa-whatsapp text-white"
-          } transition-all duration-300`}
-        ></i>
+        <Icon name={isOpen ? "times" : "whatsapp"} className={`h-6 w-6 transition-all duration-300 ${isOpen ? "text-gold" : "text-white"}`} />
       </button>
     </div>
   );

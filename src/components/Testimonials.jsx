@@ -1,8 +1,9 @@
+import Icon from "./Icon";
 import { useState, useEffect } from 'react';
 // PERUBAHAN: Import data dari file database pusat, bukan dari folder data/
 import { testimonialsData, partnersData } from '../database';
 // 1. IMPORT HOOK BAHASA
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/useLanguage.js';
 
 export default function Testimonials() {
   // Menggunakan data import untuk Marquee loop
@@ -63,20 +64,18 @@ export default function Testimonials() {
 
   // Auto Play
   useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [currentIndex, itemsPerView]);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const timer = window.setInterval(() => {
+      setCurrentIndex((previous) => (previous >= maxIndex ? 0 : previous + 1));
+    }, 6000);
+    return () => window.clearInterval(timer);
+  }, [maxIndex]);
 
   // Star Render Helper
   const renderStars = (rating) => (
-    <div className="flex gap-1 mb-4">
+    <div className="flex gap-1 mb-4" role="img" aria-label={language === "id" ? `Rating ${rating} dari 5 bintang` : `Rating ${rating} out of 5 stars`}>
       {[...Array(5)].map((_, i) => (
-        <i
-          key={i}
-          className={`fas fa-star text-xs ${i < rating ? "text-gold shadow-glow" : "text-gray-600"}`}
-        ></i>
+        <Icon key={i} name="star" className={`h-3 w-3 ${i < rating ? "text-gold shadow-glow" : "text-gray-600"}`} />
       ))}
     </div>
   );
@@ -113,21 +112,25 @@ export default function Testimonials() {
 
         {/* --- CAROUSEL AREA --- */}
         <div className="relative max-w-7xl mx-auto mb-20 group/carousel">
-          {/* Prev Button */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold hover:text-black text-gold flex items-center justify-center transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0"
-          >
-            <i className="fas fa-chevron-left"></i>
-          </button>
+     {/* Tombol navigasi sebelumnya */}
+<button
+  type="button"
+  onClick={prevSlide}
+  aria-label="Gambar galeri sebelumnya"
+  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-16 bg-black/60 text-gold flex items-center justify-center -translate-x-full group-hover/gallery:translate-x-0 transition-all duration-300 hover:bg-gold hover:text-black rounded-r-md backdrop-blur-sm"
+>
+  <Icon name="chevron-left" className="h-5 w-5" />
+</button>
 
-          {/* Next Button */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold hover:text-black text-gold flex items-center justify-center transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0"
-          >
-            <i className="fas fa-chevron-right"></i>
-          </button>
+         {/* Next Button */}
+<button
+  type="button"
+  onClick={nextSlide}
+  aria-label="Slide berikutnya"
+  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold hover:text-black text-gold flex items-center justify-center transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0"
+>
+  <Icon name="chevron-right" className="h-5 w-5" />
+</button>
 
           {/* Wrapper Overflow Hidden */}
           <div className="overflow-hidden px-2 py-4">
@@ -151,15 +154,21 @@ export default function Testimonials() {
 
                     {/* Profile */}
                     <div className="flex items-center gap-4 mb-6">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-gold/20"
-                      />
+                     
+<img
+  loading="lazy"
+  decoding="async"
+  width="56"
+  height="56"
+  src={item.image}
+  alt={item.name}
+  className="w-14 h-14 rounded-full object-cover border-2 border-gold/20"
+/>
+
                       <div>
-                        <h4 className="text-white font-display text-lg tracking-wide">
+                        <h3 className="text-white font-display text-lg tracking-wide">
                           {item.name}
-                        </h4>
+                        </h3>
                         <p className="text-gold text-xs uppercase tracking-wider">
                           {item.role}
                         </p>
@@ -173,8 +182,8 @@ export default function Testimonials() {
                     </p>
 
                     <div className="mt-6 pt-6 border-t border-white/5 flex items-center gap-2">
-                      <i className="fas fa-briefcase text-white/20 text-xs"></i>
-                      <span className="text-white/40 text-xs uppercase tracking-widest">
+                      <Icon name="briefcase" className="h-3 w-3 text-white/20" />
+                      <span className="text-gray-400 text-xs uppercase tracking-widest">
                         {item.workplace}
                       </span>
                     </div>
@@ -185,19 +194,24 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  currentIndex === idx
-                    ? "w-8 bg-gold"
-                    : "w-2 bg-white/20 hover:bg-white/40"
-                }`}
-              />
-            ))}
-          </div>
+<div className="flex justify-center gap-2 mt-8">
+  {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+    <button
+      key={idx}
+      type="button"
+      aria-label={`Lihat slide ${idx + 1}`}
+      aria-current={currentIndex === idx ? "true" : undefined}
+      onClick={() => setCurrentIndex(idx)}
+      className="flex min-h-11 min-w-11 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+    >
+      <span className={`h-1 rounded-full transition-all duration-300 ${
+        currentIndex === idx
+          ? "w-8 bg-gold"
+          : "w-2 bg-white/40 hover:bg-white/70"
+      }`} />
+    </button>
+  ))}
+</div>
         </div>
       </div>{" "}
       {/* <--- PERBAIKAN: CONTAINER DITUTUP DI SINI */}
@@ -205,7 +219,7 @@ export default function Testimonials() {
       {/* --- Partner Logos (DILUAR CONTAINER AGAR FULL WIDTH) --- */}
       {/* UBAH: Menambahkan pb-16 agar ada jarak di bawah huruf */}
       <div className="border-t bg-dark-charcoal border-white/5 pt-16 pb-16 overflow-hidden relative z-10">
-        <p className="text-center text-white/30 text-xs uppercase tracking-[0.2em] mb-12">
+        <p className="text-center text-white/70 text-xs uppercase tracking-[0.2em] mb-12">
           {text.partners}
         </p>
 
@@ -219,7 +233,7 @@ export default function Testimonials() {
               key={idx}
               className="mx-8 md:mx-16 flex items-center justify-center"
             >
-              <h3 className="text-xl md:text-3xl font-display font-bold text-white/40 hover:text-gold transition-colors duration-300 cursor-default whitespace-nowrap">
+              <h3 className="text-xl md:text-3xl font-display font-bold text-white/70 hover:text-gold transition-colors duration-300 cursor-default whitespace-nowrap">
                 {partner}
               </h3>
             </div>

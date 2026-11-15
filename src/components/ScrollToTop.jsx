@@ -1,6 +1,7 @@
+import Icon from "./Icon";
 import { useState, useEffect } from 'react';
 // 1. IMPORT HOOK BAHASA
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/useLanguage.js';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,6 +65,7 @@ export default function ScrollToTop() {
       >
         {/* --- SVG PROGRESS RING --- */}
         <svg
+          aria-hidden="true"
           className="absolute inset-0 w-full h-full -rotate-90 transform p-1" // p-1 memberi sedikit jarak dari tepi
           viewBox={`0 0 ${size} ${size}`}
         >
@@ -93,7 +95,7 @@ export default function ScrollToTop() {
 
         {/* --- ICON ARROW --- */}
         {/* UBAH: Text size diperbesar sedikit (text-xl) agar seimbang dengan tombol yang lebih besar */}
-        <i className="fas fa-arrow-up text-gold text-xl group-hover:-translate-y-1 transition-transform duration-300 relative z-10 group-hover:text-white"></i>
+        <Icon name="arrow-up" className="relative z-10 h-5 w-5 text-gold transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-white" />
       </button>
     </div>
   );

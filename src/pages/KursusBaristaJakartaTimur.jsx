@@ -72,11 +72,11 @@ export default function KursusBaristaJakartaTimur() {
           </h1>
 
           <p className="mb-4 text-gray-300 leading-relaxed text-lg">
-            Barista Lab Academy menyelenggarakan program pelatihan barista intensif di wilayah Jakarta Timur. Dirancang khusus untuk mengakomodasi kebutuhan pemula, calon profesional di industri F&B, hingga pemilik kedai kopi modern [•].
+            Barista Lab Academy menyelenggarakan program pelatihan barista intensif di wilayah Jakarta Timur. Dirancang khusus untuk mengakomodasi kebutuhan pemula, calon profesional di industri F&B, hingga pemilik kedai kopi modern.
           </p>
 
           <p className="mb-8 text-gray-300 leading-relaxed">
-            Laboratorium praktik kami dilengkapi dengan deretan mesin espresso komersial standar kafe populer serta mesin *grinder* presisi tinggi, memastikan setiap peserta dapat berlatih secara privat (1 orang 1 mesin) [•].
+            Laboratorium praktik kami dilengkapi dengan deretan mesin espresso komersial standar kafe populer serta mesin *grinder* presisi tinggi, memastikan setiap peserta dapat berlatih secara privat (1 orang 1 mesin) .
           </p>
 
           {/* TABEL PERBANDINGAN PROGRAM */}
@@ -133,7 +133,7 @@ export default function KursusBaristaJakartaTimur() {
 
           <div className="mt-10">
             <a
-              href="https://wa.me"
+              href="https://wa.me/6285213541993"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition"
@@ -145,7 +145,7 @@ export default function KursusBaristaJakartaTimur() {
         </div>
       </main>
 
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

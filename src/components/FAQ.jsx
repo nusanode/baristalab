@@ -1,8 +1,9 @@
+import Icon from "./Icon";
 import { useState } from 'react';
 // 1. IMPORT DATA DARI DATABASE
 import { faqData, contactData } from '../database';
 // 2. IMPORT HOOK BAHASA
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/useLanguage.js';
 
 export default function FAQ() {
   // State to track which accordion is open (null = all closed)
@@ -46,7 +47,7 @@ export default function FAQ() {
       <div className="container mx-auto px-6 relative z-10 max-w-4xl">
         {/* Header Section */}
         <div className="text-center mb-16 animate-fade-up">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] mb-3 font-medium">
+          <p className="text-[#e8c85b] text-xs uppercase tracking-[0.3em] mb-3 font-medium">
             {text.subtitle}
           </p>
           <h2 className="text-3xl md:text-5xl font-display text-white">
@@ -70,10 +71,16 @@ export default function FAQ() {
             >
               {/* Accordion Header (Button) */}
               <button
+                type="button"
+                id={`faq-trigger-${index}`}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center p-6 text-left focus:outline-none group"
+                className="w-full min-h-14 flex justify-between items-center p-6 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold group"
               >
                 <span
+                  role="heading"
+                  aria-level="3"
                   className={`text-lg font-display tracking-wide transition-colors duration-300 pr-8 ${
                     activeIndex === index
                       ? "text-gold"
@@ -91,12 +98,15 @@ export default function FAQ() {
                       : "border-white/20 text-gold group-hover:border-gold"
                   }`}
                 >
-                  <i className="fas fa-chevron-down text-xs"></i>
+                  <Icon name="chevron-down" className="h-3 w-3" />
                 </span>
               </button>
 
               {/* Accordion Content (Answer) */}
               <div
+                id={`faq-answer-${index}`}
+                aria-labelledby={`faq-trigger-${index}`}
+                aria-hidden={activeIndex !== index}
                 className={`transition-all duration-500 ease-in-out ${
                   activeIndex === index
                     ? "max-h-48 opacity-100"
@@ -117,7 +127,7 @@ export default function FAQ() {
 
         {/* Additional Call to Action */}
         <div className="mt-12 text-center animate-fade-up delay-200">
-          <p className="text-gray-500 text-sm mb-4">
+          <p className="text-gray-400 text-sm mb-4">
             {text.cta}
           </p>
           <a
@@ -127,7 +137,7 @@ export default function FAQ() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-gold border-b border-gold pb-1 hover:text-white hover:border-white transition-all uppercase text-xs tracking-widest font-bold"
           >
-            <i className="fab fa-whatsapp"></i> {text.button}
+            <Icon name="whatsapp" className="mr-1 inline-block h-4 w-4" /> {text.button}
           </a>
         </div>
       </div>

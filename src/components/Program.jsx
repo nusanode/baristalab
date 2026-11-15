@@ -1,8 +1,10 @@
+import Icon from "./Icon";
 import { useState, useEffect } from 'react';
+import { getUnsplashSrcSet } from "../utils/responsiveImage";
 // 1. UPDATE IMPORT: Ambil coursesData dari database.js
 import { coursesData } from '../database';
 // 2. IMPORT HOOK BAHASA
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/useLanguage.js';
 
 export default function Program({ onOpenModal }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -57,11 +59,6 @@ export default function Program({ onOpenModal }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // Reset "Show More" button if user changes filter/search for consistency
-  useEffect(() => {
-    setIsExpanded(false);
-  }, [filterLevel, searchTerm]);
 
 
   // 2. Helper to determine Level based on course keys
@@ -133,7 +130,7 @@ export default function Program({ onOpenModal }) {
           {/* Title Area */}
           <div className="animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-display text-white mb-2">{text.header}</h2>
-            <p className="text-gold uppercase tracking-[0.2em] text-xs font-medium">{text.subheader}</p>
+            <p className="text-[#e8c85b] uppercase tracking-[0.2em] text-xs font-medium">{text.subheader}</p>
           </div>
 
           {/* --- CONTROLS BAR (Filter & Search Aligned) --- */}
@@ -144,8 +141,9 @@ export default function Program({ onOpenModal }) {
               {levels.map((level) => (
                 <button
                   key={level}
-                  onClick={() => setFilterLevel(level)}
-                  className={`px-5 py-2 text-xs uppercase tracking-widest rounded-md transition-all duration-300 ease-out ${
+                  type="button"
+                  onClick={() => { setFilterLevel(level); setIsExpanded(false); }}
+                  className={`min-h-11 px-5 py-2 text-xs uppercase tracking-widest rounded-md transition-all duration-300 ease-out ${
                     filterLevel === level 
                       ? 'bg-gold text-black font-bold shadow-lg shadow-gold/20 scale-105' 
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -158,23 +156,28 @@ export default function Program({ onOpenModal }) {
 
             {/* Search Bar (Right) */}
             <div className="relative group w-full md:w-auto">
-              <div className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors duration-300 ${searchTerm ? 'text-gold' : 'text-gray-500 group-focus-within:text-gold'}`}>
-                <i className="fas fa-search text-xs"></i>
+              <div className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors duration-300 ${searchTerm ? 'text-gold' : 'text-gray-400 group-focus-within:text-gold'}`}>
+                <Icon name="search" className="h-3 w-3" />
               </div>
-              <input 
-                type="text" 
-                placeholder={text.searchPlaceholder} 
+              <label htmlFor="course-search" className="sr-only">{text.searchPlaceholder}</label>
+              <input
+                id="course-search"
+              name="course-search"
+              type="text"
+              placeholder={text.searchPlaceholder}
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-dark-charcoal border border-white/10 text-white pl-10 pr-10 py-3 w-full md:w-72 focus:w-full md:focus:w-80 focus:outline-none focus:border-gold/50 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-500 rounded-lg text-sm placeholder-gray-600"
+                onChange={(e) => { setSearchTerm(e.target.value); setIsExpanded(false); }}
+                className="bg-dark-charcoal border border-white/10 text-white pl-10 pr-10 py-3 w-full md:w-72 focus:w-full md:focus:w-80 focus:outline-none focus:border-gold/50 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all duration-500 rounded-lg text-sm placeholder-gray-400"
               />
               {/* Clear Button (Shows if text exists) */}
               {searchTerm && (
-                <button 
-                  onClick={() => setSearchTerm('')}
-                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-white transition-colors"
+                <button
+                  type="button"
+                  aria-label={language === "id" ? "Hapus pencarian" : "Clear search"}
+                  onClick={() => { setSearchTerm(''); setIsExpanded(false); }}
+                  className="absolute inset-y-0 right-0 min-h-11 min-w-11 pr-4 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <i className="fas fa-times text-xs"></i>
+                  <Icon name="times" className="h-3 w-3" />
                 </button>
               )}
             </div>
@@ -187,16 +190,38 @@ export default function Program({ onOpenModal }) {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {displayedCourses.map((course, idx) => (
-                <div 
-                  key={course.id} 
-                  onClick={() => onOpenModal(course)} 
-                  className="group relative bg-dark-charcoal border border-white/5 hover:border-gold/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col h-full rounded-xl hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-2"
-                  style={{ animationDelay: `${idx * 100}ms` }} // Staggered animation
+                <div
+                  key={course.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  aria-label={`${language === "id" ? "Lihat detail program" : "View program details"}: ${course.title}`}
+                  onClick={() => onOpenModal(course)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      onOpenModal(course);
+                    }
+                  }}
+                  className="group relative w-full text-left bg-dark-charcoal border border-white/5 hover:border-gold/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold transition-all duration-500 overflow-hidden cursor-pointer flex flex-col h-full rounded-xl hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-2"
+                  style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   {/* Image Area */}
                   <div className="h-72 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-transparent to-transparent opacity-80 z-10"></div>
-                    <img src={course.image} alt={course.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0" />
+                    
+<img
+  loading="lazy"
+  decoding="async"
+  width="800"
+  height="600"
+  src={course.image}
+  srcSet={getUnsplashSrcSet(course.image, [320, 480], 45)}
+  sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1023px) calc(50vw - 3rem), 33vw"
+  alt={course.title}
+  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
+/>
+
                     
                     {/* Level Badge */}
                     <div className={`absolute top-4 left-4 z-20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded border backdrop-blur-md ${getBadgeStyle(course.level)}`}>
@@ -224,7 +249,7 @@ export default function Program({ onOpenModal }) {
                       </div>
                       
                       <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-gold group-hover:border-gold group-hover:text-black transition-all duration-300">
-                        <i className="fas fa-arrow-right transform -rotate-45 group-hover:rotate-0 transition-transform duration-500"></i>
+                        <Icon name="arrow-right" className="h-4 w-4 -rotate-45 transition-transform duration-500 group-hover:rotate-0" />
                       </div>
                     </div>
                   </div>
@@ -236,27 +261,29 @@ export default function Program({ onOpenModal }) {
             {/* Only visible if filtered course count is greater than the initial limit (1 or 3) */}
             {filteredCourses.length > initialLimit && (
               <div className="mt-16 text-center animate-fade-up">
-                <button 
+                <button
+                  type="button"
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="group relative inline-flex items-center gap-3 px-8 py-3 bg-transparent border border-gold text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition-all duration-300"
+                  className="group relative inline-flex min-h-11 items-center gap-3 px-8 py-3 bg-transparent border border-gold text-[#e8c85b] text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition-all duration-300"
                 >
                   <span>{isExpanded ? text.showLess : text.showMore}</span>
-                  <i className={`fas fa-chevron-down transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}></i>
+                  <Icon name="chevron-down" className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
                 </button>
               </div>
             )}
           </>
         ) : (
           /* Empty State */
-          <div className="text-center py-20 opacity-50 animate-fade-up">
+          <div className="text-center py-20 animate-fade-up">
             <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-filter text-3xl text-gray-500"></i>
+                <Icon name="filter" className="h-8 w-8 text-gray-500" />
             </div>
             <h3 className="text-white font-display text-xl mb-2">{text.emptyTitle}</h3>
             <p className="text-gray-400 tracking-widest uppercase text-xs">{text.emptyDesc}</p>
-            <button 
-              onClick={() => { setSearchTerm(''); setFilterLevel('All'); }}
-              className="mt-6 text-gold border-b border-gold pb-1 text-xs uppercase tracking-widest hover:text-white hover:border-white transition-colors"
+            <button
+              type="button"
+              onClick={() => { setSearchTerm(''); setFilterLevel('All'); setIsExpanded(false); }}
+              className="mt-6 inline-flex min-h-11 items-center px-4 text-gold border-b border-gold pb-1 text-xs uppercase tracking-widest hover:text-white hover:border-white transition-colors"
             >
               {text.clearFilter}
             </button>

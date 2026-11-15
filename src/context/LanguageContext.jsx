@@ -1,13 +1,10 @@
-import { createContext, useState, useContext } from 'react';
+import { useState } from "react";
+import { LanguageContext } from "./languageContextCore.js";
 
-const LanguageContext = createContext();
-
-export const LanguageProvider = ({ children }) => {
-  // Mengubah default bahasa menjadi 'id' (Indonesia)
+export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("id");
-
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "id" ? "en" : "id"));
+    setLanguage((previous) => (previous === "id" ? "en" : "id"));
   };
 
   return (
@@ -15,6 +12,4 @@ export const LanguageProvider = ({ children }) => {
       {children}
     </LanguageContext.Provider>
   );
-};;
-
-export const useLanguage = () => useContext(LanguageContext);
+}

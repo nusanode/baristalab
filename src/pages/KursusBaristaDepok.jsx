@@ -53,7 +53,7 @@ export default function KursusBaristaDepok() {
           </p>
           
           <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl my-8">
-            <h3 className="text-xl font-semibold text-gold mb-3">Kemudahan Akses Khusus dari Depok:</h3>
+            <h2 className="text-xl font-semibold text-gold mb-3">Kemudahan Akses Khusus dari Depok:</h2>
             <ul className="list-disc pl-6 space-y-2 text-sm text-gray-400">
               <li><strong>Rute Kereta (KRL) Langsung:</strong> Akses Commuter Line langsung tanpa transit dari Stasiun Depok Baru / Pondok Cina menuju area terdekat studio.</li>
               <li><strong>Sistem Kelas Semi-Private:</strong> Pembatasan kuota murid agar setiap orang memegang 1 mesin espresso mandiri tanpa mengantre bergantian.</li>
@@ -77,13 +77,13 @@ export default function KursusBaristaDepok() {
             <p className="text-sm text-gray-400 mb-4">
               *Catatan: Seluruh konsumsi biji kopi dan susu selama masa pelatihan telah ditanggung penuh oleh akademi.
             </p>
-            <a href="https://wa.me." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
+            <a href="https://wa.me/6285213541993?text=Halo%2C%20saya%20dari%20Depok%20dan%20ingin%20bertanya%20tentang%20kursus%20barista." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
               Hubungi Admin untuk Info Kelas Depok
             </a>
           </div>
         </div>
       </main>
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

@@ -7,7 +7,7 @@ import { locationData } from "../data/locationData";
 
 export default function LocationPage() {
   const location = useLocation();
-  const slug = location.pathname.replace("/", "");
+  const slug = location.pathname.replace(/^\/|\/$/g, "");
   const data = locationData[slug];
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function LocationPage() {
       // 3. Otomatis mengubah Open Graph URL (Sudah Diperbaiki)
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) {
-        ogUrl.setAttribute("content", `https://baristalab.co.id{slug}`);
+        ogUrl.setAttribute("content", `https://www.baristalab.co.id/${slug}`);
       }
 
       // 4. SUNTIKKAN SKEMA COURSE OTOMATIS BERDASARKAN WILAYAH
@@ -35,13 +35,14 @@ export default function LocationPage() {
         script.type = "application/ld+json";
         script.innerHTML = JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Course",
+          "@type": slug === "lokasi" ? "EducationalOrganization" : "Course",
           "name": data.h1,
           "description": data.description,
+          "url": `https://www.baristalab.co.id/${slug}`,
           "provider": {
             "@type": "EducationalOrganization",
             "name": "Barista Lab Academy",
-            "url": "https://baristalab.co.id"
+            "url": "https://www.baristalab.co.id/"
           }
         });
         document.head.appendChild(script);
@@ -151,7 +152,7 @@ export default function LocationPage() {
           {/* Tombol WhatsApp Sudah Dinamis Sesuai Wilayah */}
           <div className="mt-10">
             <a
-              href={`https://wa.me{data.phone}`}
+              href={`https://wa.me/${data.phone}?text=${encodeURIComponent(`Halo, saya ingin bertanya tentang ${data.title}.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-black px-6 py-3 rounded-xl font-semibold inline-block hover:bg-opacity-90 transition"

@@ -1,8 +1,10 @@
+import Icon from "./Icon";
 import { useEffect } from "react";
 // 1. IMPORT DATA DARI DATABASE
 import { contactData } from "../database";
 // 2. IMPORT HOOK BAHASA
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../context/useLanguage.js";
+import { getUnsplashSrcSet } from "../utils/responsiveImage";
 
 export default function Modal({ isOpen, course, onClose }) {
   // 3. AMBIL STATE BAHASA
@@ -75,6 +77,7 @@ export default function Modal({ isOpen, course, onClose }) {
   return (
     // 3. CONTAINER TRANSITION
     <div
+      aria-hidden={!isOpen}
       className={`fixed inset-0 z-[100] flex justify-center p-0 md:p-4 transition-all duration-300
         ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}
         ${/* UX Fix: Mobile = items-end (bottom sheet), Desktop = items-center */ ""}
@@ -107,11 +110,12 @@ export default function Modal({ isOpen, course, onClose }) {
       >
         {/* Close Button (Top Right - Icon only) */}
         <button
+          type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 z-50 text-white/70 hover:text-gold text-2xl transition-colors p-2"
-          aria-label="Close modal"
+          className="absolute top-4 right-4 z-50 flex min-h-11 min-w-11 items-center justify-center text-white/70 hover:text-gold text-2xl transition-colors p-2"
+          aria-label={language === "id" ? "Tutup detail program" : "Close program details"}
         >
-          <i className="fas fa-times"></i>
+          <Icon name="times" className="h-5 w-5" />
         </button>
 
         {/* Scrollable Content Wrapper */}
@@ -120,9 +124,14 @@ export default function Modal({ isOpen, course, onClose }) {
           <div className="md:w-5/12 relative h-48 md:h-auto flex-shrink-0">
             <img
               src={course.image}
+              srcSet={getUnsplashSrcSet(course.image, [480, 768, 960], 70)}
+              sizes="(max-width: 767px) 100vw, 40vw"
+              width="960"
+              height="720"
               alt={`Ilustrasi untuk kelas ${course.title}`}
               className="absolute inset-0 w-full h-full object-cover filter grayscale"
               loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gold/10 mix-blend-multiply"></div>
           </div>
@@ -166,7 +175,7 @@ export default function Modal({ isOpen, course, onClose }) {
                 {course.syllabus &&
                   course.syllabus.map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <i className="fas fa-check text-gold mr-3 mt-1 text-[10px]"></i>
+                      <Icon name="check" className="mr-3 mt-1 h-3 w-3 shrink-0 text-gold" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -182,12 +191,13 @@ export default function Modal({ isOpen, course, onClose }) {
                 rel="noopener noreferrer"
                 className="w-full bg-gold text-black py-4 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 flex items-center justify-center gap-2 group rounded-sm"
               >
-                <i className="fab fa-whatsapp text-lg group-hover:text-green-600 transition-colors"></i>
+                <Icon name="whatsapp" className="h-5 w-5 transition-colors group-hover:text-green-600" />
                 {text.btnAction}
               </a>
 
               {/* 2. Close Button (Secondary Action) */}
               <button
+                type="button"
                 onClick={onClose}
                 className="w-full border border-white/10 text-gray-400 py-3 font-bold uppercase tracking-widest text-xs hover:text-white hover:border-white transition-all duration-300 rounded-sm"
               >

@@ -1,10 +1,10 @@
-import React from 'react';
+import Icon from "./Icon";
 // 1. IMPORT GAMBAR DI SINI
-import certificateImg from '../images/certificate-sample.jpg'; 
+import certificateImg from "../images/certificate-sample-320.webp"; 
 // 2. IMPORT DATA DARI DATABASE
 import { benefitsData, statsData } from '../database';
 // 3. IMPORT HOOK BAHASA
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../context/useLanguage.js';
 
 export default function Benefits() {
   // 4. AMBIL STATE BAHASA
@@ -65,15 +65,15 @@ export default function Benefits() {
         <div className="grid grid-cols-3 divide-x divide-white/10 border-b border-white/10 pb-16 mb-20 animate-fade-up">
           {statsData[language].map((stat, idx) => (
             <div key={idx} className="text-center px-2">
-              <h3 className="text-3xl md:text-5xl font-display font-bold text-white mb-2">{stat.number}</h3>
-              <p className="text-gold text-[10px] md:text-xs uppercase tracking-[0.2em]">{stat.label}</p>
+              <p className="text-3xl md:text-5xl font-display font-bold text-white mb-2">{stat.number}</p>
+              <p className="text-[#e8c85b] text-[10px] md:text-xs uppercase tracking-[0.2em]">{stat.label}</p>
             </div>
           ))}
         </div>
 
         {/* --- HEADER --- */}
         <div className="text-center mb-16 max-w-2xl mx-auto animate-fade-up delay-100">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] mb-4 font-medium">{text.subtitle}</p>
+          <p className="text-[#e8c85b] text-xs uppercase tracking-[0.3em] mb-4 font-medium">{text.subtitle}</p>
           <h2 className="text-3xl md:text-5xl font-display text-white leading-tight">
             {text.headline.t1}<br />
             {text.headline.t2}<span className="text-gold italic font-serif">{text.headline.highlight}</span>
@@ -91,10 +91,10 @@ export default function Benefits() {
 
               <div className="relative z-10">
                 <div className="w-14 h-14 bg-black border border-gold/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold group-hover:border-gold transition-colors duration-300">
-                  <i className={`fas ${item.icon} text-xl text-gold group-hover:text-black transition-colors duration-300`}></i>
+                  <Icon name={item.icon} className="h-5 w-5 text-gold transition-colors duration-300 group-hover:text-black" />
                 </div>
                 
-                <h4 className="text-xl font-display text-white mb-4 group-hover:text-gold transition-colors">{item.title}</h4>
+                <h3 className="text-xl font-display text-white mb-4 group-hover:text-gold transition-colors">{item.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed font-light border-l border-white/10 pl-4 group-hover:border-gold transition-colors duration-300">
                   {item.desc}
                 </p>
@@ -122,7 +122,7 @@ export default function Benefits() {
                     <ul className="space-y-4 mb-8">
                         {text.cert.list.map((item, i) => (
                             <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
-                                <i className="fas fa-check-circle text-gold"></i> {item}
+                                <Icon name="check-circle" className="h-4 w-4 text-gold" /> {item}
                             </li>
                         ))}
                     </ul>
@@ -140,13 +140,17 @@ export default function Benefits() {
                         {/* Frame */}
                         <div className="relative rounded-lg overflow-hidden border-4 border-black shadow-2xl bg-white">
                              
-                             {/* Gambar Sertifikat */}
-                             <img 
-                                src={certificateImg} 
-                                alt="Barista Lab Certificate Sample" 
-                                draggable="false"
-                                className="w-full h-auto object-cover pointer-events-none"
-                             />
+                            {/* Gambar Sertifikat */}
+<img
+  loading="lazy"
+  decoding="async"
+  width="320"
+height="452"
+  src={certificateImg}
+  alt="Barista Lab Certificate Sample"
+  draggable="false"
+  className="w-full h-auto object-cover pointer-events-none"
+/>
 
                              {/* --- WATERMARK FIX --- 
                                  Perubahan: Menggunakan text-gray-900 (Hitam pudar) bukan text-white
@@ -161,28 +165,30 @@ export default function Benefits() {
                                         PREVIEW ONLY
                                     </p>
                                 </div>
+                                </div>
                                 
-                                {/* Pattern Garis Diagonal Halus (Optional texture) */}
-                                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-stripes-dark.png')] opacity-10 mix-blend-multiply"></div>
-                             </div>
+                           {/* Pattern Garis Diagonal Halus - CSS Lokal */}
+<div
+  className="absolute inset-0 opacity-10 mix-blend-multiply"
+  style={{
+    backgroundImage:
+      "repeating-linear-gradient(135deg, #333 0px, #333 1px, transparent 1px, transparent 6px)",
+  }}
+></div>
 
-                             {/* Pelindung Transparan (Anti Klik Kanan/Save) */}
-                             <div className="absolute inset-0 z-30 bg-transparent"></div>
+{/* Badge Icon */}
+<div className="absolute bottom-4 right-4 w-12 h-12 bg-gold rounded-full flex items-center justify-center shadow-lg border-2 border-black z-40">
+  <Icon name="award" className="h-5 w-5 text-black" />
+</div>
 
-                             {/* Badge Icon */}
-                             <div className="absolute bottom-4 right-4 w-12 h-12 bg-gold rounded-full flex items-center justify-center shadow-lg border-2 border-black z-40">
-                                <i className="fas fa-award text-xl text-black"></i>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Decorative BG Elements */}
+                                                             {/* Decorative BG Elements */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px] pointer-events-none"></div>
+                            </div>
             </div>
+          </div>
         </div>
-
       </div>
+    </div>
     </section>
   );
 }

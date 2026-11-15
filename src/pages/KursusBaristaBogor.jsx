@@ -53,7 +53,7 @@ export default function KursusBaristaBogor() {
           </p>
           
           <div className="bg-neutral-900 border border-gray-800 p-6 rounded-xl my-8">
-            <h3 className="text-xl font-semibold text-gold mb-3">Mengapa Peserta Asal Bogor Memilih Kami?</h3>
+            <h2 className="text-xl font-semibold text-gold mb-3">Mengapa Peserta Asal Bogor Memilih Kami?</h2>
             <ul className="list-disc pl-6 space-y-2 text-sm text-gray-400">
               <li><strong>Pilihan Kelas Akhir Pekan (Weekend):</strong> Sangat cocok bagi mahasiswa atau pekerja asal Bogor yang hanya memiliki waktu luang di hari Sabtu dan Minggu.</li>
               <li><strong>Fasilitas Mesin Komersial Lengkap:</strong> Pengenalan dan praktik langsung menggunakan mesin espresso standar bisnis cafe dunia.</li>
@@ -77,13 +77,13 @@ export default function KursusBaristaBogor() {
             <p className="text-sm text-gray-400 mb-4">
               *Catatan: Seluruh peralatan keamanan kerja dan bahan penunjang praktik sudah disiapkan gratis.
             </p>
-            <a href="https://wa.me." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
+            <a href="https://wa.me/6281356561721?text=Halo%2C%20saya%20dari%20Bogor%20dan%20ingin%20bertanya%20tentang%20kursus%20barista." target="_blank" rel="noopener noreferrer" className="bg-gold text-black px-8 py-4 rounded-xl font-bold inline-block hover:bg-opacity-90 transition">
               Dapatkan Brosur Lengkap Kelas Bogor
             </a>
           </div>
         </div>
       </main>
-      <Footer onConsultClick={toggleFab} />
+      <Footer />
       <Fab isOpen={isFabOpen} toggleOpen={toggleFab} />
     </>
   );

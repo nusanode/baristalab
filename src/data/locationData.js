@@ -1,9 +1,17 @@
 export const locationData = {
+  "lokasi": {
+    title: "Lokasi Barista Lab Academy",
+    h1: "Lokasi Pelatihan Barista Lab Academy di Jakarta & Tangerang",
+    location: "Duren Sawit, Jakarta Timur dan Cibodas, Kota Tangerang",
+    phone: "6285213541993",
+    maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
+    description: "Barista Lab Academy menyelenggarakan kelas barista melalui studio pelatihan di Jakarta Timur dan Tangerang. Hubungi tim kami untuk memilih lokasi yang sesuai dengan kebutuhan dan jadwal Anda."
+  },
   "kursus-barista-jakarta": {
     title: "Kursus Barista Jakarta",
     h1: "Kursus Barista Jakarta Profesional",
     location: "Jakarta, Jakarta Timur, Barat, Selatan, Utara, & Pusat",
-    phone: "6281356561721",
+    phone: "6285213541993",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Barista Lab Academy menyediakan kursus barista Jakarta untuk pemula hingga profesional. Belajar espresso, latte art, manual brew dan bisnis coffee shop."
@@ -23,7 +31,7 @@ export const locationData = {
     title: "Kursus Barista Jakarta Timur",
     h1: "Kursus Barista Jakarta Timur Profesional",
     location: "Duren Sawit, Buaran, Klender, Pondok Kopi, & Jatinegara Jakarta Timur",
-    phone: "6281356561721",
+    phone: "6285213541993",
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Pelatihan barista Jakarta Timur untuk pemula, profesional dan calon pemilik coffee shop. Laboratorium praktik privat di Duren Sawit."
@@ -43,7 +51,7 @@ export const locationData = {
     title: "Kursus Barista Depok",
     h1: "Kursus Barista Depok Profesional",
     location: "Kota Depok, Margonda, Cinere, Sawangan, & Cimanggis",
-    phone: "628135656721", // diarahkan ke cabang terdekat (Jaktim)
+    phone: "6285213541993", // diarahkan ke cabang terdekat (Jaktim)
     maps: "https://maps.app.goo.gl/WFVcwu185iuZZcdp7",
     description:
       "Daftar kursus barista profesional di Depok, Margonda, Cinere, & Sawangan. Pelatihan espresso, latte art, dan coffee business. 1 orang 1 mesin!"

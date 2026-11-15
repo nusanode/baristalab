@@ -1,16 +1,44 @@
-# React + Vite
+# Barista Lab Academy — Upgrade Performance & Accessibility
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek React + Vite untuk website Barista Lab Academy.
 
-Currently, two official plugins are available:
+## Menjalankan di Windows
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Ekstrak ZIP ke folder kerja baru.
+2. Buka folder `baristalab-main` melalui VS Code.
+3. Buka terminal PowerShell pada folder proyek.
+4. Jalankan build:
 
-## React Compiler
+   ```powershell
+   npm.cmd run build
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5. Jika muncul pesan bahwa Vite atau dependensi tidak ditemukan, jalankan:
 
-## Expanding the ESLint configuration
+   ```powershell
+   npm.cmd ci
+   npm.cmd run build
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+6. Jalankan pemeriksaan kode:
+
+   ```powershell
+   npm.cmd run lint
+   ```
+
+7. Setelah build berhasil, jalankan preview:
+
+   ```powershell
+   npm.cmd run preview -- --host 127.0.0.1 --port 4180
+   ```
+
+8. Buka `http://127.0.0.1:4180/`.
+
+Laporan Lighthouse HTML lama yang menunjuk ke `localhost:4173` tidak disertakan karena berasal dari build sebelumnya. Folder `dist` dan `dist-ssr` tidak disertakan dalam paket ini agar hasil build dibuat ulang dari source terbaru, bukan memakai output lama. Folder `node_modules` disertakan untuk lingkungan Windows yang digunakan pada proyek ini; bila dependensi tidak cocok atau tidak lengkap, gunakan `npm.cmd ci`.
+
+## Catatan
+
+- Logo asli Barista Lab Academy dipertahankan. File sumber asli tidak dihapus atau ditimpa.
+- Video Hero asli tetap disimpan. Website menggunakan salinan MP4 yang lebih ringan untuk desktop; pada mobile, poster responsif digunakan agar video besar tidak otomatis diunduh.
+- Gambar sumber asli tetap dipertahankan; versi WebP yang lebih kecil ditambahkan untuk pemuatan halaman.
+- Setelah build, uji semua 12 URL prerender dan jalankan Lighthouse pada port preview yang sama.
