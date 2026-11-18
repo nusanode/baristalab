@@ -112,7 +112,7 @@ export default function KursusBaristaJakartaTimur() {
                 </tr>
                 <tr className="border-b border-gray-850 hover:bg-neutral-850">
                   <td className="p-4 font-medium text-white">Manual Brewing</td>
-                  <td className="p-4 text-center text-rose-400">✘ Tidak Ada</td>
+                  <td className="p-4 text-center text-emerald-400 font-semibold">✔ Ya</td>
                   <td className="p-4 text-center text-emerald-400 font-semibold bg-neutral-800/40">✔ Ya</td>
                   <td className="p-4 text-center text-emerald-400">✔ Ya</td>
                 </tr>
