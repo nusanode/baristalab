@@ -601,7 +601,7 @@ export const heroData = {
   id: {
     fallbackImage:
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=50",
-    tagline: "Kursus Barista Jabodetabek Profesional Jakarta, Tangerang, Bekasi, Depok & Bogor",
+    tagline: "Kursus Barista Profesional Jakarta, Tangerang, Bekasi, Depok, Bogor & Banten",
     headline: {
       main: "Kuasai",
       highlight: "Cangkir Sempurna",

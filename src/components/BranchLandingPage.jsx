@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Fab from "./Fab";
 import { coursesData } from "../database";
-import { getUnsplashSrcSet } from "../utils/responsiveImage"; 
+import { getUnsplashSrcSet } from "../utils/responsiveImage";
 const programs = [
   {
     name: "Barista Basic",
@@ -31,6 +31,9 @@ const benefits = ["Praktik langsung dengan mesin espresso", "Pendampingan instru
 export default function BranchLandingPage({ city, area, address, phone, mapUrl, slug, description }) {
   const [fabOpen, setFabOpen] = useState(false);
   const wa = `https://wa.me/${phone}?text=${encodeURIComponent(`Halo Barista Lab Academy, saya ingin bertanya tentang kursus barista di ${city}. Mohon informasi program, biaya, dan jadwal kelas.`)}`;
+  const heroImage = city === "Tangerang"
+    ? "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1920&q=75"
+    : "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1920&q=75";
 
   useEffect(() => {
     document.title = `Kursus Barista ${city} | Barista Lab Academy`;
@@ -60,14 +63,16 @@ export default function BranchLandingPage({ city, area, address, phone, mapUrl, 
     <Navbar />
     <main className="min-h-screen bg-[#090907] pb-20 pt-28 text-white md:pt-36">
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_15%,rgba(212,175,55,.16),transparent_42%),linear-gradient(120deg,#090907,#15130e_58%,#090907)]" />
+        <img src={heroImage} srcSet={getUnsplashSrcSet(heroImage, [480, 768, 1200, 1920], 65)} sizes="100vw" alt="" width="1920" height="1080" loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#090907]/95 via-[#090907]/80 to-[#090907]/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#090907] via-transparent to-black/25" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-8 md:grid-cols-[1.15fr_.85fr] md:items-end md:px-8 md:pb-24">
           <div>
             <p className="mb-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.32em] text-gold"><span className="h-px w-10 bg-gold" />Professional Coffee Training</p>
             <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">Kursus Barista <span className="font-serif italic text-gold">{city}</span></h1>
             <p className="mt-7 max-w-2xl text-sm leading-7 text-white/65 md:text-base md:leading-8">{description} Belajar melalui kombinasi pemahaman teori dan praktik langsung untuk membangun keterampilan yang dibutuhkan di industri kopi.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href={wa} target="_blank" rel="noreferrer" className="inline-flex min-h-14 items-center justify-center bg-gold px-7 text-[10px] font-bold uppercase tracking-[.17em] text-black transition hover:bg-[#ebcf72]">Tanya Jadwal & Biaya ↗</a>
+              <a href={wa} target="_blank" rel="noreferrer" className="inline-flex min-h-14 items-center justify-center bg-gold px-7 text-[10px] font-bold uppercase tracking-[.17em] text-black transition hover:bg-[#ebcf72]">Konsultasi via WhatsApp ↗</a>
               <Link to="/kursus-barista" className="inline-flex min-h-14 items-center justify-center border border-white/20 px-7 text-[10px] font-bold uppercase tracking-[.17em] text-white transition hover:border-gold hover:text-gold">Lihat Semua Program</Link>
             </div>
           </div>

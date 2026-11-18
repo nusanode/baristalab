@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Fab from "../components/Fab";
 import { Link } from "react-router-dom";
+import { getUnsplashSrcSet } from "../utils/responsiveImage";
 export default function KelasLatteArt() {
   const [isFabOpen, setIsFabOpen] = useState(false);
   const toggleFab = () => setIsFabOpen(!isFabOpen);
@@ -20,8 +21,20 @@ export default function KelasLatteArt() {
         {/* --- 1. HERO BANNER FOTO UTAMA ATAS --- */}
      {/* HERO BANNER */}
 
-  <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden border-b border-white/5 bg-black">
-  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-black/50 to-black/70"></div>
+  <div className="relative h-[390px] md:h-[520px] w-full overflow-hidden border-b border-white/5 bg-black">
+  <img
+    src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1920&q=75"
+    srcSet={getUnsplashSrcSet("https://images.unsplash.com/photo-1497935586351-b67a49e012bf", [480, 768, 1200, 1920], 65)}
+    sizes="100vw"
+    alt="Latte art dan suasana pelatihan barista"
+    width="1920"
+    height="1080"
+    fetchPriority="high"
+    decoding="async"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/35"></div>
+  <div className="absolute inset-0 bg-gradient-to-t from-dark-charcoal via-transparent to-black/25"></div>
 
   <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
     <span className="text-gold text-xs md:text-sm uppercase tracking-[0.25em] mb-3 font-semibold">
@@ -63,16 +76,24 @@ export default function KelasLatteArt() {
             </div>
             
             {/* --- 3. FOTO KEDUA DI SAMPING MATERI --- */}
-            <div className="bg-neutral-900 border border-white/10 rounded-lg p-8 h-64 flex items-center justify-center">
-  <div className="text-center">
-    <h3 className="text-gold text-xl font-bold mb-3">
-      Praktik Intensif Latte Art
-    </h3>
-    <p className="text-gray-300">
-      Milk Steaming • Microfoam • Tulip • Rosetta • Swan
-    </p>
-  </div>
-</div>
+            <div className="relative min-h-[300px] overflow-hidden border border-white/10 bg-neutral-900">
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=75"
+                srcSet={getUnsplashSrcSet("https://images.unsplash.com/photo-1509042239860-f550ce710b93", [480, 768, 900], 65)}
+                sizes="(max-width: 767px) calc(100vw - 3rem), 50vw"
+                alt="Latte art pada minuman espresso"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <h3 className="text-gold text-xl font-bold mb-2">Praktik Intensif Latte Art</h3>
+                <p className="text-sm text-white/80">Milk Steaming • Microfoam • Tulip • Rosetta • Swan</p>
+              </div>
+            </div>
 </div>            
 {/* ===== TENTANG KELAS LATTE ART ===== */}
 <section className="mt-20">

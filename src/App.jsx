@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 import Home from "./pages/Home";
 import KelasLatteArt from "./pages/KelasLatteArt";
+import KelasBrewing from "./pages/KelasBrewing";
+import KelasBasicBarista from "./pages/KelasBasicBarista";
 import KursusBarista from "./pages/KursusBarista";
 import LocationPage from "./pages/LocationPage";
 import PelatihanBarista from "./pages/PelatihanBarista";
@@ -96,6 +98,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/kursus-barista" element={<KursusBarista />} />
       <Route path="/kelas-latte-art" element={<KelasLatteArt />} />
+      <Route path="/kelas-brewing" element={<KelasBrewing />} />
+      <Route path="/kelas-basic-barista" element={<KelasBasicBarista />} />
       <Route path="/lokasi" element={<LocationPage />} />
       <Route path="/pelatihan-barista" element={<PelatihanBarista />} />
       <Route path="/sertifikasi-barista" element={<SertifikasiBarista />} />

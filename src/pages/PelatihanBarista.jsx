@@ -1,17 +1,28 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { getUnsplashSrcSet } from "../utils/responsiveImage";
 
 export default function PelatihanBarista() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-dark-charcoal text-white min-h-screen">
-        <div className="max-w-5xl mx-auto px-4 py-10">
+      <main className="min-h-screen bg-[#090907] text-white">
+        <section className="relative isolate flex min-h-[480px] items-end overflow-hidden pt-28 md:min-h-[570px]">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd" srcSet={getUnsplashSrcSet("https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd", [480, 768, 1200, 1920], 65)} sizes="100vw" alt="" width="1920" height="1080" loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/95 via-black/75 to-black/35" />
+          <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-16 md:px-8 md:pb-20">
+            <p className="mb-5 text-[10px] font-bold uppercase tracking-[.3em] text-gold">Professional Coffee Training</p>
+            <h1 className="max-w-4xl font-display text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl">Pelatihan Barista <span className="font-serif italic text-gold">Profesional</span> Jakarta & Tangerang</h1>
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-white/75">Program praktik untuk pemula, calon barista profesional, karyawan coffee shop, dan calon pemilik usaha kopi.</p>
+            <a href="https://wa.me/6285213541993" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-14 items-center justify-center bg-gold px-8 text-xs font-bold uppercase tracking-wider text-black">Konsultasi Pelatihan ↗</a>
+          </div>
+        </section>
+        <div className="mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-20">
 
-          <h1 className="text-4xl font-bold mb-6">
-            Pelatihan Barista Profesional Jakarta & Tangerang
-          </h1>
+          <h2 className="text-2xl font-semibold mb-6 text-gold">
+            Gambaran Program Pelatihan
+          </h2>
 
           <p className="mb-4">
             Pelatihan Barista Barista Lab Academy merupakan program belajar
@@ -89,8 +100,8 @@ export default function PelatihanBarista() {
 
           <p className="mb-4">
             Peserta pelatihan barista berasal dari Jakarta, Tangerang,
-            Bekasi, Depok, Bogor, BSD, Gading Serpong, Cikarang dan
-            berbagai wilayah Jabodetabek lainnya.
+            Bekasi, Depok, Bogor, BSD, Gading Serpong, Cikarang, Banten, dan
+            berbagai wilayah sekitarnya.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">

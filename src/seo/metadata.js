@@ -3,7 +3,7 @@ export const SITE_URL = "https://www.baristalab.co.id";
 export const pageSEO = {
   "/": {
     title: "Barista Lab Academy | Kursus Barista Profesional Jakarta & Tangerang",
-    description: "Kursus barista profesional di Jakarta dan Tangerang. Belajar espresso, latte art, manual brew, dan bisnis coffee shop dengan praktik langsung.",
+    description: "Kursus barista profesional di Jakarta, Tangerang, Bekasi, Depok, Bogor, dan Banten. Belajar espresso, latte art, manual brew, dan bisnis coffee shop melalui praktik langsung.",
   },
   "/kursus-barista": {
     title: "Kursus Barista Profesional | Barista Lab Academy",
@@ -13,13 +13,21 @@ export const pageSEO = {
     title: "Kelas Latte Art Jakarta & Tangerang | Barista Lab Academy",
     description: "Pelajari teknik steaming susu, microfoam, dan pouring latte art dari dasar hingga pola lanjutan bersama Barista Lab Academy.",
   },
+  "/kelas-brewing": {
+    title: "Kelas Manual Brewing | Barista Lab Academy",
+    description: "Pelajari teknik manual brewing, V60, Kalita, grind size, rasio seduh, dan sensory kopi melalui praktik di Barista Lab Academy.",
+  },
+  "/kelas-basic-barista": {
+    title: "Kelas Basic Barista untuk Pemula | Barista Lab Academy",
+    description: "Kelas basic barista untuk pemula dengan materi pengenalan kopi, grinder, espresso, milk steaming, dan dasar operasional coffee shop.",
+  },
   "/lokasi": {
     title: "Lokasi Barista Lab Academy Jakarta & Tangerang",
     description: "Temukan studio pelatihan Barista Lab Academy di Duren Sawit, Jakarta Timur dan Cibodas, Tangerang.",
   },
   "/pelatihan-barista": {
     title: "Pelatihan Barista untuk Individu & Bisnis | Barista Lab Academy",
-    description: "Pelatihan barista dengan praktik langsung untuk calon barista, tim coffee shop, dan calon pemilik usaha kopi.",
+    description: "Pelatihan barista dengan praktik langsung untuk calon barista, tim coffee shop, dan calon pemilik usaha kopi di Jakarta, Tangerang, Jabodetabek, dan Banten.",
   },
   "/sertifikasi-barista": {
     title: "Program Sertifikasi Barista | Barista Lab Academy",
@@ -99,7 +107,7 @@ export function buildStructuredData(pathname) {
     inLanguage: "id-ID",
     publisher: { "@id": `${SITE_URL}/#organization` },
   }];
-  const courseRoutes = ["/kursus-barista", "/kelas-latte-art", "/pelatihan-barista", "/sertifikasi-barista"];
+  const courseRoutes = ["/kursus-barista", "/kelas-latte-art", "/kelas-brewing", "/kelas-basic-barista", "/pelatihan-barista", "/sertifikasi-barista"];
   if (courseRoutes.includes(path) || path.startsWith("/kursus-barista-")) {
     graph.push({
       "@type": "Course",

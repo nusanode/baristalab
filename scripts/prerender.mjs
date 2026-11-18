@@ -12,6 +12,8 @@ const routes = [
   "/",
   "/kursus-barista",
   "/kelas-latte-art",
+  "/kelas-brewing",
+  "/kelas-basic-barista",
   "/lokasi",
   "/pelatihan-barista",
   "/sertifikasi-barista",

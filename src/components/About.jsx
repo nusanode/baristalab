@@ -223,42 +223,34 @@ const t = text[language];
         </div>
       </div>
       {/* SEO Content Section */}
-
-<div className="mt-32 max-w-5xl mx-auto">
-  <h2 className="text-4xl font-display text-white mb-8">
-    Kursus Barista Jakarta & Tangerang
-  </h2>  <p className="text-gray-400 leading-relaxed mb-6">
-    Barista Lab Academy merupakan lembaga pelatihan barista profesional yang
-    melayani peserta dari Jakarta, Tangerang, Bekasi, Depok, dan Bogor.
-    Program kami dirancang untuk pemula yang ingin menjadi barista maupun
-    calon pemilik coffee shop yang ingin memahami dunia kopi secara langsung.
-  </p>  <p className="text-gray-400 leading-relaxed mb-12">
-    Peserta akan mempelajari espresso, latte art, manual brew, pengenalan
-    kopi, grinder setting, milk steaming, hingga standar operasional coffee
-    shop modern. Seluruh materi disampaikan secara praktik dengan pendampingan
-    instruktur berpengalaman.
-  </p>  <h3 className="text-2xl text-gold mb-4">
-    Kursus Barista Jakarta
-  </h3>  <p className="text-gray-400 leading-relaxed mb-10">
-    Program kursus barista Jakarta cocok untuk peserta dari Jakarta Timur,
-    Jakarta Selatan, Jakarta Barat, Jakarta Utara, dan Jakarta Pusat yang
-    ingin belajar barista secara profesional. Pelatihan berfokus pada praktik
-    sehingga peserta dapat memahami standar industri kopi modern.
-  </p>  <h3 className="text-2xl text-gold mb-4">
-    Kursus Barista Tangerang
-  </h3>  <p className="text-gray-400 leading-relaxed mb-10">
-    Peserta dari Tangerang dapat mengikuti pelatihan espresso, latte art,
-    manual brew, dan coffee business dengan fasilitas lengkap serta sertifikat
-    pelatihan. Program ini cocok untuk pemula maupun pelaku usaha kopi.
-  </p>  <h3 className="text-2xl text-gold mb-4">
-    Kursus Barista Bekasi, Depok & Bogor
-  </h3>  <p className="text-gray-400 leading-relaxed">
-    Barista Lab Academy juga menerima peserta dari Bekasi, Depok, dan Bogor.
-    Banyak alumni kami berasal dari wilayah Jabodetabek dan mengikuti
-    pelatihan untuk meningkatkan keterampilan kerja maupun mempersiapkan
-    pembukaan usaha coffee shop sendiri.
-  </p>
-</div>
+      <div className="mx-auto mt-20 max-w-5xl border-t border-white/10 pt-12 md:mt-24 md:pt-16">
+        <div className="grid gap-8 md:grid-cols-[.8fr_1.2fr] md:gap-14">
+          <div>
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.28em] text-gold">Barista Lab Academy</p>
+            <h2 className="font-display text-3xl leading-tight text-white md:text-4xl">
+              Kursus Barista Profesional <span className="font-serif italic text-gold">Jakarta & Tangerang</span>
+            </h2>
+          </div>
+          <div className="space-y-4 text-sm leading-7 text-gray-300">
+            <p>
+              Barista Lab Academy menghadirkan pelatihan barista berbasis praktik untuk pemula,
+              calon barista profesional, dan calon pemilik coffee shop. Peserta mempelajari
+              espresso, grinder setting, milk steaming, latte art, manual brew, serta dasar
+              operasional coffee shop bersama instruktur.
+            </p>
+            <p>
+              Kami melayani peserta dari <strong className="font-medium text-white">Jakarta, Tangerang,
+              Bekasi, Depok, Bogor, dan berbagai wilayah Banten</strong>. Pilihan program dan lokasi
+              pelatihan dapat dikonsultasikan melalui admin.
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2 text-xs font-semibold uppercase tracking-wider">
+              <a href="/kursus-barista-jakarta" className="text-gold transition hover:text-white">Kursus Barista Jakarta ↗</a>
+              <a href="/kursus-barista-tangerang" className="text-gold transition hover:text-white">Kursus Barista Tangerang ↗</a>
+              <a href="/kursus-barista" className="text-gold transition hover:text-white">Semua Program ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
